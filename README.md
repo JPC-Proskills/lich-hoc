@@ -1,8 +1,14 @@
 # Proskills · Lịch học trong tuần
 
-Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.2 · 26/11/2026**.
+Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.3 · 26/11/2026**.
 
 **Đọc trước:** [Đưa lên GitHub Pages](docs/GITHUB-PAGES.md) · [Hướng dẫn Giáo vụ và sao lưu](docs/HUONG-DAN-GIAO-VU.md) · [Bàn giao cho AI tiếp tục phát triển](AI_HANDOFF.md).
+
+## Giao diện học viên V1.1.3
+
+Giữ logo Proskills **3 giây** để mở hộp nhập mật khẩu Giáo viên. Chạm nhanh hoặc kéo trang sẽ không mở. Bỏ nút Giáo viên và nút sáng/tối khỏi màn hình học viên; giữ giao diện đã lưu trên thiết bị.
+
+Thanh trên cuộn cùng nội dung; điều hướng dưới dạng nổi bo tròn, cuộn xuống ẩn và cuộn lên hiện. Dấu hỏi và nút học viên dùng xanh nhạt. Bộ lọc giáo viên/lớp tách dòng và tự xuống dòng tên dài. Hướng dẫn chuyển vào **?**. Chi tiết buổi học hiển thị thành các ô ngày/giờ/giáo viên/phòng, bỏ soạn lời nhắn; chỉ nhắc: **Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày**.
 
 ## Điện thoại, cài app và phát hành lịch
 
@@ -12,7 +18,7 @@ Giáo vụ xuất **published-schedule.json** tại **Xuất & sao lưu → Tả
 
 ## Đưa lên repo riêng
 
-1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.2`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
+1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.3`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
 2. Vào **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
 3. Mở **Visit site** ở phần Pages. Gửi **đường dẫn website** cho Giáo vụ; không gửi đường dẫn xem mã nguồn HTML trên GitHub.
 

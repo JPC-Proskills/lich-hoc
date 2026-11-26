@@ -1,0 +1,51 @@
+/* V1.1.3: quiet student shell and a readable lesson sheet. */
+:root[data-role=student] #mode-switch,:root[data-role=student] #theme-toggle{display:none!important}
+:root[data-role=student] #page-desc,:root[data-role=student] .bottom-note{display:none}
+:root[data-role=student]{--student-soft:#E0ECF5;--student-soft-text:#315E81;--hint:#7B8794}
+:root[data-role=student][data-theme=dark]{--student-soft:#303E4B;--student-soft-text:#CFDFEE;--hint:#9AA6B2}
+:root[data-role=student] .button,:root[data-role=student] .button.primary,:root[data-role=student] .button.small,:root[data-role=student] .segmented button.active{background:var(--student-soft);color:var(--student-soft-text);border-color:transparent}
+:root[data-role=student] .button:hover,:root[data-role=student] .button.primary:hover,:root[data-role=student] .button.small:hover,:root[data-role=student] .segmented button.active:hover{background:color-mix(in srgb,var(--student-soft) 86%,var(--primary));color:var(--student-soft-text)}
+:root[data-role=student] .button:active,:root[data-role=student] .button.primary:active{background:color-mix(in srgb,var(--student-soft) 75%,var(--primary));color:var(--student-soft-text)}
+:root[data-role=student] .icon-button,:root[data-role=student] #help{background:var(--student-soft);color:var(--student-soft-text)}
+:root[data-role=student] .icon-button:hover,:root[data-role=student] #help:hover{background:color-mix(in srgb,var(--student-soft) 85%,var(--primary))}
+:root[data-role=student] input::placeholder,:root[data-role=student] textarea::placeholder{font-size:14px;font-weight:400;color:var(--hint);opacity:1}
+.filter-select{display:block;position:relative;min-width:150px;max-width:240px;flex:1}.filter-select select{width:100%;max-width:none}.filter-select-value{display:none}
+.brand,.mobile-brand{position:relative}.logo-holding{border-radius:50%;animation:logo-hold 3s linear forwards}
+@keyframes logo-hold{from{box-shadow:0 0 0 0 #6A9BCC00}to{box-shadow:0 0 0 5px #6A9BCC65}}
+.lesson-sheet{--lesson-accent:var(--primary);display:grid;gap:16px}
+.lesson-hero{padding:18px;border-radius:20px;background:var(--surface-low);border:1px solid var(--line);border-top:4px solid var(--lesson-accent)}
+.lesson-program{font-size:12px;color:var(--muted);margin:0 0 7px}.lesson-hero h3{font-family:Nunito,'Be Vietnam Pro',sans-serif;font-size:23px;font-weight:800;line-height:1.3;margin:0;color:var(--text);overflow-wrap:anywhere}
+.lesson-topic{font-size:15px;line-height:1.6;white-space:pre-line;margin:12px 0 0;color:var(--text)}
+.lesson-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}.lesson-fact{margin:0;padding:13px;border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:30px 1fr;column-gap:8px;align-items:start;background:var(--surface)}
+.lesson-fact>.mi{grid-row:1/3;color:var(--student-soft-text);background:var(--student-soft);border-radius:10px;padding:5px;font-size:20px;width:30px;height:30px}
+.lesson-fact dt{color:var(--secondary);font-size:12px;line-height:1.4;margin-bottom:4px}.lesson-fact dd{margin:0;font-size:14px;font-weight:600;line-height:1.5;overflow-wrap:anywhere}.lesson-fact dd small{display:block;color:var(--muted);font-size:13px;font-weight:400;margin-top:3px}
+.lesson-reminder{display:flex;align-items:flex-start;gap:9px;padding:12px 14px;background:var(--student-soft);color:var(--student-soft-text);border-radius:14px;font-size:14px;line-height:1.55;margin:0}.lesson-reminder .mi{font-size:20px;flex-shrink:0;margin-top:1px}
+.makeup-panel .section-heading p,.makeup-panel .subbar>span{display:none}
+@media(max-width:760px){
+ :root[data-role=student] .topbar{position:static;min-height:54px;border-bottom:0;padding-top:calc(4px + env(safe-area-inset-top,0px));padding-bottom:4px}
+ :root[data-role=student] #help{width:36px;height:36px;font-size:22px;border-radius:50%;position:relative;margin:4px}
+ :root[data-role=student] #help::after{content:'';position:absolute;inset:-4px}
+ :root[data-role=student] #help .mi{font-size:23px}
+ :root[data-role=student] .page-heading{margin-bottom:12px}
+ :root[data-role=student] #nav{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:auto;height:54px;padding:5px;gap:4px;border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,var(--surface) 96%,transparent);box-shadow:0 5px 22px #00000016;backdrop-filter:blur(14px);transition:transform .24s ease,opacity .24s ease;will-change:transform}
+ :root[data-role=student] #nav button{height:44px;min-height:44px;border-radius:16px}
+ :root[data-role=student] #nav button.active{background:var(--student-soft)!important;color:var(--student-soft-text)}
+ :root[data-role=student] #nav button.active>span:first-child{background:transparent}
+ :root[data-role=student] #nav button.active .mi{color:var(--student-soft-text)}
+ :root[data-role=student].nav-hidden #nav{transform:translateY(calc(100% + 24px + env(safe-area-inset-bottom,0px)));opacity:0;pointer-events:none}
+ :root[data-role=student] main,:root[data-role=student].sidebar-collapsed main{padding-top:4px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+ :root[data-role=student] #toast,:root[data-role=student].sidebar-collapsed #toast{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+ :root[data-role=student] .filters .filter-select{flex:1 1 100%;width:100%;min-width:0;max-width:none;min-height:48px}
+ :root[data-role=student] .filter-select>select{position:absolute;inset:0;width:100%;height:100%;min-height:48px;margin:0;opacity:0;z-index:1;font-size:16px!important;cursor:pointer}
+ :root[data-role=student] .filter-select-value{display:block;pointer-events:none;min-height:48px;padding:12px 38px 12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--input);font-size:16px;line-height:1.5;color:var(--text);overflow-wrap:anywhere}
+ :root[data-role=student] .filter-select-value::after{content:'expand_more';font-family:'Material Symbols Rounded';font-size:20px;position:absolute;right:12px;top:13px;color:var(--secondary)}
+ :root[data-role=student] .filter-select.is-placeholder .filter-select-value{font-size:14px;color:var(--hint)}
+ :root[data-role=student] select:has(option[value=""]:checked){font-size:14px!important;color:var(--hint)}
+ :root[data-role=student] .filter-select:focus-within .filter-select-value{outline:2px solid var(--primary);outline-offset:2px}
+ :root[data-role=student] dialog:has(.lesson-sheet){border-radius:26px 26px 0 0;max-height:90dvh}
+ :root[data-role=student] dialog:has(.lesson-sheet) .dialog-head{padding:16px 18px 8px}
+ :root[data-role=student] dialog:has(.lesson-sheet) #dialog-body{padding:10px 16px 20px}
+ .lesson-sheet{gap:12px}.lesson-hero{padding:15px}.lesson-hero h3{font-size:21px}.lesson-topic{font-size:14px;margin-top:10px}.lesson-facts{gap:8px}.lesson-fact{padding:11px;grid-template-columns:26px 1fr;column-gap:6px}.lesson-fact>.mi{font-size:18px;width:26px;height:26px;padding:4px}.lesson-fact dd{font-size:14px}.lesson-reminder{font-size:13px}
+}
+@media(max-width:350px){.lesson-facts{grid-template-columns:1fr}.lesson-fact{grid-template-columns:30px 1fr}}
+@media(prefers-reduced-motion:reduce){:root[data-role=student] #nav{transition:none}.logo-holding{animation:none;box-shadow:0 0 0 3px #6A9BCC65}}

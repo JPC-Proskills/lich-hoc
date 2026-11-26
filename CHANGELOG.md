@@ -1,3 +1,14 @@
+# PS-LICHDAY-V1.1.3 · 26/11/2026
+
+- Bỏ nút Giáo viên và theme ở màn hình học viên. Giữ logo 3 giây mở hộp mật khẩu; hỗ trợ giữ Enter/Space; hủy khi thả sớm, di chuyển, cuộn, mất focus hoặc hệ thống hủy cử chỉ.
+- Header điện thoại không cố định. Dấu hỏi gọn 36px, vùng chạm 44px; các nút học viên dùng xanh nhạt.
+- Nav nổi bo tròn 22px, cao 54px, chừa safe area; cuộn xuống ẩn, cuộn lên hiện, hiện ở đầu/cuối trang và khi dùng bàn phím. Khi ẩn, bỏ khỏi chuỗi focus. Chuyển tab đưa nội dung về đầu trang.
+- Placeholder đồng bộ 14px, màu dịu hơn; vẫn giữ chữ nhập 16px trên điện thoại để không bị phóng to khi focus.
+- Bộ lọc giáo viên/lớp mỗi ô một dòng. Giữ select native và trình đọc màn hình, bổ sung nhãn hiển thị nhiều dòng để không cắt tên dài.
+- Bỏ các đoạn hướng dẫn khỏi màn hình học viên, chuyển vào dấu hỏi; giữ cảnh báo lỗi vận hành khi cần.
+- Chi tiết buổi học mới: thẻ tên lớp/chuyên đề, bốn ô ngày/giờ/GV/phòng; bỏ nhập họ tên, textarea và sao chép/mở Teams. Chỉ nhắc xin phép trước ít nhất 1 ngày.
+- Giữ chức năng lập lịch, PWA, snapshot học viên, cập nhật app và dữ liệu lưu cũ. Tăng phiên bản cache ngoại tuyến.
+
 # PS-LICHDAY-V1.1.2 · 26/11/2026
 
 - Điện thoại học viên: header một hàng logo/Giáo viên/theme/help; bỏ sidebar và nút toggle; nav dưới chỉ Lịch học/Học bù cao 44px cộng safe area; bỏ tab tuần dưới cùng.

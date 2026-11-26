@@ -6,7 +6,7 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
-**Phiên bản hiện tại: PS-LICHDAY-V1.1.2 (26/11/2026).**
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.3 (26/11/2026).**
 
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
@@ -174,3 +174,11 @@ Manifest standalone, icon Proskills gốc được giữ nguyên trên nền t�
 feed-core.js xuất/kiểm tra snapshot học viên từ lịch tuần này và tuần sau; student-sync.js kiểm tra mạng, hiện thông báo và áp dụng khi bấm Cập nhật lịch. pwa.js kiểm tra khi mở/quay lại trang/online và mỗi 60s khi visible. Hỗ trợ cả cập nhật tuần rỗng (hủy toàn bộ buổi), không chỉ lịch có entries. Snapshot đã nhận lưu riêng theo đường dẫn repo; không ghi đè proskills-planner-v1. syncScheduleRole() đưa db về bản lập lịch riêng khi vào Giáo vụ và chọn lại bản public khi trở về học viên. Không để các ensure/migration làm biến đổi đối tượng feed gốc dùng so sánh revision.
 
 Phát hành: Giáo vụ tải published-schedule.json rồi tự đưa lên repo cùng index.html. File đi kèm là lịch mẫu. Đây là phát hành một chiều, chưa phải đồng bộ realtime hay lưu lên GitHub tự động. Không có Web Push/thông báo hệ thống khi đóng app. Chi tiết cài đặt, giới hạn status bar iOS và quy trình phát hành: docs/DIEN-THOAI-PWA.md. Các mô tả cũ trong tài liệu về việc chưa có dữ liệu dùng chung được hiểu là chưa có backend; snapshot public mới đã cho phép chia sẻ lịch qua file phát hành.
+
+## Cập nhật V1.1.3 — yêu cầu mới nhất
+
+Nguồn chính: PS-LICHDAY-V1.1.3. Các mô tả cũ về nút Giáo viên/theme và soạn tin Teams đã được thay bởi yêu cầu mới: học viên giữ logo 3 giây để hỏi mật khẩu, bỏ hai nút nói trên; Giáo vụ vẫn có nút trở về học viên. Giữ theme đã lưu, không xóa lựa chọn hoặc dữ liệu.
+
+polish.css nạp sau mobile.css; mobile-ui.js nạp sau pwa.js. Header điện thoại static. Nav nổi cao54px bo góc22px, ẩn theo cuộn xuống, hiện khi cuộn lên/đầu/cuối trang; inert khi ẩn, tôn trọng reduced-motion và vùng an toàn. Chuyển tab scroll về đầu. Long press dùng pointer/keyboard, hủy khi di chuyển>10px/scroll/release/cancel/blur; chỉ mở form mật khẩu, không tự cấp quyền.
+
+Các đoạn guide ở lịch/học bù đã vào dấu hỏi; không giấu lỗi load dữ liệu. Bộ lọc lịch vẫn select native với aria-label, nhưng nhãn phủ ngoài hỗ trợ wrap tên dài. Placeholder14px và mờ hơn; giá trị nhập16px giữ khả năng đọc/zoom. Popup học viên dùng lesson-sheet và bốn fact card; không còn permission-name/message/copy hay link Teams. Câu nhắc duy nhất: Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày. Đây là thay đổi yêu cầu đã chốt, không khôi phục composer theo ghi chú cũ.
