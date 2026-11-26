@@ -1,0 +1,4 @@
+const crypto=require('node:crypto'),readline=require('node:readline');
+if(!process.stdin.isTTY){console.error('Run in an interactive terminal. Password input is hidden.');process.exit(1)}
+readline.emitKeypressEvents(process.stdin);process.stdin.setRawMode(true);process.stdout.write('New teacher password (hidden): ');let password='';
+process.stdin.on('keypress',(str,key)=>{if(key?.ctrl&&key.name==='c'){process.stdin.setRawMode(false);process.stdout.write('\nCancelled.\n');process.exit(130)}if(key?.name==='return'){process.stdin.setRawMode(false);process.stdin.pause();if(!password){console.error('\nPassword is empty.');process.exit(1)}const hash=crypto.createHash('sha256').update(password).digest('hex');password='';console.log('\nSHA-256: '+hash+'\nSet teacherPasswordSha256 in config.js to this value. No file was changed.');return}if(key?.name==='backspace'){password=password.slice(0,-1);return}if(str&&!key?.ctrl&&!key?.meta)password+=str});
