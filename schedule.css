@@ -3,40 +3,60 @@
 #page-desc:empty,#week-range:empty,#schedule-updated:empty{display:none}
 #weekbar{min-width:0}
 #week-label{font-variant-numeric:tabular-nums}
+:root[data-role=student] .week-copy{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 10px}
+:root[data-role=student] #week-range{margin:0;font-size:12px;color:var(--secondary);font-weight:400}
 .mobile-brand{color:var(--text);text-decoration:none}
 .mobile-brand span{font-family:Nunito,sans-serif;font-size:16px;font-weight:800}
 .view-control{display:inline-flex;flex-shrink:0;gap:3px}
 .view-control button{min-width:40px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
 .view-control button .mi{font-size:17px}
+:root[data-role=student]{--student-top-action-height:44px}
+:root[data-role=student] #help{height:var(--student-top-action-height)}
+:root[data-role=student] .student-view-toggle{
+ min-height:0;height:var(--student-top-action-height);padding:0 12px;
+ border:0;border-radius:100px;background:var(--student-soft);color:var(--student-soft-text);
+ font-size:13px;font-weight:700;
+}
+:root[data-role=student] .student-view-toggle:hover{background:color-mix(in srgb,var(--student-soft) 85%,var(--primary))}
 .topbar-actions{flex-wrap:wrap;justify-content:flex-end}
 :root[data-role=student] #nav [data-tab=search]{order:-1}
+/* The teacher workspace has neutral gray surfaces and a deeper blue accent. */
 :root[data-role=teacher]{
- --teacher-button:#f4e9e2;
- --teacher-button-hover:#ecd9cd;
- --teacher-button-active:#e8cec0;
- --teacher-button-text:#603b2e;
+ --bg:#F3F4F5;--rail:#E8EAED;--sidebar-color:#E8EAED;
+ --surface:#FFFFFF;--surface-low:#F5F6F7;--surface-high:#ECEEF0;
+ --input:#FFFFFF;--line:#D9DDE1;--text:#1E2937;--muted:#4E6073;--secondary:#586C80;
+ --primary:#285884;--on-primary:#FFFFFF;--primary-container:#DEEAF7;--on-primary-container:#24486C;
+ --clay:#3A719F;--book:#366891;--crail:#285884;--action-bg:#285884;--action-hover:#376B97;--action-soft:#DEEAF7;
+ --axis:#DCE9F6;--axis-text:#264763;--kraft:#7F97AC;
+ --tts-bg:#E8F0F8;--tts-text:#34536F;--nh-bg:#EBEFF7;--nh-text:#3B5072;
+ --other-bg:#EEF0F2;--other-text:#495661;--warning-bg:#E8EFF7;--warning-text:#304E6D;
+ --teacher-button:#E4EEF8;--teacher-button-hover:#D3E4F4;--teacher-button-active:#CADDF1;--teacher-button-text:#264C71;
+ --brand-ink:#20476E;
  --control-radius:12px;
 }
-:root[data-role=teacher][data-theme=dark]{
- --teacher-button:#463732;
- --teacher-button-hover:#55413a;
- --teacher-button-active:#654940;
- --teacher-button-text:#f7dfd1;
-}
-:root[data-role=teacher] :is(button,.filter-select,.filter-select select,.search-field,.segmented){border-radius:var(--control-radius)}
-:root[data-role=teacher] :is(.button,.icon-button,.segmented button,.cell-add,#tab-add){
+
+:root[data-role=teacher] :is(.brand,.mobile-brand){color:var(--brand-ink)}
+:root[data-role=teacher] :is(.brand,.mobile-brand) img{filter:grayscale(1) brightness(.76) sepia(1) saturate(2.3) hue-rotate(166deg)}
+
+:root[data-role=teacher] :is(button,.filter-select,.filter-select select,.search-field){border-radius:var(--control-radius)}
+:root[data-role=teacher] :is(.button,.icon-button,.cell-add,#tab-add){
  background:var(--teacher-button);color:var(--teacher-button-text);border-color:transparent;font-weight:700;
 }
-:root[data-role=teacher] :is(.button,.icon-button,.segmented button,.cell-add,#tab-add):hover{
+:root[data-role=teacher] :is(.button,.icon-button,.cell-add,#tab-add):hover{
  background:var(--teacher-button-hover);color:var(--teacher-button-text);
 }
-:root[data-role=teacher] :is(.button.primary,.segmented button.active,.week-tabs button.active,#nav button.active){
+:root[data-role=teacher] :is(.button.primary,.view-control button.active,.week-tabs button.active,#nav button.active){
  background:var(--teacher-button-active);color:var(--teacher-button-text);
 }
+:root[data-role=teacher] .view-control button{border:0;box-shadow:none}
 :root[data-role=teacher] :is(.dialog-head button,.cell-add,button[data-edit-catalog],button[data-room]){
  min-width:36px;justify-content:center;
 }
 :root[data-role=teacher] #nav button.active>span:first-child{background:transparent;color:inherit}
+:root[data-role=teacher] #nav button.active .mi{color:var(--teacher-button-text)}
+:root[data-role=teacher] :is(.catalog-tabs .button.primary,.button.primary:active){background:var(--teacher-button-active);color:var(--teacher-button-text)}
+:root[data-role=teacher] #save-state::before{color:var(--primary)}
+:root[data-role=teacher] #toast .button{background:transparent;color:#D8ECFF}
 :root[data-role=teacher] button:disabled{opacity:.65;cursor:default}
 .week-tabs button{flex:none;font-variant-numeric:tabular-nums}
 .week-tabs button[data-week]+button[data-week]{position:relative;margin-left:3px}
@@ -73,10 +93,12 @@
 .student-options [role=option]{cursor:pointer;min-height:42px}
 .student-options [role=option]:is(:hover,[aria-selected=true]){background:var(--student-soft);color:var(--student-soft-text)}
 .advanced-search{margin-top:14px;padding-top:10px;border-top:1px solid var(--line)}
-.advanced-search summary{width:max-content;cursor:pointer;font-size:14px;font-weight:700}
-.advanced-search summary .mi{vertical-align:middle;font-size:19px}
+.advanced-search summary{display:flex;align-items:center;gap:5px;width:max-content;max-width:100%;cursor:pointer;font-size:14px;font-weight:700;list-style:none}
+.advanced-search summary::-webkit-details-marker{display:none}
+.advanced-search summary .mi{font-size:20px}
+.advanced-search[open] summary .mi{transform:rotate(180deg)}
 .advanced-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px;margin:13px 0}
-.student-match{border:0;margin:0;padding:0;display:flex;gap:18px;font-size:14px}
+.student-match{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 18px;font-size:14px}
 .student-match legend{font-weight:700;margin-bottom:4px}
 .student-match label{display:flex;gap:6px;align-items:center;min-height:34px}
 .student-search-actions,.student-groups{display:flex;flex-wrap:wrap;gap:7px}
@@ -119,12 +141,13 @@
 .student-guide h3,.student-guide p{margin:2px 0}
 .student-guide p{font-size:13px}
 @media(max-width:760px){
+ :root[data-role=student]{--student-top-action-height:36px}
+ :root[data-role=student] .student-view-toggle{font-size:12px;padding-inline:10px}
  :root[data-role=student] .mobile-brand{width:auto;gap:5px}
  :root[data-role=student] .mobile-brand img{width:32px;height:32px}
  .topbar{height:auto;min-height:50px}
  :root[data-role=student] .topbar-actions{flex-wrap:nowrap}
- :root[data-role=student] .view-control button{padding-inline:8px;font-size:12px}
- .view-control button{min-height:44px}
+ :root[data-role=teacher] .view-control button{min-height:44px}
  :root[data-role=teacher] .topbar-actions #save-state{display:none}
  .list-row{display:grid;grid-template-columns:minmax(85px,auto) minmax(0,1fr);gap:8px;align-items:start}
  .list-time{min-width:0;margin:0;padding:8px}
@@ -132,12 +155,48 @@
  .list-row .session{width:100%}
  #dialog-grip{height:28px}
 }
-@media(max-width:430px){:root[data-role=student] .view-control button .mi{display:none}}
 @media(max-width:370px){
  :root[data-role=teacher] .view-control button span:not(.mi){display:none}
- :root[data-role=student] .view-control button{padding-inline:7px}
- .view-control button .mi{display:none}
  .list-row{grid-template-columns:1fr}
  .list-time{justify-self:start;display:flex;gap:8px;align-items:center}
 }
 @media print{.student-groups,.student-search{display:none}}
+
+.lesson-order-list{
+ list-style:none;display:grid;gap:5px;padding:5px;margin:12px 0 4px;
+ max-height:min(48dvh,420px);overflow:auto;overscroll-behavior:contain;
+}
+.lesson-order-list li{
+ position:relative;display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;
+ gap:8px;padding:4px 6px 4px 2px;border:1px solid var(--line);border-radius:12px;background:var(--surface-low);
+}
+.order-grip{display:grid;place-items:center;width:38px;min-height:44px;touch-action:none;cursor:grab;color:var(--primary)}
+.order-grip:active{cursor:grabbing}
+.order-number{font-size:12px;font-variant-numeric:tabular-nums;color:var(--secondary)}
+.order-name{font-size:13px;line-height:1.4;font-weight:600;overflow-wrap:anywhere}
+.order-actions{display:flex;gap:4px}
+.order-actions .button{padding:0;min-height:36px;min-width:36px;justify-content:center}
+.order-actions .mi{font-size:21px}
+.order-dragging{opacity:.45}
+.lesson-order-list :is(.order-before,.order-after)::after{
+ content:'';position:absolute;z-index:1;inset-inline:0;height:3px;border-radius:2px;background:var(--primary);pointer-events:none;
+}
+.lesson-order-list .order-before::after{top:-4px}
+.lesson-order-list .order-after::after{bottom:-4px}
+.order-announcement{min-height:1.4em;color:var(--secondary);font-size:12px}
+@media(max-width:420px){
+ .lesson-order-list li{gap:4px}
+ .order-grip{width:32px}
+ .order-actions{flex-direction:column}
+}
+
+.workload-filter{display:flex;flex-wrap:wrap;align-items:end;gap:10px 16px;padding:14px;margin-bottom:16px}
+.workload-fields,.workload-shortcuts{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.workload-fields label{display:grid;gap:4px;font-size:13px;font-weight:600}
+.workload-fields input{max-width:100%;min-height:40px;border-radius:12px}
+:root[data-role=teacher] .workload-shortcuts button[aria-pressed=true]{background:var(--teacher-button-active)}
+@media(max-width:460px){
+ .workload-fields{width:100%}
+ .workload-fields label{min-width:0;flex:1 1 125px}
+ .workload-fields input{font-size:14px;padding-inline:8px}
+}

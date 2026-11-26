@@ -4,7 +4,6 @@ const isTeacher=()=>role==='teacher';
 function todayVN(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),get=t=>parts.find(p=>p.type===t).value;return `${get('year')}-${get('month')}-${get('day')}`}
 function accessibleWeeks(){return isTeacher()?[...db.weeks].sort((a,b)=>b.start.localeCompare(a.start)):[publicWeek()]}
 function requireTeacher(){if(isTeacher())return true;toast('Chế độ học viên chỉ xem lịch. Hãy đăng nhập chế độ giáo viên để điều chỉnh.');return false}
-function updateAppearanceMeta(){document.querySelector('meta[name="theme-color"]').content=document.documentElement.dataset.theme==='dark'?(isTeacher()?'#262624':'#18191B'):(isTeacher()?'#FAF9F5':'#F3F4F5')}
 function updatedText(){const stamp=week()?.updatedAt||db.updatedAt;if(!stamp||!Number.isFinite(Date.parse(stamp)))return 'Lịch tuần mới: chưa có ngày cập nhật được ghi nhận.';return 'Lịch tuần mới được cập nhật vào ngày '+new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(stamp))+' lúc '+new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(stamp))+'.'}
 function applyModeUI(){
  syncScheduleRole();
@@ -19,7 +18,7 @@ function applyModeUI(){
  $('#publish-week').hidden=!isTeacher();$('#export-open').hidden=!isTeacher();$('#save-state').textContent=isTeacher()?'Đã lưu trên máy':'Chỉ xem lịch';
  const weeks=accessibleWeeks();if(!weeks.some(w=>w.id===weekId))weekId=(isTeacher()?(weeks.find(w=>w.start===C.studentWeeks(db,todayVN())[0].start)||weeks[0]):weeks[0]).id;
  $('#sidebar-toggle').onclick=()=>{const collapsed=document.documentElement.classList.toggle('sidebar-collapsed');$('#sidebar-toggle').innerHTML=icon(collapsed?'menu':'menu_open');$('#sidebar-toggle').setAttribute('aria-expanded',String(!collapsed));$('#sidebar-toggle').setAttribute('aria-label',collapsed?'Hiện thanh bên':'Ẩn thanh bên để mở rộng lịch');};
- $('#help').onclick=()=>isTeacher()?showAdminHelp():showStudentHelp();updateAppearanceMeta();
+ $('#help').onclick=()=>isTeacher()?showAdminHelp():showStudentHelp();
 }
 function switchRole(){
  if(isTeacher()){role='student';tab='calendar';view='list';sortBy='time';query='';teacherFilter='';classFilter='';allWeeks=false;resetStudentSearch();weekId=publicWeek().id;close();init();toast('Đã chuyển sang chế độ học viên, chỉ xem lịch.');return}
@@ -39,7 +38,7 @@ function wireSort(){$("#sort-by")?.addEventListener("change",e=>{sortBy=e.target
 function showStudentHelp(){
  const steps=[
   ['search','Chọn lớp','Vào Tra cứu, gõ mã lớp như E696 hoặc 696. Chọn một hay nhiều lớp từ gợi ý.'],
-  ['filter_list','Xem hoặc lọc lịch','Nhấn Tra cứu để xem kết quả. Mở Tìm kiếm nâng cao để lọc thêm, hoặc vào Lịch tuần để xem toàn bộ lịch.'],
+  ['filter_list','Xem hoặc lọc lịch','Nhấn Tìm kiếm để xem kết quả. Mở Tìm kiếm nâng cao để lọc thêm, hoặc vào Lịch tuần để xem toàn bộ lịch.'],
   ['event_available','Mở chi tiết buổi học','Chạm vào một buổi để xem đầy đủ chuyên đề, địa điểm, các buổi tiếp theo và thêm vào lịch điện thoại.']
  ];
  modal('Hướng dẫn xem lịch',`<ol class="student-guide">${steps.map(([symbol,title,body],i)=>`<li><span class="guide-icon">${icon(symbol)}</span><div><small>Bước ${i+1}</small><h3>${title}</h3><p>${body}</p></div></li>`).join('')}</ol>`);

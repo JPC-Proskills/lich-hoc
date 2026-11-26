@@ -111,9 +111,19 @@ Ghi lại: đang dùng link nào, tuần nào, lớp/giáo viên nào, thao tác
 
 ## Phát hành lịch học viên
 
-1. Mở Giáo vụ bằng cách giữ logo Proskills ba giây rồi nhập mật khẩu. Chọn tuần cần phát hành và rà soát lịch.
+1. Mở Giáo vụ bằng cách giữ logo hoặc chữ Proskills 1,5 giây rồi nhập mật khẩu. Chọn tuần cần phát hành và rà soát lịch.
 2. Bấm **Hiển thị cho học viên**. Dòng **Đã chọn để phát hành** cho biết tuần nào sẽ được đưa vào tệp. Các lần tạo tuần hoặc lưu buổi chỉ thay đổi lịch trên máy Giáo vụ.
 3. Vào **Xuất & sao lưu → Tải lịch học viên để phát hành**. Mục này ghi rõ tuần đã chọn trước khi tải.
 4. Đưa `published-schedule.json` lên cùng cấp `index.html` trong repo GitHub. Sau khi GitHub Pages cập nhật, cả hai tab học viên sẽ tự nhận cùng một tuần khi mở app, quay lại hoặc dùng **? → Kiểm tra cập nhật**.
 
-Hãy tải bản sao lưu toàn bộ riêng. Nếu khôi phục bản sao lưu cũ chưa ghi tuần hiển thị, chọn lại tuần trước khi xuất. Bản V1.1.4 đi kèm tuần mẫu để thử thao tác. Xem [hướng dẫn điện thoại và PWA](DIEN-THOAI-PWA.md).
+Hãy tải bản sao lưu toàn bộ riêng. Nếu khôi phục bản sao lưu cũ chưa ghi tuần hiển thị, chọn lại tuần trước khi xuất. Bản V1.1.5 đi kèm tuần mẫu để thử thao tác. Xem [hướng dẫn điện thoại và PWA](DIEN-THOAI-PWA.md).
+
+
+## Đổi thứ tự chuyên đề và quản lý bộ môn
+
+- Trong **Chương trình đào tạo → Chương trình học**, chọn chương trình, bấm **Đổi thứ tự chuyên đề**, rồi kéo tay nắm bên trái hoặc dùng nút lên/xuống. Bấm **Lưu thứ tự** để dùng thứ tự mới cho gợi ý bài sau. Các buổi đã xếp giữ nguyên chuyên đề.
+- Trong **Chương trình đào tạo → Giáo viên**, bấm **Thêm giáo viên**, nhập tên và chọn **Bộ môn**. Có thể sửa bộ môn bằng icon cây viết. Hồ sơ cũ có ghi nhận GDTC hiện là **Giáo viên thể chất**, các hồ sơ còn lại hiện **Chưa thiết lập** cho đến khi chọn bộ môn.
+
+## Tính công suất trong tháng
+
+Mở **Công suất giáo viên**. Bảng mặc định tính theo tuần đang chọn. Chọn **Tháng này** để lấy cả tháng theo giờ Việt Nam, hoặc nhập **Từ ngày** và **Đến ngày** rồi bấm **Áp dụng**. Hai ngày đầu và cuối đều được tính. **Xuất CSV** dùng cùng khoảng ngày đang hiển thị.

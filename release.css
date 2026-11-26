@@ -3,10 +3,10 @@
 h1,h2,h3,.dialog-head h2,.section-heading h2,.program-header h3,.student-detail h3,.week-title b{font-family:Nunito,'Be Vietnam Pro',sans-serif;font-weight:700;letter-spacing:0;line-height:1.3}
 .brand-logo{width:46px;height:46px;object-fit:contain;flex-shrink:0}
 :root[data-role=student]{--clay:#2E6596;--book:#25557F;--crail:#2E6596;--kraft:#6385A3;--primary:#2E6596;--primary-container:#E5ECF2;--on-primary-container:#244F75;--bg:#F3F4F5;--rail:#E9EBED;--surface:#FFFFFF;--surface-low:#F4F5F6;--surface-high:#E9EBED;--line:#DADDE1;--text:#22262B;--muted:#535C65;--secondary:#606973;--input:#FFFFFF;--sidebar-color:#E9EBED;--tts-bg:#F0F2F4;--tts-text:#303A44;--nh-bg:#F0F1F4;--nh-text:#384151;--other-bg:#F2F2F3;--other-text:#414850;--info-bg:#EAEDF0;--info-text:#354E64;--axis:#244F75;--axis-text:#E8F3FF;--action-bg:#2E6596;--action-hover:#25557F;--action-soft:#E5ECF2;--action-pressed:#1D466A}
-:root[data-role=student][data-theme=dark]{--bg:#18191B;--rail:#202225;--surface:#242629;--surface-low:#202225;--surface-high:#303338;--line:#41454B;--text:#F0F1F3;--muted:#C2C6CC;--secondary:#B3BAC3;--input:#1B1D20;--sidebar-color:#202225;--primary:#A8CDEF;--primary-container:#303A44;--on-primary-container:#DCEBFA;--tts-bg:#2B2E32;--tts-text:#E2E5EA;--nh-bg:#2D2F34;--nh-text:#E3E5EC;--other-bg:#2D2F31;--other-text:#E5E7EA;--info-bg:#2C3137;--info-text:#D4DDE7;--axis:#244F75;--axis-text:#E8F3FF;--action-bg:#2E6596;--action-hover:#3976AB;--action-soft:#303A44;--action-pressed:#25557F;--warning-bg:#37332C;--warning-text:#E7D2A6}
+
 :root[data-role=student] .button:active{background:var(--action-pressed);color:#FFF}
-:root[data-role=student] .icon-button,:root[data-role=student] #theme-toggle{background:var(--action-bg);color:#F1F7FF}
-:root[data-role=student] .icon-button:hover,:root[data-role=student] #theme-toggle:hover{background:var(--action-hover)}
+:root[data-role=student] .icon-button{background:var(--action-bg);color:#F1F7FF}
+:root[data-role=student] .icon-button:hover{background:var(--action-hover)}
 :root[data-role=student] .segmented button.active,:root[data-role=student] .segmented button.active:hover{background:var(--action-bg);color:#F1F7FF}
 :root[data-role=student] .cell-add{background:var(--action-soft);color:var(--primary)}
 :root[data-role=student] .cell-add:hover{background:var(--action-bg);color:#FFF}
@@ -15,7 +15,7 @@ h1,h2,h3,.dialog-head h2,.section-heading h2,.program-header h3,.student-detail 
 :root[data-role=student] nav button{color:var(--muted)}
 :root[data-role=student] nav button.active{background:var(--action-bg);color:#FFF}
 :root[data-role=student] .session.has-program-color{background:color-mix(in srgb,var(--program-color) 6%,var(--surface-low))}
-:root[data-role=student][data-theme=dark] .session.has-program-color{background:color-mix(in srgb,var(--program-color) 7%,var(--surface-low))}
+
 :root[data-role=student] #toast .button{color:#D8ECFF;background:transparent}
 body{line-height:1.5}.topbar{height:58px}.page-heading{margin-bottom:16px;gap:16px}.eyebrow{margin-bottom:4px}h1{font-size:32px}.page-heading p:last-child{margin-top:5px;line-height:1.5}
 :root[data-role=student] .heading-actions{display:none}

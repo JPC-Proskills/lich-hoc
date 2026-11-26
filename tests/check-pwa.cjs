@@ -19,6 +19,8 @@ const changed=C.clone(feed);changed.data.weeks[0].entries[0].title='Chuyên đ�
 assert.notEqual(F.signature(feed),F.signature(changed));
 const S=require('../student-core.js');
 assert.equal(S.weekLabel('2026-10-26'),'26.10-01.11');
+assert.equal(S.updateLabel('2026-11-26T18:07:00Z'),'01:07 ngày 27.11.2026');
+assert.equal(S.updateLabel('invalid'),'');
 assert(S.matches('Pháp luật Nhật Bản & Việt Nam','viet nam Pháp luật'));
 assert.equal(S.audience(undefined,'LỚP KỸ NĂNG - KS67'),'Kỹ sư');
 assert.equal(S.audience(undefined,'LHS29'),'Lưu học sinh');

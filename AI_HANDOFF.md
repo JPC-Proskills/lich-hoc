@@ -6,7 +6,7 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
-**Phiên bản hiện tại: PS-LICHDAY-V1.1.4 (26/11/2026).**
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.5 (26/11/2026).**
 
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
@@ -26,7 +26,7 @@ core.js                   Logic dữ liệu thuần, kiểm tra và chuyển tu�
 modes.js                  Chế độ học viên/Giáo vụ, tìm học bù, chi tiết chỉ xem
 greetings.js              Giao diện lịch chào thứ 6
 colors.js                 Bảng chọn màu và thẻ tên giáo viên
-ui.js                     Icon và lựa chọn sáng/tối
+ui.js                     Icon
 seed.js                   Dữ liệu mẫu window.SEED
 fonts.css                 Font Be Vietnam Pro đóng gói tại máy
 m3.css                    Giao diện Material 3 nền tảng
@@ -45,7 +45,7 @@ Chạy `npm start`; kiểm tra `npm test`. Không cần `npm install`. Có thể
 
 **Thứ tự script quan trọng:** `ui.js` trong head; cuối body là `seed.js`, `core.js`, `config.js`, `modes.js`, `greetings.js`, `colors.js`, `app.js`. App dùng các binding toàn cục theo thứ tự này. `app.js` gọi `init()` ở cuối; không làm các file kia chạy logic truy cập `db` trước khi app khởi tạo.
 
-`m3.css` được nạp trước `modes.css`, sau cùng là `release.css`; một số quy tắc sau cố ý ghi đè giao diện cũ. Trước khi sửa CSS cần xem độ ưu tiên và cả chế độ sáng/tối/học viên.
+`m3.css` được nạp trước `modes.css`, sau cùng là `release.css`; một số quy tắc sau cố ý ghi đè giao diện cũ. Trước khi sửa CSS cần xem độ ưu tiên theo vai trò.
 
 ## 3. Vai trò đã thống nhất
 
@@ -83,7 +83,7 @@ Chạy `npm start`; kiểm tra `npm test`. Không cần `npm install`. Có thể
 
 `status` của buổi học: `planned`, `done`, `cancelled`. Không suy diễn “đã dạy” từ việc xuất hiện trong lịch. ID giữ ổn định khi đổi tên; không dùng tên làm khóa liên kết.
 
-**Lưu trữ:** localStorage, khóa lịch **`proskills-planner-v1`**. Giao diện sáng/tối có khóa riêng `proskills-appearance`. Không đổi khóa lịch hoặc xóa dữ liệu để “sửa lỗi”. Nếu cần đổi schema/namespace, viết migration và kiểm tra backup cũ. Nhiều đường dẫn trên cùng một origin có thể dùng chung localStorage: khi triển khai nhiều bản song song cần xem xét namespace và migration cụ thể.
+**Lưu trữ:** localStorage, khóa lịch **`proskills-planner-v1`**. Không đổi khóa lịch hoặc xóa dữ liệu để “sửa lỗi”. Nếu cần đổi schema/namespace, viết migration và kiểm tra backup cũ. Nhiều đường dẫn trên cùng một origin có thể dùng chung localStorage: khi triển khai nhiều bản song song cần xem xét namespace và migration cụ thể.
 
 App chỉ lưu trong trình duyệt hiện tại. Không có tài khoản, API, database, đồng bộ nhiều người, lưu lịch vào repo hoặc tự commit dữ liệu. Chuyển origin/máy phải sao lưu và khôi phục. Upload code lên GitHub không mang theo dữ liệu người dùng đã nhập ở trình duyệt.
 
@@ -146,7 +146,7 @@ Hướng mong muốn: Giáo vụ làm lịch → cập nhật dữ liệu vào r
 2. Sửa **trực tiếp trong repo/package này**, không sinh một bản nguồn khác rồi quên đồng bộ.
 3. Giữ schema/ID/khóa lưu và backup cũ. Không dùng xóa localStorage hoặc làm mới seed như cách sửa lỗi mặc định.
 4. Nếu thay đổi dữ liệu, bổ sung migration và kiểm tra cả backup cũ lẫn mới. Không ghi file sao lưu thật vào repo công khai.
-5. Chạy `npm test`. Khi thay đổi giao diện/role, thử trên trình duyệt: mặc định học viên, mật khẩu sai/đúng, chuyển về học viên/reload, form chỉ xem, lọc/sort, tuần hiện tại/tuần sau, màn hình 390px và máy tính, sáng/tối.
+5. Chạy `npm test`. Khi thay đổi giao diện/role, thử trên trình duyệt: mặc định học viên, mật khẩu sai/đúng, chuyển về học viên/reload, form chỉ xem, lọc/sort, tuần hiện tại/tuần sau, màn hình 390px và máy tính.
 6. Với lịch chào hoặc chuyển bài, kiểm tra luân phiên, buổi hủy, lớp kết thúc, chương trình hết và công suất không cộng nhầm ca chào.
 7. Với xuất/nhập, phân biệt **backup toàn bộ** và **schedule.json một tuần**, giữ bước xác nhận thay dữ liệu. Cập nhật hướng dẫn Giáo vụ nếu nút/quy trình thay đổi.
 8. Ghi thay đổi có ý nghĩa vào `CHANGELOG.md`; cập nhật tài liệu này khi yêu cầu được chốt thay đổi. Đừng ghi kết quả kiểm tra chưa chạy.
@@ -192,3 +192,18 @@ Các đoạn guide ở lịch/học bù đã vào dấu hỏi; không giấu l�
 - `student-ui.js` hỗ trợ kết quả theo tuần đã phát hành, nhiều lựa chọn, tìm chuyên đề theo từng từ, điều kiện Và/Hoặc và nhóm lịch. Mỗi phiên và khi chuyển tab mở dạng danh sách.
 - `student-core.js` tính dự kiến 1–4 tuần theo tiến độ đã xếp và các khung tiết có bài được gán trong tuần phát hành. Gợi ý học bù bỏ các chuyên đề lớp đã bắt đầu. Timeline lấy các buổi còn lại trong tuần trước khi nối dự kiến. Nếu thiếu dữ liệu chương trình/khung tiết tương ứng, có thể hiện ít hơn hai buổi hoặc không có dự kiến.
 - `schedule-navigation.js` dùng lịch sử trình duyệt cho Back và hỗ trợ kéo tay nắm popup; `schedule.css` tắt kéo làm mới và cập nhật giao diện. Tệp .ics dùng giờ Việt Nam và nội dung buổi đã chọn.
+
+
+## Cập nhật V1.1.5
+
+- Học viên dùng một nút phẳng ghi kiểu xem hiện tại. Nút mở ở Danh sách, chuyển Lịch tuần với icon lịch và có chiều cao bằng dấu hỏi. Điều hướng học viên trên điện thoại thu gọn, icon trên nhãn, chỉ icon và nền icon đổi khi chọn.
+- Mốc cập nhật trong thẻ tuần dùng giờ Việt Nam, ưu tiên `week.updatedAt` rồi đến `publishedAt` nếu tuần thiếu mốc. Dạng tuần có khoảng cách quanh dấu gạch ở thẻ học viên. Giữ định dạng gọn của thẻ Giáo vụ và thông báo kiểm tra cập nhật.
+- Tìm kiếm nâng cao dùng mũi tên, nhãn đầy đủ cho Và/Hoặc và nút Tìm kiếm có icon phễu. Cơ chế lọc giữ nguyên.
+- Giữ logo hoặc chữ Proskills 1,5 giây để mở hộp mật khẩu. Tông xanh và cách đổi màu logo Giáo vụ nằm trong `schedule.css`; logo học viên dùng ảnh gốc.
+- Tệp lịch phát hành từ V1.1.4 tương thích. Khi nâng cấp mã trên repo đang chạy, giữ `published-schedule.json` đang phát hành lịch thật.
+
+
+- Chế độ Giáo vụ dùng nền xám trung tính và các màu xanh lam/xám cho điểm nhấn. Bảng màu hiển thị trong `colors.js` ánh xạ các mã đã lưu để backup cũ và màu của lịch học viên vẫn đọc đúng. Cụm đổi kiểu xem dùng các nút phẳng. Đã bỏ phần cài đặt và quy tắc dark mode, chọn giao diện sáng ở cả hai vai trò.
+- `lesson-order.js` đổi thứ tự trong một chương trình sau khi bấm lưu. Mã, số tiết, nội dung và các buổi đã xếp giữ nguyên. Từ lần gợi ý bài tiếp theo, hệ thống dùng thứ tự mới.
+- `teachers[].department` là trường tùy chọn của schema 1. Hồ sơ cũ mang specialty GDTC hiển thị mặc định là thể chất. Khi trường mới được chọn, nó có ưu tiên.
+- `workload.js` hiển thị và xuất CSV từ cùng phép tính. `sessionsBetween` lấy cả ngày đầu và cuối theo lịch địa phương. Khi không chọn khoảng riêng, tính theo tuần Giáo vụ đang mở.

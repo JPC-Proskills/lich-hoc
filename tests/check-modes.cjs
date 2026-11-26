@@ -13,4 +13,12 @@ const old=C.clone(seed);old.weeks.forEach(w=>delete w.greetings);C.ensureGreetin
 C.ensureRoster(old);C.ensureTeacherColors(old);assert(old.teachers.some(t=>t.name==='Cô Nguyễn Trang'));assert(old.teachers.some(t=>t.name==='Thầy Trung Hiếu'));assert(old.teachers.some(t=>t.name==='Thầy Vi San'));assert(old.teachers.some(t=>t.name==='Cô Xuân Thủy'));assert.equal(old.teachers.filter(t=>t.specialties?.includes('GDTC')).length,4);const staffCount=old.teachers.length;C.ensureRoster(old);assert.equal(old.teachers.length,staffCount);C.validate(old);
 assert.equal(C.PROGRAM_COLORS.length,10);old.programs[0].color='#6A9BCC';C.validate(old);old.programs[0].color='red;bad';assert.throws(()=>C.validate(old));
 const bad=C.clone(seed);bad.weeks[0].greetings[0].endTime='08:00';assert.throws(()=>C.validate(bad));
+assert.equal(C.teacherDepartment({specialties:['GDTC']}),'physical');
+assert.equal(C.teacherDepartment({}),'');
+assert.equal(C.teacherDepartment({department:'student-care',specialties:['GDTC']}),'student-care');
+const withDepartments=C.clone(seed);
+withDepartments.teachers[0].department='skills';
+assert(C.validate(withDepartments));
+withDepartments.teachers[0].department='invalid';
+assert.throws(()=>C.validate(withDepartments));
 console.log('Passed: current/next-week visibility; no fallback to past weeks; makeup matching; source duty times; duty rotation; no teaching-load impact; legacy migration; canonical GDTC roster; teacher colors; 10 program colors; invalid backup checks.');

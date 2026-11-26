@@ -3,6 +3,14 @@
 const clone=x=>JSON.parse(JSON.stringify(x));
 const uid=()=>globalThis.crypto?.randomUUID?.()||'id-'+Date.now()+'-'+Math.random().toString(36).slice(2);
 const PROGRAM_COLORS=[{name:'Clay',value:'#D97757'},{name:'Sky',value:'#6A9BCC'},{name:'Olive',value:'#788C5D'},{name:'Fig',value:'#C46686'},{name:'Heather',value:'#CBCADB'},{name:'Cactus',value:'#BCD1CA'},{name:'Coral',value:'#EBCECE'},{name:'Kraft',value:'#D4A27F'},{name:'Manilla',value:'#EBDBBC'},{name:'Slate',value:'#666663'}];
+const TEACHER_DEPARTMENTS=[
+ {id:'skills',name:'Giáo viên kỹ năng'},
+ {id:'physical',name:'Giáo viên thể chất'},
+ {id:'student-care',name:'Chăm sóc học viên'}
+];
+function teacherDepartment(teacher){
+ return teacher.department||(teacher.specialties?.includes('GDTC')?'physical':'');
+}
 function addDays(s,n){const d=new Date(s+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
 function studentWeeks(db,today){const d=new Date(today+'T12:00:00Z'),monday=addDays(today,-((d.getUTCDay()+6)%7)),current=db.weeks.find(w=>w.start===monday)||{id:'empty-'+monday,start:monday,entries:[],placeholder:true},next=db.weeks.find(w=>w.start===addDays(monday,7));return next?[current,next]:[current]}
 function makeupSessions(db,weeks,{today,teacherText='',topic='',programId=''}={}){const normalize=s=>String(s).normalize('NFD').replace(/\p{Diacritic}/gu,'').replace(/[đĐ]/g,'d').toLowerCase().trim();return weeks.flatMap(w=>w.entries.map(e=>({...e,weekId:w.id,date:addDays(w.start,e.day)}))).filter(e=>e.status==='planned'&&(!today||e.date>=today)&&(!programId||db.classes.find(c=>c.id===e.classId)?.programId===programId)&&(!teacherText||normalize(db.teachers.find(t=>t.id===e.teacherId)?.name).includes(normalize(teacherText)))&&(!topic||normalize(e.title).includes(normalize(topic)))).sort((a,b)=>a.date.localeCompare(b.date)||a.start-b.start)}
@@ -48,6 +56,14 @@ function conflicts(entries){const out=[];for(let i=0;i<entries.length;i++)for(le
  if(a.room&&a.campus&&a.room.trim().toLocaleLowerCase()===b.room.trim().toLocaleLowerCase()&&a.campus===b.campus)kinds.push('phòng');
  if(kinds.length)out.push({a:a.id,b:b.id,kinds});
 }return out}
+function sessionsBetween(db,from,to){
+ return db.weeks.filter(week=>week.start<=to&&addDays(week.start,6)>=from).flatMap(week=>
+  week.entries.filter(entry=>{
+   const date=addDays(week.start,entry.day);
+   return date>=from&&date<=to;
+  })
+ );
+}
 function workload(entries,teacherId){const days=Array.from({length:7},()=>({day:0,night:0}));for(const e of entries){if(e.teacherId!==teacherId||e.status==='cancelled')continue;for(let p=e.start;p<=e.end;p++)days[e.day][p<=8?'day':'night']++}return {days,day:days.reduce((n,d)=>n+d.day,0),night:days.reduce((n,d)=>n+d.night,0)}}
 const roomKey=(name,campus)=>[campus,name].map(x=>x.trim().toLocaleLowerCase().replace(/\s+/g,' ')).join('|');
 function ensureRooms(db){
@@ -81,12 +97,12 @@ function validate(db){
  if(db.rooms)for(const w of db.weeks)for(const e of w.entries||[])if(e.roomId&&!db.rooms.some(r=>r.id===e.roomId&&r.name===e.room&&r.campus===e.campus))fail();
  for(const p of db.programs){if(typeof p.name!=='string'||!Array.isArray(p.lessons)||!unique(p.lessons)||(p.color!==undefined&&!PROGRAM_COLORS.some(c=>c.value===p.color)))fail();for(const l of p.lessons){if(typeof l.title!=='string'||!Number.isInteger(l.periods)||l.periods<1||l.periods>200||lessons.has(l.id))fail();lessons.set(l.id,p.id)}}
  for(const c of db.classes)if(typeof c.name!=='string'||typeof c.active!=='boolean'||(c.programId&&!ps.has(c.programId))||!Number.isInteger(c.baseline)||c.baseline<0)fail();
- for(const t of db.teachers)if(typeof t.name!=='string'||typeof t.active!=='boolean'||(t.color!==undefined&&!PROGRAM_COLORS.some(c=>c.value===t.color)))fail();
+ for(const t of db.teachers)if(typeof t.name!=='string'||typeof t.active!=='boolean'||(t.department!==undefined&&!TEACHER_DEPARTMENTS.some(item=>item.id===t.department))||(t.color!==undefined&&!PROGRAM_COLORS.some(c=>c.value===t.color)))fail();
  if(db.visibleWeekId!==undefined&&!db.weeks.some(w=>w.id===db.visibleWeekId))fail();
  const dates=new Set();for(const w of db.weeks){if(!/^\d{4}-\d{2}-\d{2}$/.test(w.start)||!Number.isFinite(Date.parse(w.start))||new Date(w.start+'T12:00:00Z').toISOString().slice(0,10)!==w.start||new Date(w.start+'T12:00:00Z').getUTCDay()!==1||dates.has(w.start)||!Array.isArray(w.entries)||!unique(w.entries))fail();dates.add(w.start);
  if(w.greetings!==undefined&&(!Array.isArray(w.greetings)||!unique(w.greetings)||w.greetings.some(g=>g.day!==4||!ts.has(g.teacherId)||!['AB1','AB2','Âu Cơ'].includes(g.campus)||!((g.startTime==='07:30'&&g.endTime==='07:45')||(g.startTime==='12:45'&&g.endTime==='13:00'))||typeof g.note!=='string'||typeof g.rotate!=='boolean'||!Array.isArray(g.rotationTeacherIds)||g.rotationTeacherIds.some(id=>!ts.has(id))||new Set(g.rotationTeacherIds).size!==g.rotationTeacherIds.length)))fail();
  for(const e of w.entries){const c=db.classes.find(c=>c.id===e.classId);if(!cs.has(e.classId)||!ts.has(e.teacherId)||!Number.isInteger(e.day)||e.day<0||e.day>6||!Number.isInteger(e.start)||!Number.isInteger(e.end)||e.start<1||e.end>12||e.end<e.start||!['planned','done','cancelled'].includes(e.status)||!['title','room','campus'].every(k=>typeof e[k]==='string')||(e.lessonId&&lessons.get(e.lessonId)!==c.programId)||e.lessonOffset!==undefined&&(!Number.isInteger(e.lessonOffset)||e.lessonOffset<0))fail();}
  }return true;
 }
-const api={clone,uid,addDays,offsets,progress,nextWeek,conflicts,workload,validate,roomKey,ensureRooms,updateRoom,studentWeeks,makeupSessions,rotateDuties,greetingConflicts,PROGRAM_COLORS,ensureGreetings,ensureTeacherColors,ensureRoster};if(typeof module!=='undefined')module.exports=api;else root.ScheduleCore=api;
+const api={clone,uid,TEACHER_DEPARTMENTS,teacherDepartment,addDays,offsets,progress,nextWeek,conflicts,sessionsBetween,workload,validate,roomKey,ensureRooms,updateRoom,studentWeeks,makeupSessions,rotateDuties,greetingConflicts,PROGRAM_COLORS,ensureGreetings,ensureTeacherColors,ensureRoster};if(typeof module!=='undefined')module.exports=api;else root.ScheduleCore=api;
 })(typeof window!=='undefined'?window:globalThis);

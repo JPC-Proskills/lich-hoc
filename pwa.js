@@ -29,7 +29,7 @@
  const originalHelp=showStudentHelp;
  showStudentHelp=function(){
   originalHelp();
-  document.getElementById('dialog-body').insertAdjacentHTML('beforeend','<div class="app-tools"><button class="button small" id="install-app">Cài app</button><button class="button small" id="check-updates">Kiểm tra cập nhật</button></div><p class="app-version">PS-LICHDAY-V1.1.4 · Lịch ngoại tuyến trên thiết bị này</p>');
+  document.getElementById('dialog-body').insertAdjacentHTML('beforeend','<div class="app-tools"><button class="button small" id="install-app">Cài app</button><button class="button small" id="check-updates">Kiểm tra cập nhật</button></div><p class="app-version">PS-LICHDAY-V1.1.5 · Lịch ngoại tuyến trên thiết bị này</p>');
   document.getElementById('install-app').onclick=()=>{close();install().catch(()=>toast('Hãy dùng menu trình duyệt để cài Proskills.'));};
   document.getElementById('check-updates').onclick=()=>{close();checkUpdates(true);};
  };

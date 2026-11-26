@@ -1,10 +1,9 @@
 {
   "format": "proskills-student-schedule-v1",
-  "publishedAt": "2026-11-26T14:38:42.619Z",
-  "visibleWeekId": "w-2026-11-16",
+  "publishedAt": "2026-11-26T03:52:52.272Z",
+  "visibleWeekId": "w-2026-11-23",
   "data": {
     "schemaVersion": 1,
-    "updatedAt": "2026-11-26T14:38:29.964Z",
     "rosterVersion": 1,
     "programs": [
       {
@@ -801,251 +800,137 @@
     ],
     "weeks": [
       {
-        "id": "w-2026-11-16",
-        "start": "2026-11-16",
-        "updatedAt": "2026-11-26T14:38:29.964Z",
+        "id": "w-2026-11-23",
+        "start": "2026-11-23",
         "entries": [
           {
-            "id": "buoi-922bc079a4",
-            "day": 0,
-            "start": 7,
-            "end": 8,
-            "classId": "lop-45793a6759",
-            "teacherId": "gv-68ba598cf8",
-            "room": "702",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
-            "lessonId": "",
-            "title": "Báo cáo trước lớp kết quả rèn luyện thói quen tốt lần 4\nBài tập về nhà: Tự học từ Video",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-c7ebb51285",
+            "id": "buoi-2aef8392e0",
             "day": 0,
             "start": 1,
             "end": 2,
             "classId": "lop-9be7dd8782",
-            "teacherId": "gv-dae5775033",
-            "room": "201",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
-            "lessonId": "",
-            "title": "Kỹ năng_Báo cáo tiến độ Nhóm gắn kết #2",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-f98773302d",
-            "day": 0,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-227fa49ecb",
-            "teacherId": "gv-dae5775033",
-            "room": "201",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
-            "lessonId": "",
-            "title": "Kỹ năng_Khai giảng + Triển khai hoạt động Nhóm gắn kết",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-7e0ca4f931",
-            "day": 0,
-            "start": 3,
-            "end": 4,
-            "classId": "lop-47dba207a9",
-            "teacherId": "gv-68ba598cf8",
-            "room": "512",
-            "campus": "AB2",
-            "roomId": "room-ab2%7C512",
-            "lessonId": "",
-            "title": "Nhóm thói quen quản lý thời gian\n  C09. Thói quen tận dụng thời gian một cách có ích\n  C20. Sử dụng mạng xã hội một cách có ích\n  C22. Thói quen phân biệt được (tin) thật và giả",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-a7a91301c1",
-            "day": 0,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-84499ac8ad",
-            "teacherId": "gv-df0d7cbe8b",
-            "room": "407",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C407",
-            "lessonId": "TTS-17",
-            "title": "Nhóm thói quen xây dựng và phát triển mối quan hệ\n  C12. Thói quen chủ động tạo và giữ mối quan hệ\n  C18. Thói quen luôn quan tâm, chia sẻ, giúp đỡ với người khác\n  C21. Thói quen phân biệt được tốt xấu, đúng sai",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": true
-          },
-          {
-            "id": "buoi-59ee13a372",
-            "day": 0,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-e2523df77a",
-            "teacherId": "gv-2d67332ebb",
-            "room": "305",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C305",
-            "lessonId": "TTS-04",
-            "title": "Nhóm thói quen rèn tính kỷ luật và tuân thủ\n  C02. Thói quen tuân thủ kỷ luật\n  C13. Thói quen giữ đúng lời hứa và cam kết\n  C25. Thói quen tránh tối đa không vi phạm pháp luật, lương tâm và đạo đức",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": true
-          },
-          {
-            "id": "buoi-2cc05363a9",
-            "day": 1,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-62eaf2843d",
-            "teacherId": "gv-df0d7cbe8b",
-            "room": "702",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
-            "lessonId": "",
-            "title": "Kỹ năng_Khai giảng + Triển khai hoạt động Nhóm gắn kết",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-b8d0f30739",
-            "day": 1,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-ac9e61d055",
-            "teacherId": "gv-2d67332ebb",
-            "room": "702",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
-            "lessonId": "",
-            "title": "Kỹ năng_Khai giảng + Triển khai hoạt động Nhóm gắn kết",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-5a5843c26d",
-            "day": 1,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-a1e7319e7a",
-            "teacherId": "gv-68ba598cf8",
-            "room": "201",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
-            "lessonId": "",
-            "title": "Kỹ năng_Khai giảng + Triển khai hoạt động Nhóm gắn kết",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-5550dbef42",
-            "day": 1,
-            "start": 3,
-            "end": 4,
-            "classId": "lop-81bafedfde",
-            "teacherId": "gv-dae5775033",
-            "room": "512",
-            "campus": "AB2",
-            "roomId": "room-ab2%7C512",
-            "lessonId": "",
-            "title": "Thực hành kỹ năng thói quen #3 …\nBài tập về nhà: Tự học từ Video",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-ad332b6eb7",
-            "day": 1,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-66cac23a60",
-            "teacherId": "gv-dae5775033",
-            "room": "307",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C307",
-            "lessonId": "",
-            "title": "Những đặc sắc trong văn hóa sinh hoạt tại Nhật Bản_Phần 1",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-296aa32069",
-            "day": 1,
-            "start": 7,
-            "end": 8,
-            "classId": "lop-97296b033a",
-            "teacherId": "gv-68ba598cf8",
-            "room": "404",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C404",
-            "lessonId": "TTS-14",
-            "title": "Thực hành kỹ năng thói quen #3 …\nBài tập về nhà: Tự học từ Video",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": true
-          },
-          {
-            "id": "buoi-4ab8235353",
-            "day": 1,
-            "start": 9,
-            "end": 10,
-            "classId": "lop-fd0ad1dcf7",
-            "teacherId": "gv-5467aec210",
-            "room": "404",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C404",
-            "lessonId": "TTS-13",
-            "title": "Nhóm thói quen cải tiến và thử thách bản thân\n  C16. Thói quen dám đặt câu hỏi\n  C17. Thói quen dám đề xuất cải tiến\n  C07. Thói quen không sợ việc khó, làm tới cùng",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": true
-          },
-          {
-            "id": "buoi-5bd3b5157c",
-            "day": 2,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-1ac7c77fea",
             "teacherId": "gv-2cd70b6dfe",
             "room": "",
             "campus": "",
             "lessonId": "",
-            "title": "GDTC_Hướng dẫn thao tác an toàn, phòng tránh tai nạn lao động của ngành nghề thực tập (*Mặc quần thể dục)",
+            "title": "GDTC_Các động tác nâng cao thể lực và sức bền cho công việc (*Mặc quần thể dục)",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-0cc696b093",
-            "day": 2,
+            "id": "buoi-7fabe8d70e",
+            "day": 0,
             "start": 5,
             "end": 6,
-            "classId": "lop-6366dfd24d",
-            "teacherId": "gv-dae5775033",
+            "classId": "lop-227fa49ecb",
+            "teacherId": "gv-e1d508f062",
             "room": "201",
             "campus": "Âu Cơ",
             "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
             "lessonId": "",
-            "title": "Kỹ năng_Áp dụng QCD vào công việc ngành nghề thực tập\nNhư thế nào là một nhân viên có QCD tốt?",
+            "title": "Kỹ năng_Hướng dẫn đặc thù nội dung công việc ngành nghề thực tập (P.1)",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-85a8272942",
+            "id": "buoi-8806a5be74",
+            "day": 0,
+            "start": 3,
+            "end": 4,
+            "classId": "lop-47dba207a9",
+            "teacherId": "gv-df0d7cbe8b",
+            "room": "512",
+            "campus": "AB2",
+            "roomId": "room-ab2%7C512",
+            "lessonId": "",
+            "title": "Nhóm thói quen quản lý sức khỏe thể chất và tinh thần\n  C05. Thói quen không để bản thân rơi vào trạng thái lo lắng, buồn rầu\n  C10. Thói quen giữ gìn và rèn luyện sức khỏe\n  C19. Tìm và nuôi dưỡng sở thích lành mạnh",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-991cf10780",
+            "day": 0,
+            "start": 7,
+            "end": 8,
+            "classId": "lop-0db0c7d954",
+            "teacherId": "gv-df0d7cbe8b",
+            "room": "512",
+            "campus": "AB2",
+            "roomId": "room-ab2%7C512",
+            "lessonId": "",
+            "title": "Kỹ năng_Khai giảng + Đào tạo 5S tại trường học",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-d0d2edfd63",
+            "day": 0,
+            "start": 1,
+            "end": 2,
+            "classId": "lop-66cac23a60",
+            "teacherId": "gv-dae5775033",
+            "room": "304",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C304",
+            "lessonId": "",
+            "title": "Những đặc sắc trong văn hóa sinh hoạt tại Nhật Bản_Phần 2",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-75aa94a6b3",
+            "day": 2,
+            "start": 5,
+            "end": 6,
+            "classId": "lop-1ac7c77fea",
+            "teacherId": "gv-df0d7cbe8b",
+            "room": "702",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
+            "lessonId": "",
+            "title": "Kỹ năng_Kiểm tra kết thúc khóa học",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-134d1b76ff",
+            "day": 2,
+            "start": 5,
+            "end": 6,
+            "classId": "lop-6366dfd24d",
+            "teacherId": "gv-2cd70b6dfe",
+            "room": "",
+            "campus": "",
+            "lessonId": "",
+            "title": "GDTC_Các động tác nâng cao thể lực và sức bền cho công việc (*Mặc quần thể dục)",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-d5ec21a28a",
+            "day": 2,
+            "start": 9,
+            "end": 10,
+            "classId": "lop-85e071f2ce",
+            "teacherId": "gv-68ba598cf8",
+            "room": "202",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C202",
+            "lessonId": "TTS-25",
+            "title": "Kiến thức giới tính và sức khỏe sinh sản",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": true
+          },
+          {
+            "id": "buoi-4392f7a6b3",
             "day": 3,
             "start": 1,
             "end": 2,
@@ -1054,29 +939,13 @@
             "room": "",
             "campus": "",
             "lessonId": "",
-            "title": "GDTC_Hướng dẫn thao tác an toàn, phòng tránh tai nạn lao động của ngành nghề thực tập (*Mặc quần thể dục)",
+            "title": "GDTC_Các động tác nâng cao thể lực và sức bền cho công việc (*Mặc quần thể dục)",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-95085020fe",
-            "day": 3,
-            "start": 1,
-            "end": 2,
-            "classId": "lop-9be7dd8782",
-            "teacherId": "gv-dae5775033",
-            "room": "201",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
-            "lessonId": "",
-            "title": "Kỹ năng_Kiểm tra kết thúc khóa học",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-cde85c543b",
+            "id": "buoi-0c9f4a3fbe",
             "day": 3,
             "start": 7,
             "end": 8,
@@ -1085,6 +954,38 @@
             "room": "201",
             "campus": "Âu Cơ",
             "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
+            "lessonId": "TTS-09",
+            "title": "Nhóm thói quen quản lý tài chính cá nhân\n  C14. Thói quen sử dụng tiền\n  C15. Thói quen tiết kiệm",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": true
+          },
+          {
+            "id": "buoi-50e614fe37",
+            "day": 3,
+            "start": 7,
+            "end": 8,
+            "classId": "lop-97296b033a",
+            "teacherId": "gv-68ba598cf8",
+            "room": "404",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C404",
+            "lessonId": "TTS-15",
+            "title": "Báo cáo trước lớp kết quả rèn luyện thói quen tốt lần 3\nBài tập về nhà: Tự học từ Video",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": true
+          },
+          {
+            "id": "buoi-66e452cf2a",
+            "day": 3,
+            "start": 1,
+            "end": 2,
+            "classId": "lop-3cfd6af4c5",
+            "teacherId": "gv-68ba598cf8",
+            "room": "405",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C405",
             "lessonId": "TTS-08",
             "title": "Nhóm thói quen quản lý sức khỏe thể chất và tinh thần\n  C05. Thói quen không để bản thân rơi vào trạng thái lo lắng, buồn rầu\n  C10. Thói quen giữ gìn và rèn luyện sức khỏe\n  C19. Tìm và nuôi dưỡng sở thích lành mạnh",
             "status": "planned",
@@ -1092,95 +993,47 @@
             "needsReview": true
           },
           {
-            "id": "buoi-6d736500c0",
+            "id": "buoi-8ce6439c57",
             "day": 3,
             "start": 5,
             "end": 6,
             "classId": "lop-1dbfab9d82",
             "teacherId": "gv-7aafd90906",
-            "room": "303",
+            "room": "301",
             "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C303",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C301",
             "lessonId": "",
-            "title": "Đào tạo chuyên đề Insight/ 4 đứa con/ bầu sữa",
+            "title": "Chân dung một Kỹ sư thực thụ",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-03105e92b7",
-            "day": 3,
-            "start": 3,
-            "end": 4,
-            "classId": "lop-5e8359f481",
-            "teacherId": "gv-2d67332ebb",
-            "room": "304",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C304",
-            "lessonId": "",
-            "title": "Những đặc sắc trong văn hóa sinh hoạt tại Nhật Bản_Phần 1",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-79ee0d0838",
-            "day": 3,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-1e8d727b82",
-            "teacherId": "gv-5467aec210",
-            "room": "305",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C305",
-            "lessonId": "",
-            "title": "Nhóm thói quen quản lý sức khỏe thể chất và tinh thần\n  C05. Thói quen không để bản thân rơi vào trạng thái lo lắng, buồn rầu\n  C10. Thói quen giữ gìn và rèn luyện sức khỏe\n  C19. Tìm và nuôi dưỡng sở thích lành mạnh",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-a826e5dc3b",
+            "id": "buoi-10e4b4a9fa",
             "day": 3,
             "start": 1,
             "end": 2,
-            "classId": "lop-3cfd6af4c5",
-            "teacherId": "gv-5467aec210",
-            "room": "304",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C304",
-            "lessonId": "TTS-07",
-            "title": "Nhóm thói quen quản lý thời gian\n  C09. Thói quen tận dụng thời gian một cách có ích\n  C20. Sử dụng mạng xã hội một cách có ích\n  C22. Thói quen phân biệt được (tin) thật và giả",
+            "classId": "lop-bc1860875f",
+            "teacherId": "gv-2d67332ebb",
+            "room": "407",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C407",
+            "lessonId": "TTS-24",
+            "title": "Nhận diện những thủ đoạn lợi dụng, lừa đảo",
             "status": "planned",
             "suggested": false,
             "needsReview": true
           },
           {
-            "id": "buoi-2554f7a24d",
+            "id": "buoi-9ceec7968d",
             "day": 3,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-e081f2b5cd",
-            "teacherId": "gv-e1d508f062",
-            "room": "305",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C305",
-            "lessonId": "",
-            "title": "Thói quen làm việc nhóm - Phối hợp với người khác trong công việc",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": false
-          },
-          {
-            "id": "buoi-a0bdb986a0",
-            "day": 3,
-            "start": 7,
-            "end": 8,
-            "classId": "lop-b88b683ea6",
-            "teacherId": "gv-e1d508f062",
-            "room": "405",
-            "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C405",
+            "start": 3,
+            "end": 4,
+            "classId": "lop-5e8359f481",
+            "teacherId": "gv-2d67332ebb",
+            "room": "404",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C404",
             "lessonId": "",
             "title": "Những đặc sắc trong văn hóa sinh hoạt tại Nhật Bản_Phần 2",
             "status": "planned",
@@ -1188,7 +1041,55 @@
             "needsReview": false
           },
           {
-            "id": "buoi-7ed7c01fb8",
+            "id": "buoi-a12004d3d7",
+            "day": 3,
+            "start": 1,
+            "end": 2,
+            "classId": "lop-84499ac8ad",
+            "teacherId": "gv-df0d7cbe8b",
+            "room": "307",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C307",
+            "lessonId": "",
+            "title": "Thực hành kỹ năng thói quen #4 \nBài tập về nhà: Tự học từ Video",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-f969a59055",
+            "day": 3,
+            "start": 5,
+            "end": 6,
+            "classId": "lop-e081f2b5cd",
+            "teacherId": "gv-e1d508f062",
+            "room": "204",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C204",
+            "lessonId": "",
+            "title": "Thói quen chủ động báo cáo - liên lạc - xác nhận trong công việc",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-5274a07d03",
+            "day": 3,
+            "start": 7,
+            "end": 8,
+            "classId": "lop-b88b683ea6",
+            "teacherId": "gv-e1d508f062",
+            "room": "203",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C203",
+            "lessonId": "TTS-22",
+            "title": "Pháp luật Nhật Bản & Việt Nam mà TTS cần hiểu rõ",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": true
+          },
+          {
+            "id": "buoi-e506f43455",
             "day": 4,
             "start": 1,
             "end": 2,
@@ -1198,13 +1099,13 @@
             "campus": "Âu Cơ",
             "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
             "lessonId": "",
-            "title": "Kỹ năng_Mục tiêu, nội dung kỹ năng ngành nghề thực tập",
+            "title": "Kỹ năng_Hướng dẫn đặc thù nội dung công việc ngành nghề thực tập (P.1)",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-538961eb8e",
+            "id": "buoi-9ac97c9b84",
             "day": 4,
             "start": 5,
             "end": 6,
@@ -1213,38 +1114,70 @@
             "room": "702",
             "campus": "Âu Cơ",
             "roomId": "room-%C3%A2u%20c%C6%A1%7C702",
-            "lessonId": "TTS-09",
-            "title": "Nhóm thói quen quản lý tài chính cá nhân\n  C14. Thói quen sử dụng tiền\n  C15. Thói quen tiết kiệm",
+            "lessonId": "TTS-10",
+            "title": "Thực hành thói quen #2…\nBài tập về nhà: Tự học từ Video",
             "status": "planned",
             "suggested": false,
             "needsReview": true
           },
           {
-            "id": "buoi-267c23a66c",
+            "id": "buoi-55a83943ce",
             "day": 4,
             "start": 1,
             "end": 2,
             "classId": "lop-a1e7319e7a",
-            "teacherId": "gv-68ba598cf8",
+            "teacherId": "gv-2cd70b6dfe",
             "room": "201",
             "campus": "Âu Cơ",
             "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
             "lessonId": "",
-            "title": "Kỹ năng_Mục tiêu, nội dung kỹ năng ngành nghề thực tập",
+            "title": "GDTC_Lưu ý về các chấn thương hay gặp phải theo từng ngành nghề công việc (Lý thuyết)",
             "status": "planned",
             "suggested": false,
             "needsReview": false
           },
           {
-            "id": "buoi-3f5af0eb62",
+            "id": "buoi-3293b10ff5",
             "day": 4,
             "start": 5,
             "end": 6,
             "classId": "lop-741a6acaa2",
             "teacherId": "gv-dae5775033",
-            "room": "201",
+            "room": "301",
             "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C201",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C301",
+            "lessonId": "TTS-10",
+            "title": "Thực hành thói quen #2…\nBài tập về nhà: Tự học từ Video",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": true
+          },
+          {
+            "id": "buoi-558f56fe4b",
+            "day": 4,
+            "start": 3,
+            "end": 4,
+            "classId": "lop-81bafedfde",
+            "teacherId": "gv-dae5775033",
+            "room": "512",
+            "campus": "AB2",
+            "roomId": "room-ab2%7C512",
+            "lessonId": "",
+            "title": "Nhóm thói quen cải tiến và thử thách bản thân\n  C16. Thói quen dám đặt câu hỏi\n  C17. Thói quen dám đề xuất cải tiến\n  C07. Thói quen không sợ việc khó, làm tới cùng",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "buoi-f9dd353a4a",
+            "day": 4,
+            "start": 5,
+            "end": 6,
+            "classId": "lop-af10a837de",
+            "teacherId": "gv-df0d7cbe8b",
+            "room": "512",
+            "campus": "AB2",
+            "roomId": "room-ab2%7C512",
             "lessonId": "TTS-09",
             "title": "Nhóm thói quen quản lý tài chính cá nhân\n  C14. Thói quen sử dụng tiền\n  C15. Thói quen tiết kiệm",
             "status": "planned",
@@ -1252,88 +1185,104 @@
             "needsReview": true
           },
           {
-            "id": "buoi-35904952ff",
-            "day": 4,
-            "start": 5,
-            "end": 6,
-            "classId": "lop-af10a837de",
-            "teacherId": "gv-e1d508f062",
-            "room": "512",
-            "campus": "AB2",
-            "roomId": "room-ab2%7C512",
-            "lessonId": "TTS-08",
-            "title": "Nhóm thói quen quản lý sức khỏe thể chất và tinh thần\n  C05. Thói quen không để bản thân rơi vào trạng thái lo lắng, buồn rầu\n  C10. Thói quen giữ gìn và rèn luyện sức khỏe\n  C19. Tìm và nuôi dưỡng sở thích lành mạnh",
-            "status": "planned",
-            "suggested": false,
-            "needsReview": true
-          },
-          {
-            "id": "buoi-4293d6f57e",
+            "id": "buoi-ff29aa54dc",
             "day": 4,
             "start": 1,
             "end": 2,
-            "classId": "lop-bc1860875f",
-            "teacherId": "gv-2d67332ebb",
-            "room": "404",
-            "campus": "AB1",
-            "roomId": "room-ab1%7C404",
-            "lessonId": "TTS-23",
-            "title": "Quy định Công ty, KTX, Hiệp hội",
+            "classId": "lop-d106d84a08",
+            "teacherId": "gv-68ba598cf8",
+            "room": "402",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C402",
+            "lessonId": "TTS-05",
+            "title": "Thực hành thói quen #1 …\nBài tập về nhà: Tự học từ Video",
             "status": "planned",
             "suggested": false,
             "needsReview": true
           },
           {
-            "id": "buoi-0ca89f29e6",
+            "id": "buoi-020718461c",
             "day": 4,
             "start": 3,
             "end": 4,
-            "classId": "lop-d106d84a08",
-            "teacherId": "gv-68ba598cf8",
-            "room": "204",
+            "classId": "lop-e2523df77a",
+            "teacherId": "gv-2d67332ebb",
+            "room": "202",
             "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C204",
-            "lessonId": "TTS-04",
-            "title": "Nhóm thói quen rèn tính kỷ luật và tuân thủ\n  C02. Thói quen tuân thủ kỷ luật\n  C13. Thói quen giữ đúng lời hứa và cam kết\n  C25. Thói quen tránh tối đa không vi phạm pháp luật, lương tâm và đạo đức",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C202",
+            "lessonId": "TTS-05",
+            "title": "Thực hành thói quen #1 …\nBài tập về nhà: Tự học từ Video",
             "status": "planned",
             "suggested": false,
             "needsReview": true
           },
           {
-            "id": "buoi-427d3ad0b4",
+            "id": "buoi-8eb6b53aa5",
             "day": 4,
             "start": 7,
             "end": 8,
             "classId": "lop-dda5e04c14",
             "teacherId": "gv-dae5775033",
-            "room": "301",
+            "room": "401",
             "campus": "Âu Cơ",
-            "roomId": "room-%C3%A2u%20c%C6%A1%7C301",
-            "lessonId": "TTS-12",
-            "title": "Nhóm thói quen tư duy dài hạn và liên tục học hỏi\n  C08. Thói quen suy nghĩ dài hạn, luôn nghĩ đến tương lai\n  C24. Thói quen luôn học hỏi, nâng cấp bản thân\n  C06. Thói quen quan sát và thu thập thông tin",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C401",
+            "lessonId": "TTS-13",
+            "title": "Nhóm thói quen cải tiến và thử thách bản thân\n  C16. Thói quen dám đặt câu hỏi\n  C17. Thói quen dám đề xuất cải tiến\n  C07. Thói quen không sợ việc khó, làm tới cùng",
             "status": "planned",
             "suggested": false,
             "needsReview": true
+          },
+          {
+            "id": "buoi-3bb3e664ff",
+            "day": 4,
+            "start": 7,
+            "end": 8,
+            "classId": "lop-1e8d727b82",
+            "teacherId": "gv-5467aec210",
+            "room": "401",
+            "campus": "AB1",
+            "roomId": "room-ab1%7C401",
+            "lessonId": "",
+            "title": "Nhóm thói quen quản lý tài chính cá nhân\n  C14. Thói quen sử dụng tiền\n  C15. Thói quen tiết kiệm",
+            "status": "planned",
+            "suggested": false,
+            "needsReview": false
+          },
+          {
+            "id": "demo-nh4-1",
+            "day": 2,
+            "start": 1,
+            "end": 2,
+            "classId": "demo-nh4",
+            "teacherId": "gv-e1d508f062",
+            "room": "301",
+            "campus": "Âu Cơ",
+            "roomId": "room-%C3%A2u%20c%C6%A1%7C301",
+            "lessonId": "NH-01",
+            "title": "Khai giảng\nKỹ năng nền tảng để làm việc & phát triển sự nghiệp \ntrong ngành Dịch vụ tại Nhật Bản",
+            "status": "planned",
+            "demo": true,
+            "suggested": false
           }
         ],
         "greetings": [
           {
-            "id": "greeting-2026-11-16-C84",
+            "id": "greeting-2026-11-23-C72",
             "day": 4,
             "startTime": "07:30",
             "endTime": "07:45",
-            "teacherId": "gv-2d67332ebb",
+            "teacherId": "gv-e1d508f062",
             "campus": "AB1",
             "note": "",
             "rotate": false,
             "rotationTeacherIds": []
           },
           {
-            "id": "greeting-2026-11-16-E84",
+            "id": "greeting-2026-11-23-E72",
             "day": 4,
             "startTime": "12:45",
             "endTime": "13:00",
-            "teacherId": "greeting-teacher-10",
+            "teacherId": "gv-68ba598cf8",
             "campus": "AB1",
             "note": "",
             "rotate": false,
@@ -1349,41 +1298,41 @@
       "classId": "lop-2abee5284b",
       "teacherId": "gv-df0d7cbe8b",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-09"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-2abee5284b",
-      "topics": [
-        "TTS-09"
-      ]
-    },
-    {
-      "offset": 2,
-      "classId": "lop-2abee5284b",
-      "teacherId": "gv-df0d7cbe8b",
-      "campus": "Âu Cơ",
       "lessonId": "TTS-10"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-2abee5284b",
       "topics": [
         "TTS-10"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-2abee5284b",
       "teacherId": "gv-df0d7cbe8b",
       "campus": "Âu Cơ",
       "lessonId": "TTS-11"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-2abee5284b",
       "topics": [
         "TTS-11"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-2abee5284b",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-2abee5284b",
+      "topics": [
+        "TTS-12"
       ]
     },
     {
@@ -1391,125 +1340,125 @@
       "classId": "lop-2abee5284b",
       "teacherId": "gv-df0d7cbe8b",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-12"
+      "lessonId": "TTS-13"
     },
     {
       "offset": 4,
       "classId": "lop-2abee5284b",
       "topics": [
-        "TTS-12"
+        "TTS-13"
       ]
     },
     {
       "offset": 1,
-      "classId": "lop-97296b033a",
-      "teacherId": "gv-68ba598cf8",
-      "campus": "AB1",
-      "lessonId": "TTS-15"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-97296b033a",
-      "topics": [
-        "TTS-15"
-      ]
-    },
-    {
-      "offset": 2,
       "classId": "lop-97296b033a",
       "teacherId": "gv-68ba598cf8",
       "campus": "AB1",
       "lessonId": "TTS-16"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-97296b033a",
       "topics": [
         "TTS-16"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-97296b033a",
       "teacherId": "gv-68ba598cf8",
       "campus": "AB1",
       "lessonId": "TTS-17"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-97296b033a",
       "topics": [
         "TTS-17"
       ]
     },
     {
-      "offset": 4,
+      "offset": 3,
       "classId": "lop-97296b033a",
       "teacherId": "gv-68ba598cf8",
       "campus": "AB1",
       "lessonId": "TTS-18"
     },
     {
-      "offset": 4,
+      "offset": 3,
       "classId": "lop-97296b033a",
       "topics": [
         "TTS-18"
       ]
     },
     {
-      "offset": 1,
-      "classId": "lop-3cfd6af4c5",
-      "teacherId": "gv-5467aec210",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-08"
+      "offset": 4,
+      "classId": "lop-97296b033a",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "AB1",
+      "lessonId": "TTS-19"
     },
     {
-      "offset": 1,
-      "classId": "lop-3cfd6af4c5",
+      "offset": 4,
+      "classId": "lop-97296b033a",
       "topics": [
-        "TTS-08"
+        "TTS-19"
       ]
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-3cfd6af4c5",
-      "teacherId": "gv-5467aec210",
+      "teacherId": "gv-68ba598cf8",
       "campus": "Âu Cơ",
       "lessonId": "TTS-09"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-3cfd6af4c5",
       "topics": [
         "TTS-09"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-3cfd6af4c5",
-      "teacherId": "gv-5467aec210",
+      "teacherId": "gv-68ba598cf8",
       "campus": "Âu Cơ",
       "lessonId": "TTS-10"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-3cfd6af4c5",
       "topics": [
         "TTS-10"
       ]
     },
     {
-      "offset": 4,
+      "offset": 3,
       "classId": "lop-3cfd6af4c5",
-      "teacherId": "gv-5467aec210",
+      "teacherId": "gv-68ba598cf8",
       "campus": "Âu Cơ",
       "lessonId": "TTS-11"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-3cfd6af4c5",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-3cfd6af4c5",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
     },
     {
       "offset": 4,
       "classId": "lop-3cfd6af4c5",
       "topics": [
-        "TTS-11"
+        "TTS-12"
       ]
     },
     {
@@ -1517,39 +1466,53 @@
       "classId": "lop-bc1860875f",
       "teacherId": "gv-2d67332ebb",
       "campus": "AB1",
-      "lessonId": "TTS-24"
+      "lessonId": "TTS-25"
     },
     {
       "offset": 1,
       "classId": "lop-bc1860875f",
+      "topics": [
+        "TTS-25"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-23"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-b88b683ea6",
+      "topics": [
+        "TTS-23"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-24"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-b88b683ea6",
       "topics": [
         "TTS-24"
       ]
     },
     {
-      "offset": 2,
-      "classId": "lop-bc1860875f",
-      "teacherId": "gv-2d67332ebb",
-      "campus": "AB1",
+      "offset": 3,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
       "lessonId": "TTS-25"
     },
     {
-      "offset": 2,
-      "classId": "lop-bc1860875f",
-      "topics": [
-        "TTS-25"
-      ]
-    },
-    {
-      "offset": 1,
-      "classId": "lop-84499ac8ad",
-      "teacherId": "gv-df0d7cbe8b",
-      "campus": "AB1",
-      "lessonId": "TTS-25"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-84499ac8ad",
+      "offset": 3,
+      "classId": "lop-b88b683ea6",
       "topics": [
         "TTS-25"
       ]
@@ -1559,41 +1522,41 @@
       "classId": "lop-e82d2fcf3b",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-10"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-e82d2fcf3b",
-      "topics": [
-        "TTS-10"
-      ]
-    },
-    {
-      "offset": 2,
-      "classId": "lop-e82d2fcf3b",
-      "teacherId": "gv-2d67332ebb",
-      "campus": "Âu Cơ",
       "lessonId": "TTS-11"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-e82d2fcf3b",
       "topics": [
         "TTS-11"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-e82d2fcf3b",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
       "lessonId": "TTS-12"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-e82d2fcf3b",
       "topics": [
         "TTS-12"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e82d2fcf3b",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e82d2fcf3b",
+      "topics": [
+        "TTS-13"
       ]
     },
     {
@@ -1601,55 +1564,55 @@
       "classId": "lop-e82d2fcf3b",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-13"
+      "lessonId": "TTS-14"
     },
     {
       "offset": 4,
       "classId": "lop-e82d2fcf3b",
       "topics": [
-        "TTS-13"
+        "TTS-14"
       ]
     },
     {
       "offset": 1,
-      "classId": "lop-741a6acaa2",
-      "teacherId": "gv-dae5775033",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-10"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-741a6acaa2",
-      "topics": [
-        "TTS-10"
-      ]
-    },
-    {
-      "offset": 2,
       "classId": "lop-741a6acaa2",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
       "lessonId": "TTS-11"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-741a6acaa2",
       "topics": [
         "TTS-11"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-741a6acaa2",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
       "lessonId": "TTS-12"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-741a6acaa2",
       "topics": [
         "TTS-12"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-741a6acaa2",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-741a6acaa2",
+      "topics": [
+        "TTS-13"
       ]
     },
     {
@@ -1657,167 +1620,167 @@
       "classId": "lop-741a6acaa2",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-13"
+      "lessonId": "TTS-14"
     },
     {
       "offset": 4,
       "classId": "lop-741a6acaa2",
       "topics": [
-        "TTS-13"
+        "TTS-14"
       ]
     },
     {
       "offset": 1,
       "classId": "lop-af10a837de",
-      "teacherId": "gv-e1d508f062",
+      "teacherId": "gv-df0d7cbe8b",
       "campus": "AB2",
+      "lessonId": "TTS-10"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-10"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-13"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-06"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-06"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-07"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-07"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-08"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-08"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
       "lessonId": "TTS-09"
     },
     {
-      "offset": 1,
-      "classId": "lop-af10a837de",
+      "offset": 4,
+      "classId": "lop-d106d84a08",
       "topics": [
         "TTS-09"
       ]
     },
     {
-      "offset": 2,
-      "classId": "lop-af10a837de",
-      "teacherId": "gv-e1d508f062",
-      "campus": "AB2",
-      "lessonId": "TTS-10"
-    },
-    {
-      "offset": 2,
-      "classId": "lop-af10a837de",
-      "topics": [
-        "TTS-10"
-      ]
-    },
-    {
-      "offset": 3,
-      "classId": "lop-af10a837de",
-      "teacherId": "gv-e1d508f062",
-      "campus": "AB2",
-      "lessonId": "TTS-11"
-    },
-    {
-      "offset": 3,
-      "classId": "lop-af10a837de",
-      "topics": [
-        "TTS-11"
-      ]
-    },
-    {
-      "offset": 4,
-      "classId": "lop-af10a837de",
-      "teacherId": "gv-e1d508f062",
-      "campus": "AB2",
-      "lessonId": "TTS-12"
-    },
-    {
-      "offset": 4,
-      "classId": "lop-af10a837de",
-      "topics": [
-        "TTS-12"
-      ]
-    },
-    {
       "offset": 1,
-      "classId": "lop-d106d84a08",
-      "teacherId": "gv-68ba598cf8",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-05"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-d106d84a08",
-      "topics": [
-        "TTS-05"
-      ]
-    },
-    {
-      "offset": 2,
-      "classId": "lop-d106d84a08",
-      "teacherId": "gv-68ba598cf8",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-06"
-    },
-    {
-      "offset": 2,
-      "classId": "lop-d106d84a08",
-      "topics": [
-        "TTS-06"
-      ]
-    },
-    {
-      "offset": 3,
-      "classId": "lop-d106d84a08",
-      "teacherId": "gv-68ba598cf8",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-07"
-    },
-    {
-      "offset": 3,
-      "classId": "lop-d106d84a08",
-      "topics": [
-        "TTS-07"
-      ]
-    },
-    {
-      "offset": 4,
-      "classId": "lop-d106d84a08",
-      "teacherId": "gv-68ba598cf8",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-08"
-    },
-    {
-      "offset": 4,
-      "classId": "lop-d106d84a08",
-      "topics": [
-        "TTS-08"
-      ]
-    },
-    {
-      "offset": 1,
-      "classId": "lop-e2523df77a",
-      "teacherId": "gv-2d67332ebb",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-05"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-e2523df77a",
-      "topics": [
-        "TTS-05"
-      ]
-    },
-    {
-      "offset": 2,
       "classId": "lop-e2523df77a",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
       "lessonId": "TTS-06"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-e2523df77a",
       "topics": [
         "TTS-06"
       ]
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-e2523df77a",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
       "lessonId": "TTS-07"
     },
     {
-      "offset": 3,
+      "offset": 2,
       "classId": "lop-e2523df77a",
       "topics": [
         "TTS-07"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e2523df77a",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-08"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e2523df77a",
+      "topics": [
+        "TTS-08"
       ]
     },
     {
@@ -1825,41 +1788,41 @@
       "classId": "lop-e2523df77a",
       "teacherId": "gv-2d67332ebb",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-08"
+      "lessonId": "TTS-09"
     },
     {
       "offset": 4,
       "classId": "lop-e2523df77a",
       "topics": [
-        "TTS-08"
+        "TTS-09"
       ]
     },
     {
       "offset": 1,
-      "classId": "lop-dda5e04c14",
-      "teacherId": "gv-dae5775033",
-      "campus": "Âu Cơ",
-      "lessonId": "TTS-13"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-dda5e04c14",
-      "topics": [
-        "TTS-13"
-      ]
-    },
-    {
-      "offset": 2,
       "classId": "lop-dda5e04c14",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
       "lessonId": "TTS-14"
     },
     {
-      "offset": 2,
+      "offset": 1,
       "classId": "lop-dda5e04c14",
       "topics": [
         "TTS-14"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-dda5e04c14",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-15"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-dda5e04c14",
+      "topics": [
+        "TTS-15"
       ]
     },
     {
@@ -1867,13 +1830,13 @@
       "classId": "lop-dda5e04c14",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-15"
+      "lessonId": "TTS-16"
     },
     {
       "offset": 3,
       "classId": "lop-dda5e04c14",
       "topics": [
-        "TTS-15"
+        "TTS-16"
       ]
     },
     {
@@ -1881,69 +1844,69 @@
       "classId": "lop-dda5e04c14",
       "teacherId": "gv-dae5775033",
       "campus": "Âu Cơ",
-      "lessonId": "TTS-16"
-    },
-    {
-      "offset": 4,
-      "classId": "lop-dda5e04c14",
-      "topics": [
-        "TTS-16"
-      ]
-    },
-    {
-      "offset": 1,
-      "classId": "lop-fd0ad1dcf7",
-      "teacherId": "gv-5467aec210",
-      "campus": "AB1",
-      "lessonId": "TTS-14"
-    },
-    {
-      "offset": 1,
-      "classId": "lop-fd0ad1dcf7",
-      "topics": [
-        "TTS-14"
-      ]
-    },
-    {
-      "offset": 2,
-      "classId": "lop-fd0ad1dcf7",
-      "teacherId": "gv-5467aec210",
-      "campus": "AB1",
-      "lessonId": "TTS-15"
-    },
-    {
-      "offset": 2,
-      "classId": "lop-fd0ad1dcf7",
-      "topics": [
-        "TTS-15"
-      ]
-    },
-    {
-      "offset": 3,
-      "classId": "lop-fd0ad1dcf7",
-      "teacherId": "gv-5467aec210",
-      "campus": "AB1",
-      "lessonId": "TTS-16"
-    },
-    {
-      "offset": 3,
-      "classId": "lop-fd0ad1dcf7",
-      "topics": [
-        "TTS-16"
-      ]
-    },
-    {
-      "offset": 4,
-      "classId": "lop-fd0ad1dcf7",
-      "teacherId": "gv-5467aec210",
-      "campus": "AB1",
       "lessonId": "TTS-17"
     },
     {
       "offset": 4,
-      "classId": "lop-fd0ad1dcf7",
+      "classId": "lop-dda5e04c14",
       "topics": [
         "TTS-17"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-02"
+    },
+    {
+      "offset": 1,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-02"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-03"
+    },
+    {
+      "offset": 2,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-03"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-04"
+    },
+    {
+      "offset": 3,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-04"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-05"
+    },
+    {
+      "offset": 4,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-05"
       ]
     }
   ]

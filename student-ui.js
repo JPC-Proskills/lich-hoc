@@ -79,14 +79,14 @@ function studentSearchPage(rows){
  return `<form class="student-search panel" id="student-search">
   ${studentField(STUDENT_FIELDS[0],choices)}
   <details class="advanced-search" ${studentAdvanced?'open':''}>
-   <summary>${icon('tune')} Tìm kiếm nâng cao</summary>
+   <summary>Tìm kiếm nâng cao ${icon('expand_more')}</summary>
    <div class="advanced-fields">${STUDENT_FIELDS.slice(1).map(field=>studentField(field,choices)).join('')}</div>
    <fieldset class="student-match"><legend>Điều kiện tìm</legend>
-    <label><input type="radio" name="student-join" value="and" ${studentJoin==='and'?'checked':''}> Và</label>
-    <label><input type="radio" name="student-join" value="or" ${studentJoin==='or'?'checked':''}> Hoặc</label>
+    <label><input type="radio" name="student-join" value="and" ${studentJoin==='and'?'checked':''}> Tất cả điều kiện trên</label>
+    <label><input type="radio" name="student-join" value="or" ${studentJoin==='or'?'checked':''}> Một trong các điều kiện trên</label>
    </fieldset>
   </details>
-  <div class="student-search-actions"><button class="button primary" type="submit">${icon('search')} Tra cứu</button>
+  <div class="student-search-actions"><button class="button primary" type="submit">${icon('filter_alt')} Tìm kiếm</button>
    ${studentApplied?'<button class="button" id="clear-student-search" type="button">Xóa bộ lọc</button>':''}</div>
  </form>${results?`<section class="panel student-results"><h2>Kết quả tra cứu <small>${results.length} buổi</small></h2>
   ${studentSchedule(results,'time','Chưa có buổi học phù hợp trong tuần đang xem.')}</section>${studentForecast()}`:''}`;

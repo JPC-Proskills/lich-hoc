@@ -1,4 +1,4 @@
-/* Hold the brand for three seconds; scrolling cancels the gesture. */
+/* Hold the brand for 1.5 seconds; scrolling cancels the gesture. */
 (function(){
  'use strict';
  let timer=null,holding=null,startX=0,startY=0;
@@ -6,11 +6,11 @@
  function start(logo){
   cancel();if(isTeacher()||document.getElementById('dialog').open)return;
   holding=logo;logo.classList.add('logo-holding');
-  timer=setTimeout(()=>{cancel();if(!isTeacher()&&!document.getElementById('dialog').open)switchRole();},3000);
+  timer=setTimeout(()=>{cancel();if(!isTeacher()&&!document.getElementById('dialog').open)switchRole();},1500);
  }
  document.querySelectorAll('.brand,.mobile-brand').forEach(logo=>{
-  logo.setAttribute('role','button');logo.setAttribute('aria-label','Proskills · Giữ 3 giây để mở chế độ giáo viên');
-  logo.title='Giữ logo 3 giây để mở chế độ giáo viên';
+  logo.setAttribute('role','button');logo.setAttribute('aria-label','Proskills · Giữ 1,5 giây để mở chế độ giáo viên');
+  logo.title='Giữ logo hoặc chữ Proskills 1,5 giây để mở chế độ giáo viên';
   logo.addEventListener('pointerdown',event=>{if(event.button!==0||!event.isPrimary)return;startX=event.clientX;startY=event.clientY;start(logo);});
   logo.addEventListener('pointermove',event=>{if(holding===logo&&Math.hypot(event.clientX-startX,event.clientY-startY)>10)cancel();});
   logo.addEventListener('pointerleave',cancel);logo.addEventListener('pointercancel',cancel);logo.addEventListener('blur',cancel);

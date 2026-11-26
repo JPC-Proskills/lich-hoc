@@ -1,5 +1,15 @@
 # PS-LICHDAY-V1.1.3 · 26/11/2026
 
+## V1.1.5 · 26/11/2026
+
+- Một nút đổi kiểu xem cạnh dấu hỏi ở chế độ học viên. Nhãn tuần có khoảng cách quanh dấu gạch và mốc cập nhật giờ Việt Nam từ lịch phát hành.
+- Thanh điều hướng điện thoại thu gọn, icon nằm trên nhãn. Tìm kiếm nâng cao dùng mũi tên, diễn giải đầy đủ điều kiện và nút Tìm kiếm có icon riêng.
+- Giữ logo hoặc chữ Proskills 1,5 giây để mở hộp mật khẩu. Chế độ giáo viên dùng xanh lam và logo đổi tông theo chế độ.
+- Giáo vụ dùng nền xám trung tính, màu xanh cho nút, tab, tuần đã chọn và thẻ lịch. Bỏ khung cụm chọn kiểu xem, dòng lịch mẫu và chế độ tối.
+- Đổi thứ tự chuyên đề bằng kéo thả hoặc nút lên/xuống, có bước lưu. Danh mục giáo viên có trường và cột Bộ môn.
+- Công suất giáo viên tính theo tuần, tháng này hoặc khoảng ngày tùy chọn. Tệp CSV theo cùng khoảng ngày.
+
+
 ## V1.1.4 · 26/11/2026
 
 - Chọn một tuần hiển thị cho học viên và tự nhận lịch sau khi Giáo vụ tải tệp lên GitHub Pages.

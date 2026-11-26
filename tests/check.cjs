@@ -21,4 +21,13 @@ const added=C.updateRoom(roomDb,{name:'Phòng kiểm tra',campus:'AB1',active:tr
 C.updateRoom(roomDb,{...added,active:false});assert.equal(roomDb.rooms.find(r=>r.id===added.id).active,false);C.validate(roomDb);
 C.updateRoom(roomDb,{...usedRoom,active:false});const roomCopy=C.nextWeek(roomDb,roomDb.weeks.at(-1),'2026-11-30');assert(roomCopy.week.entries.filter(e=>e.roomId===usedRoom.id).every(e=>e.needsReview));
 const brokenRoom=C.clone(roomDb);brokenRoom.rooms.push({...added,id:'dup'});assert.throws(()=>C.validate(brokenRoom));
+const rangeFixture={weeks:[
+ {start:'2026-11-23',entries:[{...x,id:'before',day:4},{...x,id:'start',day:6}]},
+ {start:'2026-11-30',entries:[{...x,id:'end',day:0},{...x,id:'after',day:1}]}
+]};
+const acrossWeeks=C.sessionsBetween(rangeFixture,'2026-11-29','2026-11-30');
+assert.deepEqual(acrossWeeks.map(entry=>entry.id),['start','end']);
+assert.equal(C.workload(acrossWeeks,'t').day,4);
+assert.equal(C.workload(acrossWeeks,'t').night,4);
+assert.deepEqual(C.sessionsBetween(rangeFixture,'2026-11-30','2026-11-30').map(entry=>entry.id),['end']);
 console.log('Passed: scheduling regression checks; room migration; room rename references; campus-change protection; room duplicate checks; inactive rooms; backup round-trip integrity.');

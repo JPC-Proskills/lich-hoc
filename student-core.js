@@ -6,6 +6,15 @@
  const matches=(value,input)=>normalize(input).trim().split(/\s+/).every(word=>normalize(value).includes(word));
  const firstLine=value=>String(value??'').split(/\r?\n/).find(line=>line.trim())?.trim()||'';
  const weekLabel=start=>[start,C.addDays(start,6)].map(date=>date.slice(8,10)+'.'+date.slice(5,7)).join('-');
+ const updateFormat=new Intl.DateTimeFormat('vi-VN',{
+  timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',hourCycle:'h23',
+  day:'2-digit',month:'2-digit',year:'numeric'
+ });
+ function updateLabel(stamp){
+  if(!stamp||!Number.isFinite(Date.parse(stamp)))return '';
+  const parts=Object.fromEntries(updateFormat.formatToParts(new Date(stamp)).map(part=>[part.type,part.value]));
+  return `${parts.hour}:${parts.minute} ngày ${parts.day}.${parts.month}.${parts.year}`;
+ }
  const byTime=(a,b)=>a.day-b.day||a.start-b.start||a.end-b.end;
  const audienceNames=['Thực tập sinh','Thực tập sinh Kaigo','Kỹ sư','Lưu học sinh','Đặc định kỹ năng','Ikuse Shuro'];
  const audienceIds=['tts','tts kaigo','ks','lhs','ddkn','ikuse'];
@@ -88,6 +97,6 @@
    'DTSTART:'+stamp(start),'DTEND:'+stamp(end),'SUMMARY:'+safe(title),'LOCATION:'+safe(location),
    'DESCRIPTION:'+safe(description),'END:VEVENT','END:VCALENDAR',''].map(fold).join('\r\n');
  }
- const api={matches,firstLine,weekLabel,byTime,audience,campus,filter,estimates,nextTopics,calendarFile};
+ const api={matches,firstLine,weekLabel,updateLabel,byTime,audience,campus,filter,estimates,nextTopics,calendarFile};
  if(typeof module==='undefined')root.StudentCore=api;else module.exports=api;
 })(typeof window==='undefined'?globalThis:window);

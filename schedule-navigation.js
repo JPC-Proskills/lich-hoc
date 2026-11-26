@@ -2,7 +2,7 @@
 const navigationId=Date.now();
 let restoringNavigation=false,closingDialogHistory=false;
 function navigationState(dialog=false){
- return {navigationId,dialog,role,tab,view,weekId,catalog,sortBy,studentGroup,studentAdvanced,
+ return {navigationId,dialog,role,tab,view,weekId,catalog,sortBy,workloadRange,studentGroup,studentAdvanced,
   studentDraft:C.clone(studentDraft),studentApplied:C.clone(studentApplied),studentJoin,scrollY};
 }
 function rememberNavigation(dialog=false){
@@ -57,7 +57,7 @@ function enableScheduleNavigation(){
   if(state.role!==role||!state.tab)return;
   restoringNavigation=true;
   try{
-   ({tab,view,catalog,sortBy,studentGroup,studentAdvanced,studentDraft,studentApplied,studentJoin}=state);
+   ({tab,view,catalog,sortBy,workloadRange,studentGroup,studentAdvanced,studentDraft,studentApplied,studentJoin}=state);
    if(isTeacher())weekId=state.weekId;
    else if(state.weekId!==publicWeek().id)resetStudentSearch();
    init();
