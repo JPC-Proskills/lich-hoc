@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "timeZone": "Asia/Ho_Chi_Minh",
-  "exportedAt": "2026-11-26T14:29:51.887Z",
+  "exportedAt": "2026-11-26T14:33:42.125Z",
   "week": {
     "id": "w-2026-11-16",
     "startDate": "2026-11-16",
     "endDate": "2026-11-22",
-    "updatedAt": null,
+    "updatedAt": "2026-11-26T14:33:35.842Z",
     "greetings": [
       {
         "id": "greeting-2026-11-16-C84",
