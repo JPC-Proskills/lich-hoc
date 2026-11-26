@@ -3,6 +3,20 @@
 const clone=x=>JSON.parse(JSON.stringify(x));
 const uid=()=>globalThis.crypto?.randomUUID?.()||'id-'+Date.now()+'-'+Math.random().toString(36).slice(2);
 const PROGRAM_COLORS=[{name:'Clay',value:'#D97757'},{name:'Sky',value:'#6A9BCC'},{name:'Olive',value:'#788C5D'},{name:'Fig',value:'#C46686'},{name:'Heather',value:'#CBCADB'},{name:'Cactus',value:'#BCD1CA'},{name:'Coral',value:'#EBCECE'},{name:'Kraft',value:'#D4A27F'},{name:'Manilla',value:'#EBDBBC'},{name:'Slate',value:'#666663'}];
+const WEEK_TAB_COLORS=[
+ {id:'blue',name:'Xanh dương',background:'#1D4ED8',text:'#FFFFFF'},
+ {id:'sky',name:'Xanh nhạt',background:'#DBEAFE',text:'#000000'},
+ {id:'navy',name:'Navy',background:'#0F172A',text:'#FFFFFF'},
+ {id:'deep-teal',name:'Teal đậm',background:'#134E4A',text:'#FFFFFF'},
+ {id:'mint',name:'Bạc hà',background:'#A7F3D0',text:'#000000'},
+ {id:'yellow',name:'Vàng',background:'#FDE68A',text:'#000000'},
+ {id:'peach',name:'Cam đào',background:'#FED7AA',text:'#000000'},
+ {id:'rose',name:'Hồng đậm',background:'#9F1239',text:'#FFFFFF'},
+ {id:'pink',name:'Hồng nhạt',background:'#FBCFE8',text:'#000000'},
+ {id:'lavender',name:'Tím nhạt',background:'#DDD6FE',text:'#000000'},
+ {id:'purple',name:'Tím đậm',background:'#5B21B6',text:'#FFFFFF'},
+ {id:'gray',name:'Xám',background:'#E2E8F0',text:'#000000'}
+];
 const TEACHER_DEPARTMENTS=[
  {id:'skills',name:'Giáo viên kỹ năng'},
  {id:'physical',name:'Giáo viên thể chất'},
@@ -99,10 +113,10 @@ function validate(db){
  for(const c of db.classes)if(typeof c.name!=='string'||typeof c.active!=='boolean'||(c.programId&&!ps.has(c.programId))||!Number.isInteger(c.baseline)||c.baseline<0)fail();
  for(const t of db.teachers)if(typeof t.name!=='string'||typeof t.active!=='boolean'||(t.department!==undefined&&!TEACHER_DEPARTMENTS.some(item=>item.id===t.department))||(t.color!==undefined&&!PROGRAM_COLORS.some(c=>c.value===t.color)))fail();
  if(db.visibleWeekId!==undefined&&!db.weeks.some(w=>w.id===db.visibleWeekId))fail();
- const dates=new Set();for(const w of db.weeks){if(!/^\d{4}-\d{2}-\d{2}$/.test(w.start)||!Number.isFinite(Date.parse(w.start))||new Date(w.start+'T12:00:00Z').toISOString().slice(0,10)!==w.start||new Date(w.start+'T12:00:00Z').getUTCDay()!==1||dates.has(w.start)||!Array.isArray(w.entries)||!unique(w.entries))fail();dates.add(w.start);
+ const dates=new Set();for(const w of db.weeks){if(w.tabColor!==undefined&&!WEEK_TAB_COLORS.some(color=>color.id===w.tabColor))fail();if(!/^\d{4}-\d{2}-\d{2}$/.test(w.start)||!Number.isFinite(Date.parse(w.start))||new Date(w.start+'T12:00:00Z').toISOString().slice(0,10)!==w.start||new Date(w.start+'T12:00:00Z').getUTCDay()!==1||dates.has(w.start)||!Array.isArray(w.entries)||!unique(w.entries))fail();dates.add(w.start);
  if(w.greetings!==undefined&&(!Array.isArray(w.greetings)||!unique(w.greetings)||w.greetings.some(g=>g.day!==4||!ts.has(g.teacherId)||!['AB1','AB2','Âu Cơ'].includes(g.campus)||!((g.startTime==='07:30'&&g.endTime==='07:45')||(g.startTime==='12:45'&&g.endTime==='13:00'))||typeof g.note!=='string'||typeof g.rotate!=='boolean'||!Array.isArray(g.rotationTeacherIds)||g.rotationTeacherIds.some(id=>!ts.has(id))||new Set(g.rotationTeacherIds).size!==g.rotationTeacherIds.length)))fail();
  for(const e of w.entries){const c=db.classes.find(c=>c.id===e.classId);if(!cs.has(e.classId)||!ts.has(e.teacherId)||!Number.isInteger(e.day)||e.day<0||e.day>6||!Number.isInteger(e.start)||!Number.isInteger(e.end)||e.start<1||e.end>12||e.end<e.start||!['planned','done','cancelled'].includes(e.status)||!['title','room','campus'].every(k=>typeof e[k]==='string')||(e.lessonId&&lessons.get(e.lessonId)!==c.programId)||e.lessonOffset!==undefined&&(!Number.isInteger(e.lessonOffset)||e.lessonOffset<0))fail();}
  }return true;
 }
-const api={clone,uid,TEACHER_DEPARTMENTS,teacherDepartment,addDays,offsets,progress,nextWeek,conflicts,sessionsBetween,workload,validate,roomKey,ensureRooms,updateRoom,studentWeeks,makeupSessions,rotateDuties,greetingConflicts,PROGRAM_COLORS,ensureGreetings,ensureTeacherColors,ensureRoster};if(typeof module!=='undefined')module.exports=api;else root.ScheduleCore=api;
+const api={clone,uid,WEEK_TAB_COLORS,TEACHER_DEPARTMENTS,teacherDepartment,addDays,offsets,progress,nextWeek,conflicts,sessionsBetween,workload,validate,roomKey,ensureRooms,updateRoom,studentWeeks,makeupSessions,rotateDuties,greetingConflicts,PROGRAM_COLORS,ensureGreetings,ensureTeacherColors,ensureRoster};if(typeof module!=='undefined')module.exports=api;else root.ScheduleCore=api;
 })(typeof window!=='undefined'?window:globalThis);

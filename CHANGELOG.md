@@ -1,5 +1,19 @@
 # PS-LICHDAY-V1.1.3 · 26/11/2026
 
+## V1.1.7 · 26/11/2026
+
+- Hướng dẫn Giáo viên trình bày bằng các bước và biểu tượng. Lịch chào có tab riêng dưới Chương trình đào tạo.
+- Thanh bên sáng, phân màu Giáo viên và Học viên, giữ logo gốc. Thanh đầu trang có trạng thái Đã lưu trước nút chuyển vai trò, cùng một nút xoay vòng kiểu xem.
+- Thêm 12 màu nền cho từng tuần, có chữ trắng hoặc đen tương ứng. Bấm chuột phải hoặc nhấn giữ tên tuần để mở bảng màu. Nút tạo tuần màu cam đất với dấu cộng đậm căn giữa. Ba nút lọc Công suất cùng chiều cao.
+
+
+## V1.1.6 · 26/11/2026
+
+- Hai chế độ dùng chung nền sáng, xanh dương, thanh bên navy và điểm nhấn cam, vàng, teal; logo và chữ Proskills sáng trong thanh bên.
+- Bảng 10 màu chương trình phân biệt rõ hơn trong lịch và chi tiết buổi. Bản sao lưu và lịch đã phát hành tiếp tục đọc được mã màu cũ.
+- Bỏ trạng thái Chỉ xem lịch ở học viên, bỏ nhãn Luân phiên hằng tuần khỏi thẻ lịch chào và tinh chỉnh thứ bậc nút, chữ và độ tương phản.
+
+
 ## V1.1.5 · 26/11/2026
 
 - Một nút đổi kiểu xem cạnh dấu hỏi ở chế độ học viên. Nhãn tuần có khoảng cách quanh dấu gạch và mốc cập nhật giờ Việt Nam từ lịch phát hành.

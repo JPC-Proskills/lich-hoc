@@ -1,12 +1,12 @@
 # Proskills · Lịch học trong tuần
 
-Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.5 · 26/11/2026**.
+Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.7 · 26/11/2026**.
 
 **Đọc trước:** [Đưa lên GitHub Pages](docs/GITHUB-PAGES.md) · [Hướng dẫn Giáo vụ và sao lưu](docs/HUONG-DAN-GIAO-VU.md) · [Bàn giao cho AI tiếp tục phát triển](AI_HANDOFF.md).
 
-## Giao diện học viên V1.1.5
+## Giao diện học viên V1.1.7
 
-Học viên chỉ xem tuần do Giáo vụ phát hành. **Tra cứu** cho phép chọn nhiều lớp và lọc nâng cao theo chuyên đề, giáo viên, đối tượng, cơ sở hoặc tiết. **Lịch tuần** có các nút nhóm lịch theo ngày giờ, giáo viên, lớp, cơ sở và đối tượng. Hai tab mở ở dạng danh sách. Giữ logo hoặc chữ Proskills **1,5 giây** để mở hộp mật khẩu Giáo viên.
+Học viên chỉ xem tuần do Giáo vụ phát hành. **Tra cứu** cho phép chọn nhiều lớp và lọc nâng cao theo chuyên đề, giáo viên, đối tượng, cơ sở hoặc tiết. **Lịch tuần** có các nút nhóm lịch theo ngày giờ, giáo viên, lớp, cơ sở và đối tượng. Hai tab mở ở dạng danh sách. Bấm **Giáo viên** để mở hộp mật khẩu. Có thể giữ logo hoặc chữ Proskills **1,5 giây** để mở cùng hộp.
 
 ## Điện thoại, cài app và phát hành lịch
 
@@ -16,7 +16,7 @@ Giáo vụ chọn **Hiển thị cho học viên** trên tuần cần phát hàn
 
 ## Đưa lên repo riêng
 
-1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.5`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
+1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.7`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
 2. Vào **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
 3. Mở **Visit site** ở phần Pages. Gửi **đường dẫn website** cho Giáo vụ; không gửi đường dẫn xem mã nguồn HTML trên GitHub.
 
@@ -30,7 +30,7 @@ Không cần cài thư viện, build hay cấu hình tên repo trong mã. Mọi 
 - Phòng học theo AB1, AB2, Âu Cơ; giáo viên; lớp học; lớp hoàn thành được ẩn khi thêm lịch mới.
 - Công suất: Giáo viên → Tổng tiết → Tiết ngày 1–8 → Tiết tối 9–12 → Chi tiết từng ngày.
 - Lịch chào thứ 6: 7:30–7:45 và 12:45–13:00; có danh sách luân phiên, không tính vào số tiết dạy.
-- Giao diện Material 3, tiêu đề Nunito và nội dung Be Vietnam Pro; logo Proskills mới; chế độ học viên nền xám, nút xanh đậm; chế độ Giáo vụ dùng xanh lam trên nền xám trung tính; khoảng cách gọn hơn trên điện thoại.
+- Giao diện Material 3, tiêu đề Nunito và nội dung Be Vietnam Pro; logo Proskills mới; chế độ học viên nền xám, nút xanh đậm; hai chế độ dùng xanh dương và nền sáng, với thanh bên xanh lam nhạt cho Giáo vụ và xanh bạc hà cho học viên; khoảng cách gọn hơn trên điện thoại.
 - Xuất CSV, JSON một tuần, sao lưu và khôi phục toàn bộ app. Soạn lời nhắn xin học bù, sao chép và mở MS Teams để tự gửi.
 
 ## Dữ liệu và giới hạn cần biết khi thử

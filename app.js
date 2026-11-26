@@ -8,7 +8,25 @@ let weekId=accessibleWeeks()[0].id,tab='calendar',view='list',catalog='classes',
 const week=()=>accessibleWeeks().find(w=>w.id===weekId),cls=id=>db.classes.find(c=>c.id===id),teacher=id=>db.teachers.find(t=>t.id===id),program=id=>db.programs.find(p=>p.id===id),lesson=id=>db.programs.flatMap(p=>p.lessons).find(l=>l.id===id);
 const shortDate=s=>new Date(s+'T12:00:00').toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit'}),dateLabel=s=>new Date(s+'T12:00:00').toLocaleDateString('vi-VN'),norm=s=>String(s).normalize('NFD').replace(/\p{Diacritic}/gu,'').replace(/[đĐ]/g,'d').toLowerCase();
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),5000)}
-function save(){if(!requireTeacher())return false;db.updatedAt=new Date().toISOString();const savedWeek=db.weeks.find(w=>w.id===weekId);if(savedWeek)savedWeek.updatedAt=db.updatedAt;try{localStorage.setItem(KEY,JSON.stringify(db));$('#save-state').textContent='Đã lưu trên máy';$('#schedule-updated').textContent=updatedText();$('#sidebar-updated').textContent=updatedText();return true}catch(e){$('#save-state').textContent='Chưa lưu được';toast('Không lưu được trên trình duyệt. Hãy tải bản sao lưu JSON ngay.');return false}}
+function save({touchSchedule=true}={}){
+ if(!requireTeacher())return false;
+ if(touchSchedule){
+  db.updatedAt=new Date().toISOString();
+  const savedWeek=db.weeks.find(w=>w.id===weekId);
+  if(savedWeek)savedWeek.updatedAt=db.updatedAt;
+ }
+ try{
+  localStorage.setItem(KEY,JSON.stringify(db));
+  $('#save-state').textContent='Đã lưu';
+  $('#schedule-updated').textContent=updatedText();
+  $('#sidebar-updated').textContent=updatedText();
+  return true;
+ }catch(error){
+  $('#save-state').textContent='Chưa lưu được';
+  toast('Không lưu được trên trình duyệt. Hãy tải bản sao lưu JSON ngay.');
+  return false;
+ }
+}
 function modal(title,html){
  $('#dialog-title').textContent=title;
  $('#dialog-body').innerHTML=html;
@@ -25,7 +43,8 @@ function init(){
   calendar:[admin?'Lịch học trong tuần':'Lịch tuần',''],
   search:['Tra cứu lịch học',''],
   workload:['Công suất giáo viên','Theo dõi số tiết ban ngày và buổi tối theo khoảng ngày.'],
-  catalog:['Chương trình đào tạo','Quản lý giáo viên, lớp học và lộ trình giảng dạy.']
+  catalog:['Chương trình đào tạo','Quản lý giáo viên, lớp học và lộ trình giảng dạy.'],
+  greetings:['Lịch chào','']
  };
  document.querySelectorAll('[data-tab]').forEach(button=>{
   button.classList.toggle('active',button.dataset.tab===tab);
@@ -43,9 +62,7 @@ function init(){
   (timestamp?'(Cập nhật gần nhất: '+timestamp+')':'');
  $('.week-select').hidden=!admin;
  $('#week-select').innerHTML=admin?options(weeks.map(w=>({id:w.id,name:StudentCore.weekLabel(w.start)})),weekId):'';
- $('#week-tabs').hidden=!admin;
- $('#week-tabs').innerHTML=admin?`<button id="tab-add" aria-label="Tạo tuần mới">${icon('add')}</button>`+weeks.map(w=>
-  `<button data-week="${esc(w.id)}" class="${w.id===weekId?'active':''}" aria-pressed="${w.id===weekId}">${StudentCore.weekLabel(w.start)}</button>`).join(''):'';
+ renderWeekTabs(weeks);
  $('#publish-week').disabled=db.visibleWeekId===weekId;
  $('#publish-week').textContent=db.visibleWeekId===weekId?'Đã chọn tuần hiển thị':'Hiển thị cho học viên';
  $('#schedule-updated').textContent=admin?updatedText():'';
@@ -63,9 +80,12 @@ function updateViewControl(){
    title="Chuyển sang ${next}">${icon(grid?'calendar_month':'view_agenda')}<span>${label}</span></button>`;
   return;
  }
- const modes=[['list','Danh sách','view_agenda'],['grid','Lịch tuần','calendar_view_week'],['table','Dữ liệu','table_chart']];
- control.innerHTML=modes.map(([key,label,symbol])=>
-  `<button data-view="${key}" class="button small ${view===key?'active':''}" aria-pressed="${view===key}" aria-label="${label}" title="${label}">${icon(symbol)}<span>${label}</span></button>`).join('');
+ const modes=[['list','Danh sách','view_agenda'],['grid','Lịch tuần','calendar_month'],['table','Dữ liệu','table_chart']];
+ const position=modes.findIndex(([key])=>key===view);
+ const [,label,symbol]=modes[position<0?0:position];
+ const [next,nextLabel]=modes[(position+1)%modes.length];
+ control.innerHTML=`<button type="button" class="button small" data-view="${next}" title="Chuyển sang ${nextLabel}">
+  ${icon(symbol)}<span>${label}</span></button>`;
 }
 function sortRows(r){return r.sort((a,b)=>(sortBy==='teacher'?(teacher(a.teacherId)?.name||'').localeCompare(teacher(b.teacherId)?.name||'','vi'):sortBy==='class'?(cls(a.classId)?.name||'').localeCompare(cls(b.classId)?.name||'','vi'):0)||a.date.localeCompare(b.date)||a.start-b.start)}
 function sortControl(){return `<label class="sort-control">Sắp xếp<select id="sort-by" aria-label="Sắp xếp lịch">${[['time','Theo ngày, giờ'],['teacher','Theo tên giáo viên'],['class','Theo tên lớp']].map(([v,n])=>`<option value="${v}" ${sortBy===v?'selected':''}>${n}</option>`).join('')}</select></label>`}
@@ -76,16 +96,19 @@ function filters(search=false){return `<div class="filters"><div class="search-f
 
 function stat(icon,n,label,color=''){return `<div class="stat"><span class="stat-icon ${color}">${window.icon(({'▦':'event','▣':'school','♙':'groups','◷':'schedule','☀':'light_mode','☾':'nights_stay','✓':'task_alt'})[icon]||icon)}</span><div><strong>${n}</strong><small>${label}</small></div></div>`}
 function badge(e){return (e.demo?'<span class="tag">Minh họa</span>':'')+(e.suggested?'<span class="tag">Gợi ý tuần mới</span>':'')+(e.needsReview?'<span class="tag warn">Cần rà soát</span>':'')+(e.status==='done'?'<span class="tag">✓ Đã dạy</span>':'')+(e.status==='cancelled'?'<span class="tag">Đã hủy</span>':'')}
-function card(e,conflictIds=new Set(),inList=false){const c=cls(e.classId),p=c?.programId;return `<button class="session ${p?'has-program-color':'other'} ${e.status==='cancelled'?'cancelled':''} ${conflictIds.has(e.id)?'conflict':''}" style="${p?'--program-color:'+scheduleAccent(programColor(program(p))):''}" data-entry="${esc(e.id)}" data-inweek="${esc(e.weekId||weekId)}" title="${esc(inList?StudentCore.firstLine(e.title):e.title)}"><b>${esc(c?.name||'Lớp chưa xác định')}</b><div class="topic">${esc(inList?StudentCore.firstLine(e.title):e.title)}</div><span class="teacher">${teacherChip(e.teacherId)}</span><div class="location"><span>${icon('meeting_room')}${esc(locationLabel(e))}</span></div>${badge(e)}${conflictIds.has(e.id)?'<span class="tag warn">⚠ Trùng lịch</span>':''}</button>`}
+function card(e,conflictIds=new Set(),inList=false){const c=cls(e.classId),p=c?.programId;return `<button class="session ${p?'has-program-color':'other'} ${e.status==='cancelled'?'cancelled':''} ${conflictIds.has(e.id)?'conflict':''}" style="${p?'--program-color:'+programAccent(program(p)):''}" data-entry="${esc(e.id)}" data-inweek="${esc(e.weekId||weekId)}" title="${esc(inList?StudentCore.firstLine(e.title):e.title)}"><b>${esc(c?.name||'Lớp chưa xác định')}</b><div class="topic">${esc(inList?StudentCore.firstLine(e.title):e.title)}</div><span class="teacher">${teacherChip(e.teacherId)}</span><div class="location"><span>${icon('meeting_room')}${esc(locationLabel(e))}</span></div>${badge(e)}${conflictIds.has(e.id)?'<span class="tag warn">⚠ Trùng lịch</span>':''}</button>`}
 function render(){if(!isTeacher()){renderStudent();return}const r=rows(),content=$('#content');let html='';if(loadError)html+=`<div class="notice">${esc(loadError)}</div>`;
  if(tab==='calendar'){
  const active=r.filter(e=>e.status!=='cancelled'),conf=C.conflicts(week().entries),confIds=new Set(conf.flatMap(x=>[x.a,x.b]));
  if(isTeacher())html+=`<div class="stats">${stat('▦',active.length,'Buổi học trong bộ lọc')}${stat('▣',new Set(active.map(e=>e.classId)).size,'Lớp được xếp lịch','purple')}${stat('♙',new Set(active.map(e=>e.teacherId)).size,'Giáo viên giảng dạy','blue')}${stat('◷',active.reduce((n,e)=>n+e.end-e.start+1,0),'Tiết giảng dạy','orange')}</div>`;
  if(isTeacher()&&conf.length)html+=`<div class="notice">⚠ Có ${conf.length} cặp buổi trùng lịch trong tuần. <button id="show-conflicts">Xem chi tiết</button></div>`;
- if(isTeacher())html+=greetingsPanel();html+=`<section class="panel"><div class="toolbar">${filters()}</div><div class="subbar"><div class="legend">${db.programs.map(p=>`<span style="--legend-color:${scheduleAccent(programColor(p))}">${esc(p.name.split(' ·')[0])}</span>`).join('')}<span style="--legend-color:var(--kraft)">Chưa gán chương trình</span></div><div><label class="check-label"><input id="weekend" type="checkbox" ${showWeekend?'checked':''}> Hiện Thứ 7, CN</label></div>${sortControl()}${isTeacher()?`<button id="add-session" class="button small">${icon('add')}Thêm buổi học</button>`:''}</div>`;
- if(view==='grid')html+=calendar(r,confIds);else if(view==='table')html+=table(r);else html+=list(r,confIds);html+='</section>';if(!isTeacher())html+=greetingsPanel();
+ html+=`<section class="panel"><div class="toolbar">${filters()}</div><div class="subbar"><div class="legend">${db.programs.map(p=>`<span style="--legend-color:${programAccent(p)}">${esc(p.name.split(' ·')[0])}</span>`).join('')}<span style="--legend-color:var(--kraft)">Chưa gán chương trình</span></div><div><label class="check-label"><input id="weekend" type="checkbox" ${showWeekend?'checked':''}> Hiện Thứ 7, CN</label></div>${sortControl()}${isTeacher()?`<button id="add-session" class="button small">${icon('add')}Thêm buổi học</button>`:''}</div>`;
+ if(view==='grid')html+=calendar(r,confIds);else if(view==='table')html+=table(r);else html+=list(r,confIds);html+='</section>';
  }else if(tab==='search'){html+=`<div class="notice green">Tìm theo chuyên đề để xem buổi học ở các lớp khác. Học viên cần xác nhận với giáo viên trước khi tham gia học bù.</div><section class="panel"><div class="toolbar">${filters(true)}</div><div class="subbar">Tìm thấy ${r.length} buổi học ${allWeeks?'trong các tuần đã lưu':'trong tuần đang chọn'}</div>${list(r)}</section>`}
- else if(tab==='workload')html+=workloadPage();else html+=catalogPage();content.innerHTML=html;wireContent();
+ else if(tab==='workload')html+=workloadPage();
+ else if(tab==='greetings')html+=greetingsPanel();
+ else html+=catalogPage();
+ content.innerHTML=html;wireContent();
 }
 function calendar(r,conf){const weekend=showWeekend||!isTeacher()&&r.some(e=>e.day>=5);const dates=Array.from({length:weekend?7:5},(_,i)=>C.addDays(week().start,i));let h='<div class="grid-scroll"><div class="calendar '+(weekend?'weekend':'')+'"><div class="cal-header">CA HỌC</div>'+dates.map((d,i)=>`<div class="cal-header ${d===new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())?'today':''}"><strong>${DAYS[i]}</strong><b>${shortDate(d)}</b></div>`).join('');for(let s=0;s<6;s++){h+=`<div class="cal-time ${s>=4?'night':''}"><b>Tiết ${s*2+1}–${s*2+2}</b><small>${TIMES[s][0]}<br>${TIMES[s][1]}</small></div>`;for(let d=0;d<dates.length;d++){const es=r.filter(e=>e.day===d&&Math.floor((e.start-1)/2)===s),cont=r.filter(e=>e.day===d&&e.start<s*2+1&&e.end>=s*2+1);h+=`<div class="cal-cell">${es.map(e=>card(e,conf)).join('')}${cont.map(e=>`<button class="button small" data-entry="${esc(e.id)}" data-inweek="${weekId}">Tiếp tiết ${e.start}–${e.end} · ${esc(cls(e.classId)?.name)}</button>`).join('')}${isTeacher()?`<button class="cell-add" data-add-day="${d}" data-add-start="${s*2+1}" aria-label="Thêm buổi ${DAYS[d]} tiết ${s*2+1}">${icon('add')}</button>`:''}</div>`}}
  return h+'</div></div>'+(r.some(e=>e.day>=5)&&!weekend?'<div class="notice">Có buổi học cuối tuần. Bật “Hiện Thứ 7, CN” để xem.</div>':'')}
@@ -119,7 +142,7 @@ document.addEventListener('click',event=>{
   rememberNavigation();view=d.view;
   if(!isTeacher()&&tab==='calendar'&&view==='grid')studentGroup='time';
   updateViewControl();render();
-  $(isTeacher()?`#view-control [data-view="${view}"]`:'#view-control button')?.focus({preventScroll:true});
+  $('#view-control button')?.focus({preventScroll:true});
  }
  if(d.studentGroup&&(d.studentGroup!==studentGroup||view!=='list')){
   rememberNavigation();studentGroup=d.studentGroup;view='list';
@@ -207,3 +230,4 @@ function roomsPage(){const rooms=[...db.rooms].sort((a,b)=>a.campus.localeCompar
 function editRoom(id){if(!requireTeacher())return;const old=db.rooms.find(r=>r.id===id),r=old||{name:'',campus:'Âu Cơ',active:true};modal(old?'Sửa phòng học':'Thêm phòng học',`<form id="room-form"><div class="form-grid"><label>Tên / số phòng<input id="r-name" value="${esc(r.name)}" required maxlength="100" placeholder="Ví dụ: 301, Hội trường"></label><label>Cơ sở<select id="r-campus">${['AB1','AB2','Âu Cơ'].map(c=>`<option ${r.campus===c?'selected':''}>${c}</option>`).join('')}</select></label></div><label class="choice"><input id="r-active" type="checkbox" ${r.active?'checked':''}><span>Phòng đang sử dụng<small>Bỏ chọn để ẩn khỏi danh sách khi thêm buổi mới. Lịch cũ vẫn tra cứu được.</small></span></label><p class="form-note">Đổi tên phòng được cập nhật trên các buổi đã lưu. Phòng đã dùng trong lịch không thể chuyển cơ sở; hãy thêm phòng mới tại cơ sở khác.</p><div id="form-error" class="error" role="alert"></div><div class="form-actions"><button type="button" class="button" id="cancel-form">Hủy</button><button class="button primary" type="submit">${icon('check')}Lưu phòng học</button></div></form>`);$('#cancel-form').onclick=close;$('#room-form').onsubmit=e=>{e.preventDefault();try{C.updateRoom(db,{id,name:$('#r-name').value,campus:$('#r-campus').value,active:$('#r-active').checked});save();close();init();toast('Đã lưu phòng học.')}catch(e){error(e.message)}}}
 init();
 enableScheduleNavigation();
+wireWeekTabColors();

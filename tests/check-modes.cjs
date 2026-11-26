@@ -21,4 +21,19 @@ withDepartments.teachers[0].department='skills';
 assert(C.validate(withDepartments));
 withDepartments.teachers[0].department='invalid';
 assert.throws(()=>C.validate(withDepartments));
+const withWeekColor=C.clone(seed);
+assert.equal(C.WEEK_TAB_COLORS.length,12);
+assert.equal(new Set(C.WEEK_TAB_COLORS.map(item=>item.background)).size,12);
+for(const {background,text} of C.WEEK_TAB_COLORS){
+ const luminance=color=>[0.2126,0.7152,0.0722].reduce((total,weight,i)=>{
+  const value=parseInt(color.slice(1+i*2,3+i*2),16)/255;
+  return total+weight*(value<=.04045?value/12.92:((value+.055)/1.055)**2.4);
+ },0);
+ const values=[luminance(background),luminance(text)].sort((a,b)=>b-a);
+ assert((values[0]+.05)/(values[1]+.05)>=4.5);
+}
+withWeekColor.weeks[0].tabColor='navy';
+assert(C.validate(withWeekColor));
+withWeekColor.weeks[0].tabColor='invalid';
+assert.throws(()=>C.validate(withWeekColor));
 console.log('Passed: current/next-week visibility; no fallback to past weeks; makeup matching; source duty times; duty rotation; no teaching-load impact; legacy migration; canonical GDTC roster; teacher colors; 10 program colors; invalid backup checks.');

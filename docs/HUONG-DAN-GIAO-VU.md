@@ -9,7 +9,7 @@
 
 ## A. Làm lịch một tuần
 
-1. Mở link app → **Chế độ giáo viên** → nhập mật khẩu.
+1. Mở app, bấm **Giáo viên** rồi nhập mật khẩu.
 2. Vào **Lịch học trong tuần**, chọn tuần cần làm ở **Chọn tuần** hoặc các tab tuần phía dưới.
 3. Chọn **Thêm buổi học** hoặc bấm một buổi có sẵn để sửa.
 4. Chọn lớp, ngày, giáo viên, tiết bắt đầu/kết thúc, cơ sở, phòng và chuyên đề. Danh sách phòng được lọc theo cơ sở.
@@ -18,9 +18,15 @@
 7. Kiểm tra **Công suất giáo viên**: các cột tổng, tiết ngày và tiết tối nằm trước chi tiết từng ngày.
 8. **Tải bản sao lưu toàn bộ app sau khi làm xong.**
 
+### Đổi kiểu xem và màu tuần
+
+- Nút bên cạnh dấu hỏi hiển thị kiểu xem hiện tại. Bấm để lần lượt chuyển qua **Danh sách**, **Lịch tuần** và **Dữ liệu**.
+- Bấm chuột phải vào tên tuần ở thanh dưới, hoặc nhấn giữ trên điện thoại. Nếu dùng bàn phím, chọn tên tuần bằng Tab rồi nhấn Shift + F10. Chọn một trong 12 màu và bấm **Lưu màu**. Chấm màu giúp nhận ra tuần đó khi đang xem tuần khác.
+- Bấm dấu hỏi ở chế độ Giáo viên để xem hướng dẫn trực quan.
+
 ### Tạo tuần kế tiếp từ tuần cũ
 
-1. Chọn tuần nguồn → **Tạo tuần mới**.
+1. Chọn tuần nguồn rồi bấm **+** ở thanh tuần.
 2. Kiểm tra tuần nguồn và ngày Thứ 2 bắt đầu tuần mới.
 3. Giữ **Giữ khung lịch tuần cũ** để sao chép lớp, giáo viên, phòng và giờ.
 4. Giữ **Tự gợi ý bài tiếp theo**, căn cứ mặc định **Theo lịch đã xếp**.
@@ -31,7 +37,7 @@
 
 ### Thêm lịch chào
 
-Ở **Lịch chào thứ 6**, chọn **Thêm lịch chào**. Chọn ca sáng **7:30–7:45** hoặc ca trưa **12:45–13:00**, cơ sở và giáo viên. Nếu bật luân phiên, chọn ít nhất hai giáo viên, gồm người đang phụ trách. Hai ca cùng cơ sở cần hai người khác nhau. Lịch chào không cộng vào số tiết dạy.
+Ở thanh bên, chọn **Lịch chào** ngay dưới **Chương trình đào tạo** rồi bấm **Thêm lịch chào**. Chọn ca sáng **7:30–7:45** hoặc ca trưa **12:45–13:00**, cơ sở và giáo viên. Nếu bật luân phiên, chọn ít nhất hai giáo viên, gồm người đang phụ trách. Hai ca cùng cơ sở cần hai người khác nhau. Lịch chào không cộng vào số tiết dạy.
 
 ## B. Tải về để sao lưu toàn bộ các tuần
 
@@ -111,16 +117,17 @@ Ghi lại: đang dùng link nào, tuần nào, lớp/giáo viên nào, thao tác
 
 ## Phát hành lịch học viên
 
-1. Mở Giáo vụ bằng cách giữ logo hoặc chữ Proskills 1,5 giây rồi nhập mật khẩu. Chọn tuần cần phát hành và rà soát lịch.
+1. Bấm **Giáo viên** rồi nhập mật khẩu. Chọn tuần cần phát hành và rà soát lịch.
 2. Bấm **Hiển thị cho học viên**. Dòng **Đã chọn để phát hành** cho biết tuần nào sẽ được đưa vào tệp. Các lần tạo tuần hoặc lưu buổi chỉ thay đổi lịch trên máy Giáo vụ.
 3. Vào **Xuất & sao lưu → Tải lịch học viên để phát hành**. Mục này ghi rõ tuần đã chọn trước khi tải.
 4. Đưa `published-schedule.json` lên cùng cấp `index.html` trong repo GitHub. Sau khi GitHub Pages cập nhật, cả hai tab học viên sẽ tự nhận cùng một tuần khi mở app, quay lại hoặc dùng **? → Kiểm tra cập nhật**.
 
-Hãy tải bản sao lưu toàn bộ riêng. Nếu khôi phục bản sao lưu cũ chưa ghi tuần hiển thị, chọn lại tuần trước khi xuất. Bản V1.1.5 đi kèm tuần mẫu để thử thao tác. Xem [hướng dẫn điện thoại và PWA](DIEN-THOAI-PWA.md).
+Hãy tải bản sao lưu toàn bộ riêng. Nếu khôi phục bản sao lưu cũ chưa ghi tuần hiển thị, chọn lại tuần trước khi xuất. Bản V1.1.7 đi kèm tuần mẫu để thử thao tác. Xem [hướng dẫn điện thoại và PWA](DIEN-THOAI-PWA.md).
 
 
-## Đổi thứ tự chuyên đề và quản lý bộ môn
+## Màu chương trình, thứ tự chuyên đề và bộ môn
 
+- Trong **Chương trình đào tạo → Chương trình học**, dùng **Màu chương trình** để chọn một trong mười màu. Màu thể hiện trên thẻ lịch và trong chi tiết buổi học.
 - Trong **Chương trình đào tạo → Chương trình học**, chọn chương trình, bấm **Đổi thứ tự chuyên đề**, rồi kéo tay nắm bên trái hoặc dùng nút lên/xuống. Bấm **Lưu thứ tự** để dùng thứ tự mới cho gợi ý bài sau. Các buổi đã xếp giữ nguyên chuyên đề.
 - Trong **Chương trình đào tạo → Giáo viên**, bấm **Thêm giáo viên**, nhập tên và chọn **Bộ môn**. Có thể sửa bộ môn bằng icon cây viết. Hồ sơ cũ có ghi nhận GDTC hiện là **Giáo viên thể chất**, các hồ sơ còn lại hiện **Chưa thiết lập** cho đến khi chọn bộ môn.
 

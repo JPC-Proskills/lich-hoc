@@ -9,13 +9,19 @@ function applyModeUI(){
  syncScheduleRole();
  C.ensureGreetings(db,SEED);C.ensureRoster(db);C.ensureTeacherColors(db);
  document.documentElement.dataset.role=role;
- const allowed=isTeacher()?['calendar','search','workload','catalog']:['calendar','search'];if(!allowed.includes(tab))tab='calendar';
+ const allowed=isTeacher()?['calendar','search','workload','catalog','greetings']:['calendar','search'];if(!allowed.includes(tab))tab='calendar';
  document.querySelectorAll('[data-tab]').forEach(b=>b.hidden=!allowed.includes(b.dataset.tab));
  const cal=$('[data-tab="calendar"]');cal.querySelector('.nav-full').textContent=isTeacher()?'Lịch học trong tuần':'Lịch tuần';cal.querySelector('.nav-short').textContent=isTeacher()?'Lịch dạy':'Lịch tuần';
  const search=$('[data-tab="search"]');search.querySelector('.nav-full').textContent='Tra cứu lịch học';search.querySelector('.nav-short').textContent='Tra cứu';
- $('.side-label').textContent=isTeacher()?'KHÔNG GIAN GIÁO VIÊN':'KHÔNG GIAN HỌC VIÊN';$('#role-avatar').textContent=isTeacher()?'GV':'HV';$('#role-caption').textContent=isTeacher()?'Giáo vụ Hành chính':'Chế độ học viên';$('#mode-badge').innerHTML=icon(isTeacher()?'badge':'school')+(isTeacher()?'Giáo viên':'Học viên');
- $('#mode-switch').innerHTML=icon(isTeacher()?'school':'lock')+'<span class="mode-full">'+(isTeacher()?'Chế độ học viên':'Chế độ giáo viên')+'</span><span class="mode-compact">'+(isTeacher()?'Học viên':'Giáo viên')+'</span>';$('#mode-switch').onclick=switchRole;$('#mode-badge').title=isTeacher()?'Giáo vụ Hành chính · Điều chỉnh lịch':'Chế độ xem dành cho học viên và giáo viên';
- $('#publish-week').hidden=!isTeacher();$('#export-open').hidden=!isTeacher();$('#save-state').textContent=isTeacher()?'Đã lưu trên máy':'Chỉ xem lịch';
+ $('.side-label').textContent=isTeacher()?'KHÔNG GIAN GIÁO VIÊN':'KHÔNG GIAN HỌC VIÊN';
+ $('#role-avatar').textContent=isTeacher()?'GV':'HV';
+ $('#role-caption').textContent=isTeacher()?'Giáo vụ Hành chính':'Chế độ học viên';
+ const modeSwitch=$('#mode-switch');
+ modeSwitch.textContent=isTeacher()?'Học viên':'Giáo viên';
+ modeSwitch.title=isTeacher()?'Chuyển sang chế độ học viên':'Mở chế độ giáo viên';
+ modeSwitch.onclick=switchRole;
+ $('#publish-week').hidden=!isTeacher();$('#export-open').hidden=!isTeacher();
+ $('#save-state').hidden=!isTeacher();if(isTeacher())$('#save-state').textContent='Đã lưu';
  const weeks=accessibleWeeks();if(!weeks.some(w=>w.id===weekId))weekId=(isTeacher()?(weeks.find(w=>w.start===C.studentWeeks(db,todayVN())[0].start)||weeks[0]):weeks[0]).id;
  $('#sidebar-toggle').onclick=()=>{const collapsed=document.documentElement.classList.toggle('sidebar-collapsed');$('#sidebar-toggle').innerHTML=icon(collapsed?'menu':'menu_open');$('#sidebar-toggle').setAttribute('aria-expanded',String(!collapsed));$('#sidebar-toggle').setAttribute('aria-label',collapsed?'Hiện thanh bên':'Ẩn thanh bên để mở rộng lịch');};
  $('#help').onclick=()=>isTeacher()?showAdminHelp():showStudentHelp();
@@ -29,7 +35,7 @@ function showStudentSession(id,inweek){
  const w=accessibleWeeks().find(w=>w.id===inweek),e=w?.entries.find(e=>e.id===id);if(!e||e.status==='cancelled')return;
  const c=cls(e.classId),t=teacher(e.teacherId),p=program(c?.programId),date=C.addDays(w.start,e.day);
  const fact=(symbol,label,value)=>`<div class="lesson-fact">${icon(symbol)}<dt>${label}</dt><dd>${value}</dd></div>`;
- modal('Chi tiết buổi học',`<article class="lesson-sheet" style="--lesson-accent:${programColor(p)}"><header class="lesson-hero"><p class="lesson-program">${esc(p?.name||'Lịch học Proskills')}</p><h3>${esc(c?.name||'Lớp học')}</h3><p class="lesson-topic">${esc(e.title)}</p></header><dl class="lesson-facts">${fact('calendar_today','Ngày học',esc(DAYS[e.day])+'<small>'+esc(dateLabel(date))+'</small>')}${fact('schedule','Ca học',esc(PERIOD_START[e.start-1])+' – '+esc(PERIOD_END[e.end-1])+'<small>Tiết '+e.start+'–'+e.end+'</small>')}${fact('person','Giáo viên',esc(t?.name||'Chưa cập nhật'))}${fact('meeting_room','Cơ sở / phòng',esc(StudentCore.campus(e.campus)||'Chưa cập nhật')+'<small>'+esc(roomLabel(e.room))+'</small>')}</dl><p class="lesson-reminder">${icon('info')}<span>Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày</span></p>${studentTimeline(w,e)}<button class="button primary" id="add-to-calendar">${icon('event_available')}Thêm vào lịch điện thoại</button></article>`);
+ modal('Chi tiết buổi học',`<article class="lesson-sheet" style="--lesson-accent:${programAccent(p)}"><header class="lesson-hero"><p class="lesson-program">${esc(p?.name||'Lịch học Proskills')}</p><h3>${esc(c?.name||'Lớp học')}</h3><p class="lesson-topic">${esc(e.title)}</p></header><dl class="lesson-facts">${fact('calendar_today','Ngày học',esc(DAYS[e.day])+'<small>'+esc(dateLabel(date))+'</small>')}${fact('schedule','Ca học',esc(PERIOD_START[e.start-1])+' – '+esc(PERIOD_END[e.end-1])+'<small>Tiết '+e.start+'–'+e.end+'</small>')}${fact('person','Giáo viên',esc(t?.name||'Chưa cập nhật'))}${fact('meeting_room','Cơ sở / phòng',esc(StudentCore.campus(e.campus)||'Chưa cập nhật')+'<small>'+esc(roomLabel(e.room))+'</small>')}</dl><p class="lesson-reminder">${icon('info')}<span>Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày</span></p>${studentTimeline(w,e)}<button class="button primary" id="add-to-calendar">${icon('event_available')}Thêm vào lịch điện thoại</button></article>`);
  $('#add-to-calendar').onclick=()=>addStudentEvent(w,e);
 }
 
@@ -43,4 +49,19 @@ function showStudentHelp(){
  ];
  modal('Hướng dẫn xem lịch',`<ol class="student-guide">${steps.map(([symbol,title,body],i)=>`<li><span class="guide-icon">${icon(symbol)}</span><div><small>Bước ${i+1}</small><h3>${title}</h3><p>${body}</p></div></li>`).join('')}</ol>`);
 }
-function showAdminHelp(){modal('Giáo vụ Hành chính · Hướng dẫn',`<div class="help-text"><p><b>Lập lịch:</b> chọn tuần và thêm/sửa buổi học. Chọn cơ sở rồi chọn phòng; app kiểm tra trùng giáo viên, lớp và phòng.</p><p><b>Tuần mới:</b> giữ khung tuần cũ, gợi ý bài tiếp theo và luân phiên lịch chào theo danh sách của từng ca. Lịch chào không cộng vào tiết dạy.</p><p><b>Chương trình đào tạo:</b> quản lý lớp, giáo viên, phòng, chương trình và 10 màu nhận diện. Ẩn lớp hoàn thành hoặc phòng ngừng sử dụng khỏi danh sách chọn.</p><p><b>Công suất:</b> tổng tiết, tiết ngày, tiết tối và chi tiết từng ngày. Cần rà soát vì lịch mẫu chưa nhập đủ các ô gộp/ca nối từ Excel.</p><p><b>Ngày cập nhật:</b> được ghi khi lưu dữ liệu lịch; bản cũ chưa có mốc sẽ hiển thị chưa ghi nhận.</p><p><b>Chế độ học viên:</b> giao diện xanh chỉ xem và tìm học bù. Khi tải lại trang, app mặc định trở về chế độ này.</p><p><b>Bản demo:</b> khóa thao tác bằng mật khẩu tại trình duyệt, chưa có tài khoản hoặc phân quyền máy chủ. Hãy sao lưu sau khi làm lịch.</p></div>`)}
+function showAdminHelp(){
+ const steps=[
+  ['add','Tạo hoặc chọn tuần','Bấm <b>+</b> ở thanh cuối trang để tạo tuần. Chọn tuần có sẵn nếu cần tiếp tục làm lịch. Khi sao chép, xem lại các bài được gợi ý.'],
+  ['edit_calendar','Xếp buổi học','Bấm <b>Thêm buổi học</b> hoặc mở một buổi để chỉnh. Điền lớp, giáo viên, tiết, cơ sở và phòng, rồi lưu. Rà các cảnh báo trùng lịch trước khi chốt.'],
+  ['waving_hand','Phân công lịch chào','Mở <b>Lịch chào</b> ở thanh bên. Bấm <b>Thêm lịch chào</b>, chọn ca, cơ sở và người phụ trách. Có thể đặt người luân phiên khi tạo tuần mới.'],
+  ['publish','Phát hành cho học viên','Bấm <b>Hiển thị cho học viên</b> trên tuần đã rà soát. Trong <b>Xuất & sao lưu</b>, tải tệp phát hành rồi đưa <code>published-schedule.json</code> lên GitHub Pages.']
+ ];
+ modal('Hướng dẫn Giáo viên',`<ol class="student-guide teacher-guide">${steps.map(([symbol,title,body],i)=>
+  `<li><span class="guide-icon">${icon(symbol)}</span><div><small>Bước ${i+1}</small><h3>${title}</h3><p>${body}</p></div></li>`
+ ).join('')}</ol><section class="teacher-guide-tools"><h3>Thao tác thường dùng</h3><dl>
+  <div><dt>${icon('palette')}Màu tuần</dt><dd>Bấm chuột phải vào tên tuần ở thanh dưới. Trên điện thoại, nhấn giữ tên tuần.</dd></div>
+  <div><dt>${icon('bar_chart')}Công suất giáo viên</dt><dd>Chọn tuần, tháng hoặc khoảng ngày, rồi xuất CSV nếu cần.</dd></div>
+  <div><dt>${icon('folder_open')}Chương trình đào tạo</dt><dd>Quản lý lớp, giáo viên, phòng và thứ tự chuyên đề.</dd></div>
+  <div><dt>${icon('save')}Sao lưu</dt><dd>Tải bản sao lưu trong <b>Xuất & sao lưu</b> để chuyển máy hoặc khôi phục lịch.</dd></div>
+ </dl></section>`);
+}

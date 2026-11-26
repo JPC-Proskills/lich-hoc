@@ -4,7 +4,6 @@ input,textarea,[contenteditable=true]{user-select:text;-webkit-user-select:text}
 button,a,summary{touch-action:manipulation;-webkit-touch-callout:none}
 body{overscroll-behavior-y:none}.mobile-brand{display:none}
 :root[data-role=student] .list-day{background:var(--axis);color:var(--axis-text);font-weight:700;border-color:color-mix(in srgb,var(--axis-text) 18%,var(--axis))}
-.mode-compact{display:none}
 .student-greetings{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
 .student-greetings>summary{display:flex;align-items:center;gap:8px;padding:12px 16px;min-height:44px;cursor:pointer;font-size:14px;font-weight:600;list-style:none}
 .student-greetings>summary::-webkit-details-marker{display:none}.student-greetings>summary .expand{margin-left:auto;transition:transform .15s}.student-greetings[open]>summary .expand{transform:rotate(180deg)}
@@ -20,15 +19,12 @@ body{overscroll-behavior-y:none}.mobile-brand{display:none}
  :root[data-role=student] .sidebar,:root[data-role=student].sidebar-collapsed .sidebar{display:contents!important}
  :root[data-role=student] .sidebar> :not(nav){display:none!important}
  :root[data-role=student] .workspace{margin-left:0}
- :root[data-role=student] #sidebar-toggle,:root[data-role=student] #mode-badge,:root[data-role=student] #save-state,:root[data-role=student] .topbar-title,:root[data-role=student] .eyebrow{display:none!important}
+ :root[data-role=student] #sidebar-toggle,:root[data-role=student] #save-state,:root[data-role=student] .topbar-title,:root[data-role=student] .eyebrow{display:none!important}
  :root[data-role=student] .mobile-brand{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0}
  .mobile-brand img{width:36px;height:36px;object-fit:contain}
  :root[data-role=student] .topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:8px;height:auto;min-height:56px;padding:calc(6px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 6px max(12px,env(safe-area-inset-left,0px));background:var(--bg);border-bottom:1px solid var(--line)}
  :root[data-role=student] .topbar>div{gap:6px}
  :root[data-role=student] .topbar .icon-button{width:44px;height:44px}
- :root[data-role=student] #mode-switch{min-height:44px;padding:8px 14px;font-size:14px}
- :root[data-role=student] #mode-switch .mi,:root[data-role=student] #mode-switch .mode-full{display:none}
- :root[data-role=student] #mode-switch .mode-compact{display:inline}
  :root[data-role=student] #week-tabs{display:none!important}
  :root[data-role=student] #nav{height:calc(var(--mobile-nav) + env(safe-area-inset-bottom,0px));padding:0 max(8px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px,env(safe-area-inset-left,0px));display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -2px 12px #00000008}
  :root[data-role=student] #nav button{flex-direction:row;gap:7px;height:44px;min-height:44px;padding:0 10px;border-radius:0;font-size:14px}

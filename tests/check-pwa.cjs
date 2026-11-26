@@ -49,6 +49,9 @@ assert.equal(vm.runInContext('db===original',sandbox),true);
 vm.runInContext('db.weeks[0].entries[0].title="LOCAL TEACHER EDIT";teacherMode=false;syncScheduleRole();acceptedFeed='+JSON.stringify(changed)+';syncScheduleRole();teacherMode=true;syncScheduleRole();',sandbox);
 assert.equal(vm.runInContext('db.weeks[0].entries[0].title',sandbox),'LOCAL TEACHER EDIT');
 assert.equal(memory.size,0,'Role switching must not overwrite planner storage');
+const coloredPlanner=C.clone(db);
+coloredPlanner.weeks.find(w=>w.id===feed.visibleWeekId).tabColor='navy';
+assert.equal(F.create(coloredPlanner,feed.visibleWeekId).data.weeks[0].tabColor,undefined);
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.webmanifest'),'utf8'));
 assert.equal(manifest.start_url,'./');assert.equal(manifest.scope,'./');assert.equal(manifest.display,'standalone');
 for(const icon of manifest.icons){assert(fs.existsSync(path.join(root,icon.src)));const png=fs.readFileSync(path.join(root,icon.src));const size=Number(icon.sizes.split('x')[0]);assert.equal(png.readUInt32BE(16),size);assert.equal(png.readUInt32BE(20),size);}

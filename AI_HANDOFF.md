@@ -6,7 +6,7 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
-**Phiên bản hiện tại: PS-LICHDAY-V1.1.5 (26/11/2026).**
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.7 (26/11/2026).**
 
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
@@ -207,3 +207,18 @@ Các đoạn guide ở lịch/học bù đã vào dấu hỏi; không giấu l�
 - `lesson-order.js` đổi thứ tự trong một chương trình sau khi bấm lưu. Mã, số tiết, nội dung và các buổi đã xếp giữ nguyên. Từ lần gợi ý bài tiếp theo, hệ thống dùng thứ tự mới.
 - `teachers[].department` là trường tùy chọn của schema 1. Hồ sơ cũ mang specialty GDTC hiển thị mặc định là thể chất. Khi trường mới được chọn, nó có ưu tiên.
 - `workload.js` hiển thị và xuất CSV từ cùng phép tính. `sessionsBetween` lấy cả ngày đầu và cuối theo lịch địa phương. Khi không chọn khoảng riêng, tính theo tuần Giáo vụ đang mở.
+
+
+## Cập nhật V1.1.6
+
+- Cả hai vai trò dùng chung bộ màu ở `schedule.css`. Màu chính #1D4ED8, thanh bên #0F172A, nền sáng trung tính, cam/vàng/teal dùng ở một số icon và nhãn nhỏ. Thanh bên giữ thao tác đóng/mở và vị trí cũ. Khi logo nằm trong thanh bên, dùng tông trắng để đọc trên navy.
+- `colors.js` ánh xạ mười mã màu chương trình cũ sang màu hiển thị đa dạng. Thẻ, chú giải, bộ chọn và chi tiết dùng cùng ánh xạ; mã trong backup và bản công bố giữ định dạng cũ. Màu thẻ tên giáo viên là dữ liệu riêng.
+- Chỉ Giáo vụ thấy trạng thái lưu. Thẻ lịch chào đã bỏ nhãn luân phiên; cấu hình và cách luân phiên khi tạo tuần mới vẫn nằm trong ca chào.
+
+
+## Cập nhật V1.1.7
+
+- Thanh bên Giáo viên xanh lam nhạt, Học viên xanh bạc hà, logo gốc ở cả hai chế độ. Một nút chuyển vai trò hiển thị đích đến. Mở Giáo viên vẫn cần mật khẩu; người dùng cũng có thể giữ logo như ở bản trước.
+- Giáo viên có một nút chuyển tuần tự Danh sách → Lịch tuần → Dữ liệu. Biểu tượng dấu hỏi mở hướng dẫn Giáo viên gồm các bước và thao tác thường dùng. Vai trò học viên giữ phần hướng dẫn và kiểu xem riêng.
+- Giáo viên quản lý ca chào ở tab Lịch chào ngay dưới Chương trình đào tạo. Học viên vẫn xem được ca chào đã phát hành trong phần thu gọn của Lịch tuần.
+- `weeks[].tabColor` là trường tùy chọn, với 12 lựa chọn trong `core.js`. `week-tabs.js` lưu màu trong bản sao lưu Giáo vụ mà không đổi mốc cập nhật lịch. Tệp lịch học viên loại trừ trường này. Tuần đang chọn có nền màu, tuần khác có chấm màu. Mở bảng màu qua chuột phải, nhấn giữ hoặc Shift + F10 trên tên tuần.

@@ -1,8 +1,8 @@
-# Proskills trên điện thoại — V1.1.5
+# Proskills trên điện thoại — V1.1.7
 
 ## Đưa bản mới lên GitHub
 
-Đưa nội dung bên trong thư mục `PS-LICHDAY-V1.1.5` lên gốc repo đang phát hành. Giữ `index.html`, `manifest.webmanifest`, `sw.js`, thư mục `assets/` và các tệp đi kèm. Dùng URL GitHub Pages qua HTTPS để cài và xem ngoại tuyến. Nếu đã có tệp lịch thật, giữ tệp đó khi thay mã. V1.1.5 đọc được tệp phát hành từ V1.1.4.
+Đưa nội dung bên trong thư mục `PS-LICHDAY-V1.1.7` lên gốc repo đang phát hành. Giữ `index.html`, `manifest.webmanifest`, `sw.js`, thư mục `assets/` và các tệp đi kèm. Dùng URL GitHub Pages qua HTTPS để cài và xem ngoại tuyến. Nếu đã có tệp lịch thật, giữ tệp đó khi thay mã. V1.1.7 tiếp tục đọc được các tệp lịch đã phát hành từ V1.1.4 trở lên.
 
 ## Cài trên điện thoại
 
@@ -18,7 +18,7 @@
 
 ## Phát hành và kiểm tra cập nhật
 
-1. Giữ logo hoặc chữ Proskills 1,5 giây để mở Giáo vụ. Chọn tuần đã rà soát và bấm **Hiển thị cho học viên**.
+1. Bấm **Giáo viên** rồi nhập mật khẩu để mở Giáo vụ. Chọn tuần đã rà soát và bấm **Hiển thị cho học viên**.
 2. Vào **Xuất & sao lưu → Tải lịch học viên để phát hành**.
 3. Đưa `published-schedule.json` lên cùng cấp với `index.html` trong repo. Đợi GitHub Pages xuất bản.
 4. Học viên tự nhận lịch khi mở app, quay lại app hoặc trong lần kiểm tra định kỳ khi đang xem. Mục **? → Kiểm tra cập nhật** báo tuần đang xem theo dạng **26.10-01.11**.

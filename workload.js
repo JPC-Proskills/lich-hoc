@@ -18,7 +18,7 @@ function workloadPage(){
   <div class="workload-fields">
    <label>Từ ngày<input type="date" id="workload-from" required value="${from}"></label>
    <label>Đến ngày<input type="date" id="workload-to" required value="${to}"></label>
-   <button class="button primary" type="submit">Áp dụng</button>
+   <button class="button primary small" type="submit">Áp dụng</button>
   </div>
   <div class="workload-shortcuts" aria-label="Khoảng thời gian">
    <button class="button small" type="button" id="workload-week" aria-pressed="${!workloadRange}">Tuần đang chọn</button>

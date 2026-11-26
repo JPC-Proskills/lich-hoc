@@ -20,49 +20,125 @@
 :root[data-role=student] .student-view-toggle:hover{background:color-mix(in srgb,var(--student-soft) 85%,var(--primary))}
 .topbar-actions{flex-wrap:wrap;justify-content:flex-end}
 :root[data-role=student] #nav [data-tab=search]{order:-1}
-/* The teacher workspace has neutral gray surfaces and a deeper blue accent. */
-:root[data-role=teacher]{
- --bg:#F3F4F5;--rail:#E8EAED;--sidebar-color:#E8EAED;
- --surface:#FFFFFF;--surface-low:#F5F6F7;--surface-high:#ECEEF0;
- --input:#FFFFFF;--line:#D9DDE1;--text:#1E2937;--muted:#4E6073;--secondary:#586C80;
- --primary:#285884;--on-primary:#FFFFFF;--primary-container:#DEEAF7;--on-primary-container:#24486C;
- --clay:#3A719F;--book:#366891;--crail:#285884;--action-bg:#285884;--action-hover:#376B97;--action-soft:#DEEAF7;
- --axis:#DCE9F6;--axis-text:#264763;--kraft:#7F97AC;
- --tts-bg:#E8F0F8;--tts-text:#34536F;--nh-bg:#EBEFF7;--nh-text:#3B5072;
- --other-bg:#EEF0F2;--other-text:#495661;--warning-bg:#E8EFF7;--warning-text:#304E6D;
- --teacher-button:#E4EEF8;--teacher-button-hover:#D3E4F4;--teacher-button-active:#CADDF1;--teacher-button-text:#264C71;
- --brand-ink:#20476E;
+/* Shared palette. Large surfaces stay neutral, with small warm and teal accents. */
+:root:is([data-role=student],[data-role=teacher]){
+ --blue:#1D4ED8;--navy:#0F172A;--white:#FFFFFF;
+ --blue-soft:#E8EFFF;--blue-hover:#DCE7FF;--blue-ink:#1E3A8A;--blue-pressed:#1E40AF;
+ --orange:#F97316;--orange-soft:#FFF0E5;--orange-ink:#9A3412;
+ --yellow:#FACC15;--yellow-soft:#FFF7D8;--yellow-ink:#713F12;
+ --teal:#0D9488;--teal-soft:#E7F7F4;--teal-ink:#115E59;
+ --sidebar-ink:#233A62;--sidebar-muted:#415B80;--sidebar-line:#BBCDE6;--sidebar-hover:#CDDCF1;
+ --bg:#F5F6F8;--rail:#EDF0F4;--surface:var(--white);--surface-low:#F7F8FA;--surface-high:#EDF0F4;
+ --text:var(--navy);--muted:#475569;--secondary:#526075;--input:var(--white);--line:#D9E0EA;
+ --sidebar-color:#DDE7F6;--primary:var(--blue);--on-primary:var(--white);
+ --primary-container:var(--blue-soft);--on-primary-container:var(--blue-ink);
+ --clay:var(--blue);--book:var(--blue-pressed);--crail:var(--blue);--kraft:#64748B;
+ --action-bg:var(--blue);--action-hover:var(--blue-pressed);--action-soft:var(--blue-soft);--action-pressed:#172F82;
+ --axis:#E4EDFF;--axis-text:#172D5E;
+ --tts-bg:var(--teal-soft);--tts-text:var(--teal-ink);--nh-bg:var(--blue-soft);--nh-text:var(--blue-ink);
+ --other-bg:#F0F2F5;--other-text:#475569;--info-bg:var(--blue-soft);--info-text:var(--blue-ink);
+ --warning-bg:var(--yellow-soft);--warning-text:var(--yellow-ink);
+ --student-soft:var(--blue-soft);--student-soft-text:var(--blue-ink);
  --control-radius:12px;
 }
-
-:root[data-role=teacher] :is(.brand,.mobile-brand){color:var(--brand-ink)}
-:root[data-role=teacher] :is(.brand,.mobile-brand) img{filter:grayscale(1) brightness(.76) sepia(1) saturate(2.3) hue-rotate(166deg)}
-
+:root[data-role=student]{
+ --sidebar-color:#E3F2EF;--sidebar-ink:#244640;--sidebar-muted:#365953;--sidebar-line:#C5DFD9;--sidebar-hover:#D0E8E2;
+}
+.sidebar .brand{
+ color:var(--text);background:color-mix(in srgb,var(--surface) 65%,transparent);
+ border:1px solid var(--sidebar-line);border-radius:12px;padding-block:6px;
+}
+.sidebar :is(.brand small,.side-label,.side-note p,footer small){color:var(--sidebar-muted)}
+.sidebar footer{color:var(--sidebar-ink);border-color:var(--sidebar-line)}
+.sidebar .side-note .mini-icon{color:var(--primary)}
+.sidebar .avatar{background:var(--surface);color:var(--sidebar-ink)}
+.sidebar :is(a,button):focus-visible{outline-color:var(--primary);outline-offset:3px}
 :root[data-role=teacher] :is(button,.filter-select,.filter-select select,.search-field){border-radius:var(--control-radius)}
-:root[data-role=teacher] :is(.button,.icon-button,.cell-add,#tab-add){
- background:var(--teacher-button);color:var(--teacher-button-text);border-color:transparent;font-weight:700;
+:root[data-role=teacher] :is(.button,.icon-button,.cell-add),
+:root[data-role=teacher] #tab-add{
+ background:var(--blue-soft);color:var(--blue-ink);border-color:transparent;font-weight:700;
 }
-:root[data-role=teacher] :is(.button,.icon-button,.cell-add,#tab-add):hover{
- background:var(--teacher-button-hover);color:var(--teacher-button-text);
+:root[data-role=teacher] :is(.button,.icon-button,.cell-add):hover,
+:root[data-role=teacher] #tab-add:hover{
+ background:var(--blue-hover);color:var(--blue-ink);
 }
-:root[data-role=teacher] :is(.button.primary,.view-control button.active,.week-tabs button.active,#nav button.active){
- background:var(--teacher-button-active);color:var(--teacher-button-text);
+:root[data-role=teacher] .workload-shortcuts button[aria-pressed=true]{background:var(--blue-hover)}
+:root[data-role=teacher] :is(.button.primary,.view-control button.active),
+:root[data-role=student] .button.primary{
+ background:var(--blue);color:var(--white);
 }
-:root[data-role=teacher] .view-control button{border:0;box-shadow:none}
+:root[data-role=teacher] :is(.button.primary:hover,.view-control button.active:hover),
+:root[data-role=student] .button.primary:hover{background:var(--blue-pressed);color:var(--white)}
+:root[data-role] .button.primary:active{background:var(--action-pressed);color:var(--white)}
+:root[data-role=teacher] :is(.view-control button,#tab-add){border:0;box-shadow:none}
+:root[data-role=teacher] .subbar .check-label{min-height:36px}
 :root[data-role=teacher] :is(.dialog-head button,.cell-add,button[data-edit-catalog],button[data-room]){
  min-width:36px;justify-content:center;
 }
-:root[data-role=teacher] #nav button.active>span:first-child{background:transparent;color:inherit}
-:root[data-role=teacher] #nav button.active .mi{color:var(--teacher-button-text)}
-:root[data-role=teacher] :is(.catalog-tabs .button.primary,.button.primary:active){background:var(--teacher-button-active);color:var(--teacher-button-text)}
 :root[data-role=teacher] #save-state::before{color:var(--primary)}
 :root[data-role=teacher] #toast .button{background:transparent;color:#D8ECFF}
 :root[data-role=teacher] button:disabled{opacity:.65;cursor:default}
+@media(min-width:761px){
+ .sidebar #nav button{background:transparent;color:var(--sidebar-muted)}
+ .sidebar #nav button:hover{background:var(--sidebar-hover);color:var(--sidebar-ink)}
+ .sidebar #nav button.active{background:var(--blue);color:var(--white)}
+ .sidebar #nav button.active .mi{color:var(--white)}
+}
+@media(max-width:760px){
+ :root[data-role=teacher] #nav{grid-template-columns:repeat(5,minmax(0,1fr))}
+ :root[data-role=teacher] #nav button{color:var(--sidebar-ink);padding-inline:0}
+ :root[data-role=teacher] #nav .nav-label{font-size:clamp(10px,2.6vw,12px);white-space:nowrap}
+ :root[data-role=teacher] .sidebar .brand{width:max-content;padding-inline:8px}
+ :root[data-role=teacher] #nav button.active{background:transparent;color:var(--sidebar-ink)}
+ :root[data-role=teacher] #nav button.active>span:first-child{background:var(--blue)}
+ :root[data-role=teacher] #nav button.active .mi{color:var(--white)}
+}
+:root[data-role=student] .cal-header.today{background:var(--blue-pressed);color:var(--white)}
+:root[data-role=student] .cal-header.today b{color:inherit}
+:root[data-role=student] .cal-time small{color:var(--axis-text)}
+:root[data-role=student] .list-day{background:var(--blue-ink);color:var(--white)}
+:root[data-role] .session.has-program-color{
+ background:color-mix(in srgb,var(--program-color) 10%,var(--surface));color:var(--text);
+}
+:root[data-role] .session .location{overflow-wrap:anywhere}
+:is(.greetings-panel h2,.student-greetings summary)>.mi:first-child{color:var(--orange-ink)}
+.lesson-reminder .mi{border-radius:50%;background:var(--yellow-soft);color:var(--yellow-ink);box-shadow:inset 0 -2px var(--yellow)}
+.forecast li>strong{color:var(--teal-ink)}
+.stat-icon.purple{background:var(--teal-soft);color:var(--teal-ink)}
+.stat-icon.orange{background:var(--orange-soft);color:var(--orange-ink);box-shadow:none}
+.stat-icon.orange .mi{color:var(--orange-ink)}
 .week-tabs button{flex:none;font-variant-numeric:tabular-nums}
+.week-tabs button[data-week]{-webkit-touch-callout:none;user-select:none}
 .week-tabs button[data-week]+button[data-week]{position:relative;margin-left:3px}
 .week-tabs button[data-week]+button[data-week]::before{
  content:'';position:absolute;inset-block:10px;left:-6px;border-left:1px solid var(--line);pointer-events:none;
 }
+:root[data-role=teacher] .week-tabs button[data-week].active{background:var(--week-tab-bg);color:var(--week-tab-text);font-weight:700}
+:root[data-role=teacher] .week-tabs button[data-week].active:hover{
+ background:color-mix(in srgb,var(--week-tab-bg) 94%,var(--week-tab-text));color:var(--week-tab-text);
+}
+.week-color-dot{width:8px;height:8px;border-radius:50%;background:var(--week-tab-bg);border:1px solid #0F172A29}
+:root[data-role=teacher] #tab-add{
+ display:grid;place-items:center;width:44px;min-width:44px;height:42px;padding:0;
+ color:var(--white);background:#A84A26;line-height:1;
+}
+:root[data-role=teacher] #tab-add:hover{background:#843C24}
+:root[data-role=teacher] #tab-add .mi{font-size:22px;font-variation-settings:'FILL' 0,'wght' 700,'GRAD' 0,'opsz' 24}
+.week-color-options{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border:0;padding:0;margin:0;
+}
+.week-color-options legend{font-weight:700;font-size:14px;margin-bottom:10px}
+.week-color-option{
+ display:grid;gap:4px;position:relative;text-align:center;padding:6px;border:1px solid var(--line);border-radius:10px;cursor:pointer;
+}
+.week-color-option:has(:checked){box-shadow:inset 0 0 0 2px var(--primary)}
+.week-color-option:has(:focus-visible){outline:2px solid var(--primary);outline-offset:2px}
+.week-color-option input{position:absolute;opacity:0;inline-size:1px;block-size:1px}
+.week-color-preview{
+ display:grid;place-items:center;min-height:34px;border-radius:7px;
+ background:var(--week-tab-bg);color:var(--week-tab-text);font-size:12px;font-weight:700;
+}
+.week-color-option small{font-size:11px;line-height:1.3;color:var(--muted)}
 .list-time{
  display:grid;gap:2px;padding:9px 12px;line-height:1.4;align-self:flex-start;min-width:124px;border-radius:10px;
  background:var(--surface-high);color:var(--text);font-variant-numeric:tabular-nums;
@@ -140,6 +216,16 @@
 .student-guide small{font-size:12px;font-weight:700;color:var(--secondary)}
 .student-guide h3,.student-guide p{margin:2px 0}
 .student-guide p{font-size:13px}
+.teacher-guide .guide-icon{background:var(--blue-soft);color:var(--blue-ink)}
+.teacher-guide code{white-space:normal;overflow-wrap:anywhere}
+.teacher-guide-tools{margin-top:16px}
+.teacher-guide-tools h3{margin:0 0 8px;font-size:17px}
+.teacher-guide-tools dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0}
+.teacher-guide-tools dl div{padding:10px;border:1px solid var(--line);border-radius:10px}
+.teacher-guide-tools dt{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700}
+.teacher-guide-tools dt .mi{font-size:18px;color:var(--primary)}
+.teacher-guide-tools dd{color:var(--muted);font-size:12px;margin:5px 0 0}
+:root[data-role=student] #mode-switch{height:var(--student-top-action-height);min-height:0;padding:0 10px;white-space:nowrap}
 @media(max-width:760px){
  :root[data-role=student]{--student-top-action-height:36px}
  :root[data-role=student] .student-view-toggle{font-size:12px;padding-inline:10px}
@@ -156,7 +242,13 @@
  #dialog-grip{height:28px}
 }
 @media(max-width:370px){
- :root[data-role=teacher] .view-control button span:not(.mi){display:none}
+ :root[data-role=student] .mobile-brand img{width:26px;height:26px}
+ :root[data-role=student] .mobile-brand span{font-size:14px}
+ :root[data-role=student] .topbar-actions{gap:4px}
+ :root[data-role=student] #help{margin-inline:1px}
+ :root[data-role=student] #mode-switch{padding-inline:7px;font-size:11px}
+ :root[data-role=student] .student-view-toggle{padding-inline:7px;font-size:11px}
+ .teacher-guide-tools dl{grid-template-columns:1fr}
  .list-row{grid-template-columns:1fr}
  .list-time{justify-self:start;display:flex;gap:8px;align-items:center}
 }
@@ -192,9 +284,9 @@
 
 .workload-filter{display:flex;flex-wrap:wrap;align-items:end;gap:10px 16px;padding:14px;margin-bottom:16px}
 .workload-fields,.workload-shortcuts{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.workload-filter .button{height:40px;min-height:40px;padding-block:0;font-size:13px}
 .workload-fields label{display:grid;gap:4px;font-size:13px;font-weight:600}
 .workload-fields input{max-width:100%;min-height:40px;border-radius:12px}
-:root[data-role=teacher] .workload-shortcuts button[aria-pressed=true]{background:var(--teacher-button-active)}
 @media(max-width:460px){
  .workload-fields{width:100%}
  .workload-fields label{min-width:0;flex:1 1 125px}

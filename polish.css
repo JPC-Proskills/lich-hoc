@@ -1,5 +1,4 @@
 /* V1.1.3: quiet student shell and a readable lesson sheet. */
-:root[data-role=student] #mode-switch{display:none!important}
 :root[data-role=student] #page-desc,:root[data-role=student] .bottom-note{display:none}
 :root[data-role=student]{--student-soft:#E0ECF5;--student-soft-text:#315E81;--hint:#7B8794}
 
