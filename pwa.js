@@ -29,7 +29,7 @@
  const originalHelp=showStudentHelp;
  showStudentHelp=function(){
   originalHelp();
-  document.getElementById('dialog-body').insertAdjacentHTML('beforeend','<div class="app-tools"><button class="button small" id="install-app">Cài app</button><button class="button small" id="check-updates">Kiểm tra cập nhật</button></div><p class="app-version">PS-LICHDAY-V1.1.3 · Lịch ngoại tuyến trên thiết bị này</p>');
+  document.getElementById('dialog-body').insertAdjacentHTML('beforeend','<div class="app-tools"><button class="button small" id="install-app">Cài app</button><button class="button small" id="check-updates">Kiểm tra cập nhật</button></div><p class="app-version">PS-LICHDAY-V1.1.4 · Lịch ngoại tuyến trên thiết bị này</p>');
   document.getElementById('install-app').onclick=()=>{close();install().catch(()=>toast('Hãy dùng menu trình duyệt để cài Proskills.'));};
   document.getElementById('check-updates').onclick=()=>{close();checkUpdates(true);};
  };
@@ -43,21 +43,10 @@
    return navigator.serviceWorker.ready;
   }).then(()=>{offlineReady=true;connectivity();}).catch(()=>{offlineReady=false;connectivity();});
  }
- const prefKey='proskills-student-preferences:'+studentScope;
- try{
-  const pref=JSON.parse(localStorage.getItem(prefKey)||'{}');
-  if(db.classes.some(c=>c.id===pref.classId))classFilter=pref.classId;
-  if(db.teachers.some(t=>t.id===pref.teacherId))teacherFilter=pref.teacherId;
-  if(['grid','list'].includes(pref.view))view=pref.view;
-  if(['time','teacher','class'].includes(pref.sortBy))sortBy=pref.sortBy;
- }catch{}
- function remember(){if(isTeacher())return;try{localStorage.setItem(prefKey,JSON.stringify({classId:classFilter,teacherId:teacherFilter,view,sortBy}))}catch{}}
- document.addEventListener('change',e=>{if(['class-filter','teacher-filter','sort-by'].includes(e.target.id))remember();});
- document.addEventListener('click',e=>{if(e.target.closest('[data-view]'))remember();});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='visible')return;const current=todayVN();if(day!==current&&!isTeacher()&&!document.getElementById('dialog').open){day=current;init();}checkUpdates();});
  addEventListener('online',()=>{connectivity();checkUpdates();});addEventListener('offline',connectivity);
- addEventListener('pageshow',connectivity);
+ addEventListener('pageshow',event=>{connectivity();if(event.persisted)checkUpdates();});
  setInterval(()=>{if(document.visibilityState==='visible'&&navigator.onLine)checkUpdates();},60000);
  // A separate student snapshot may be accepted while the planner remains editable locally.
- init();showScheduleUpdate();connectivity();checkStudentSchedule();
+ connectivity();checkStudentSchedule();
 })();

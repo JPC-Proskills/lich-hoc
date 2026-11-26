@@ -1,6 +1,7 @@
 {
   "format": "proskills-student-schedule-v1",
   "publishedAt": "2026-11-26T03:52:52.272Z",
+  "visibleWeekId": "w-2026-11-23",
   "data": {
     "schemaVersion": 1,
     "rosterVersion": 1,
@@ -1290,5 +1291,623 @@
         ]
       }
     ]
-  }
+  },
+  "estimates": [
+    {
+      "offset": 1,
+      "classId": "lop-2abee5284b",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-10"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-2abee5284b",
+      "topics": [
+        "TTS-10"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-2abee5284b",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-2abee5284b",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-2abee5284b",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-2abee5284b",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-2abee5284b",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-2abee5284b",
+      "topics": [
+        "TTS-13"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-97296b033a",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "AB1",
+      "lessonId": "TTS-16"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-97296b033a",
+      "topics": [
+        "TTS-16"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-97296b033a",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "AB1",
+      "lessonId": "TTS-17"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-97296b033a",
+      "topics": [
+        "TTS-17"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-97296b033a",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "AB1",
+      "lessonId": "TTS-18"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-97296b033a",
+      "topics": [
+        "TTS-18"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-97296b033a",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "AB1",
+      "lessonId": "TTS-19"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-97296b033a",
+      "topics": [
+        "TTS-19"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-3cfd6af4c5",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-09"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-3cfd6af4c5",
+      "topics": [
+        "TTS-09"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-3cfd6af4c5",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-10"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-3cfd6af4c5",
+      "topics": [
+        "TTS-10"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-3cfd6af4c5",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-3cfd6af4c5",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-3cfd6af4c5",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-3cfd6af4c5",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-bc1860875f",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "AB1",
+      "lessonId": "TTS-25"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-bc1860875f",
+      "topics": [
+        "TTS-25"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-23"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-b88b683ea6",
+      "topics": [
+        "TTS-23"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-24"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-b88b683ea6",
+      "topics": [
+        "TTS-24"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-b88b683ea6",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-25"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-b88b683ea6",
+      "topics": [
+        "TTS-25"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-e82d2fcf3b",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-e82d2fcf3b",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-e82d2fcf3b",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-e82d2fcf3b",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e82d2fcf3b",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e82d2fcf3b",
+      "topics": [
+        "TTS-13"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-e82d2fcf3b",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-14"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-e82d2fcf3b",
+      "topics": [
+        "TTS-14"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-741a6acaa2",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-741a6acaa2",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-741a6acaa2",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-741a6acaa2",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-741a6acaa2",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-741a6acaa2",
+      "topics": [
+        "TTS-13"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-741a6acaa2",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-14"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-741a6acaa2",
+      "topics": [
+        "TTS-14"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-10"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-10"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-11"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-11"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-12"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-12"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-af10a837de",
+      "teacherId": "gv-df0d7cbe8b",
+      "campus": "AB2",
+      "lessonId": "TTS-13"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-af10a837de",
+      "topics": [
+        "TTS-13"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-06"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-06"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-07"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-07"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-08"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-08"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-d106d84a08",
+      "teacherId": "gv-68ba598cf8",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-09"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-d106d84a08",
+      "topics": [
+        "TTS-09"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-e2523df77a",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-06"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-e2523df77a",
+      "topics": [
+        "TTS-06"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-e2523df77a",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-07"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-e2523df77a",
+      "topics": [
+        "TTS-07"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e2523df77a",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-08"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-e2523df77a",
+      "topics": [
+        "TTS-08"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-e2523df77a",
+      "teacherId": "gv-2d67332ebb",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-09"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-e2523df77a",
+      "topics": [
+        "TTS-09"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "lop-dda5e04c14",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-14"
+    },
+    {
+      "offset": 1,
+      "classId": "lop-dda5e04c14",
+      "topics": [
+        "TTS-14"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "lop-dda5e04c14",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-15"
+    },
+    {
+      "offset": 2,
+      "classId": "lop-dda5e04c14",
+      "topics": [
+        "TTS-15"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "lop-dda5e04c14",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-16"
+    },
+    {
+      "offset": 3,
+      "classId": "lop-dda5e04c14",
+      "topics": [
+        "TTS-16"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "lop-dda5e04c14",
+      "teacherId": "gv-dae5775033",
+      "campus": "Âu Cơ",
+      "lessonId": "TTS-17"
+    },
+    {
+      "offset": 4,
+      "classId": "lop-dda5e04c14",
+      "topics": [
+        "TTS-17"
+      ]
+    },
+    {
+      "offset": 1,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-02"
+    },
+    {
+      "offset": 1,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-02"
+      ]
+    },
+    {
+      "offset": 2,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-03"
+    },
+    {
+      "offset": 2,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-03"
+      ]
+    },
+    {
+      "offset": 3,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-04"
+    },
+    {
+      "offset": 3,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-04"
+      ]
+    },
+    {
+      "offset": 4,
+      "classId": "demo-nh4",
+      "teacherId": "gv-e1d508f062",
+      "campus": "Âu Cơ",
+      "lessonId": "NH-05"
+    },
+    {
+      "offset": 4,
+      "classId": "demo-nh4",
+      "topics": [
+        "NH-05"
+      ]
+    }
+  ]
 }

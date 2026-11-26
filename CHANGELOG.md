@@ -1,5 +1,13 @@
 # PS-LICHDAY-V1.1.3 · 26/11/2026
 
+## V1.1.4 · 26/11/2026
+
+- Chọn một tuần hiển thị cho học viên và tự nhận lịch sau khi Giáo vụ tải tệp lên GitHub Pages.
+- Hai tab Tra cứu và Lịch tuần. Tra cứu nhiều lớp, bộ lọc nâng cao Và/Hoặc, nhóm lịch bằng nút và mặc định Danh sách.
+- Dự kiến học bù 1–4 tuần, timeline hai buổi tiếp theo và tải sự kiện .ics.
+- Làm rõ tiết và giờ, cơ sở trước phòng, chuyên đề gọn trong danh sách. Cập nhật thanh tuần, màu nút Giáo vụ, hướng dẫn và thao tác Back/kéo đóng popup.
+
+
 - Bỏ nút Giáo viên và theme ở màn hình học viên. Giữ logo 3 giây mở hộp mật khẩu; hỗ trợ giữ Enter/Space; hủy khi thả sớm, di chuyển, cuộn, mất focus hoặc hệ thống hủy cử chỉ.
 - Header điện thoại không cố định. Dấu hỏi gọn 36px, vùng chạm 44px; các nút học viên dùng xanh nhạt.
 - Nav nổi bo tròn 22px, cao 54px, chừa safe area; cuộn xuống ẩn, cuộn lên hiện, hiện ở đầu/cuối trang và khi dùng bàn phím. Khi ẩn, bỏ khỏi chuỗi focus. Chuyển tab đưa nội dung về đầu trang.

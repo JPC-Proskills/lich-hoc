@@ -1,24 +1,22 @@
 # Proskills · Lịch học trong tuần
 
-Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.3 · 26/11/2026**.
+Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.4 · 26/11/2026**.
 
 **Đọc trước:** [Đưa lên GitHub Pages](docs/GITHUB-PAGES.md) · [Hướng dẫn Giáo vụ và sao lưu](docs/HUONG-DAN-GIAO-VU.md) · [Bàn giao cho AI tiếp tục phát triển](AI_HANDOFF.md).
 
-## Giao diện học viên V1.1.3
+## Giao diện học viên V1.1.4
 
-Giữ logo Proskills **3 giây** để mở hộp nhập mật khẩu Giáo viên. Chạm nhanh hoặc kéo trang sẽ không mở. Bỏ nút Giáo viên và nút sáng/tối khỏi màn hình học viên; giữ giao diện đã lưu trên thiết bị.
-
-Thanh trên cuộn cùng nội dung; điều hướng dưới dạng nổi bo tròn, cuộn xuống ẩn và cuộn lên hiện. Dấu hỏi và nút học viên dùng xanh nhạt. Bộ lọc giáo viên/lớp tách dòng và tự xuống dòng tên dài. Hướng dẫn chuyển vào **?**. Chi tiết buổi học hiển thị thành các ô ngày/giờ/giáo viên/phòng, bỏ soạn lời nhắn; chỉ nhắc: **Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày**.
+Học viên chỉ xem tuần do Giáo vụ phát hành. **Tra cứu** cho phép chọn nhiều lớp và lọc nâng cao theo chuyên đề, giáo viên, đối tượng, cơ sở hoặc tiết. **Lịch tuần** có các nút nhóm lịch theo ngày giờ, giáo viên, lớp, cơ sở và đối tượng. Hai tab mở ở dạng danh sách. Giữ logo Proskills **3 giây** để mở hộp mật khẩu Giáo viên.
 
 ## Điện thoại, cài app và phát hành lịch
 
-Xem [hướng dẫn PWA và cập nhật lịch học viên](docs/DIEN-THOAI-PWA.md). Bản này có điều hướng điện thoại 44px, lịch chào thu gọn, icon nền tối, xem ngoại tuyến và thông báo cập nhật trong app. Vào **? → Cài app** để cài lên điện thoại.
+Vào **? → Cài app** để cài trên điện thoại. Học viên có thể mở chi tiết buổi học, xem chuyên đề của các buổi tiếp theo và tải tệp lịch `.ics` để thêm vào ứng dụng lịch.
 
-Giáo vụ xuất **published-schedule.json** tại **Xuất & sao lưu → Tải lịch học viên để phát hành**, rồi đưa file đó lên gốc repo. Package kèm lịch mẫu; thay file này bằng lịch đã duyệt trước khi gửi học viên. App không tự upload lịch từ máy Giáo vụ và không có thông báo đẩy khi app đóng.
+Giáo vụ chọn **Hiển thị cho học viên** trên tuần cần phát hành, sau đó vào **Xuất & sao lưu → Tải lịch học viên để phát hành**. Đưa tệp **published-schedule.json** lên gốc repo GitHub Pages. Học viên tự nhận tệp mới khi ứng dụng kiểm tra cập nhật. Thay lịch mẫu trong gói bằng lịch đã duyệt trước khi gửi học viên. Xem [hướng dẫn điện thoại và phát hành](docs/DIEN-THOAI-PWA.md).
 
 ## Đưa lên repo riêng
 
-1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.3`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
+1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.4`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
 2. Vào **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
 3. Mở **Visit site** ở phần Pages. Gửi **đường dẫn website** cho Giáo vụ; không gửi đường dẫn xem mã nguồn HTML trên GitHub.
 
@@ -26,7 +24,7 @@ Không cần cài thư viện, build hay cấu hình tên repo trong mã. Mọi 
 
 ## Chức năng hiện có
 
-- Mặc định chế độ học viên nền xám trung tính, điểm nhấn xanh đậm, chỉ xem tuần hiện tại và tuần sau nếu đã có lịch; lọc/sắp xếp giáo viên, lớp và tìm buổi học bù.
+- Mặc định chế độ học viên nền xám trung tính, điểm nhấn xanh đậm, xem một tuần đã phát hành; tra cứu nhiều lớp và xem gợi ý học bù khi dữ liệu chương trình đủ để dự kiến.
 - Chế độ có mật khẩu dành cho Giáo vụ Hành chính: thêm/sửa lịch, tạo tuần mới từ tuần cũ, gợi ý bài kế tiếp và quản lý danh mục.
 - Chương trình TTS `2025_JPC`: 25 bài/50 tiết; NH `NH4`: 18 bài/36 tiết. Có thể thêm chương trình và chọn 1 trong 10 màu.
 - Phòng học theo AB1, AB2, Âu Cơ; giáo viên; lớp học; lớp hoàn thành được ẩn khi thêm lịch mới.
@@ -44,7 +42,7 @@ Không cần cài thư viện, build hay cấu hình tên repo trong mã. Mọi 
 - Khi chuyển từ bản Sites hoặc đường dẫn khác sang GitHub Pages: tải bản sao lưu từ trang cũ, mở trang mới, vào chế độ Giáo vụ và khôi phục. Việc tải package không tự lấy các thay đổi đang nằm trong trình duyệt của bạn.
 - Khóa bằng mật khẩu trong bản tĩnh chỉ bảo vệ thao tác giao diện thông thường, **chưa phải tài khoản và phân quyền máy chủ**. Mật khẩu giữ như bản demo đã thống nhất; chủ dự án gửi riêng cho Giáo vụ. Không ghi mật khẩu rõ trong repo.
 - GitHub Pages thông thường là website công khai; mật khẩu chỉnh sửa trong app không giới hạn người xem trang. Cân nhắc điều này trước khi đưa dữ liệu thật lên repo/website.
-- Lịch mẫu nhập **một phần** từ Excel, chưa đầy đủ ô gộp/ca nối; công suất mẫu chưa đại diện toàn bộ file nguồn. NH4 là lớp minh họa. Từ tuần không có dữ liệu, học viên sẽ thấy tuần trống, không tự nhảy về lịch tháng 11/2026.
+- Lịch mẫu nhập **một phần** từ Excel, chưa đầy đủ ô gộp/ca nối; công suất mẫu chưa đại diện toàn bộ file nguồn. NH4 là lớp minh họa. Gói demo phát hành tuần 23.11-29.11 để dùng thử. Khi đưa vào sử dụng, Giáo vụ chọn và phát hành tuần cần hiển thị.
 - Chưa tự gửi tin Teams, chưa có địa chỉ Teams từng giáo viên, chưa tự kết nối Proskills Hub.
 
 ## Tiếp tục phát triển

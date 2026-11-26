@@ -6,7 +6,7 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
-**Phiên bản hiện tại: PS-LICHDAY-V1.1.3 (26/11/2026).**
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.4 (26/11/2026).**
 
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
@@ -182,3 +182,13 @@ Nguồn chính: PS-LICHDAY-V1.1.3. Các mô tả cũ về nút Giáo viên/theme
 polish.css nạp sau mobile.css; mobile-ui.js nạp sau pwa.js. Header điện thoại static. Nav nổi cao54px bo góc22px, ẩn theo cuộn xuống, hiện khi cuộn lên/đầu/cuối trang; inert khi ẩn, tôn trọng reduced-motion và vùng an toàn. Chuyển tab scroll về đầu. Long press dùng pointer/keyboard, hủy khi di chuyển>10px/scroll/release/cancel/blur; chỉ mở form mật khẩu, không tự cấp quyền.
 
 Các đoạn guide ở lịch/học bù đã vào dấu hỏi; không giấu lỗi load dữ liệu. Bộ lọc lịch vẫn select native với aria-label, nhưng nhãn phủ ngoài hỗ trợ wrap tên dài. Placeholder14px và mờ hơn; giá trị nhập16px giữ khả năng đọc/zoom. Popup học viên dùng lesson-sheet và bốn fact card; không còn permission-name/message/copy hay link Teams. Câu nhắc duy nhất: Nếu đi học bù, bạn nhớ xin phép giáo viên trước ít nhất 1 ngày. Đây là thay đổi yêu cầu đã chốt, không khôi phục composer theo ghi chú cũ.
+
+
+## Cập nhật V1.1.4
+
+- Giáo vụ chọn một tuần để phát hành. `db.visibleWeekId` là trường tùy chọn trong schema 1 để đọc backup cũ. Tạo tuần/lưu buổi giữ nguyên lựa chọn. `feed-core.js` xuất bản đúng tuần đã chọn và dữ liệu dự kiến gọn, không xuất các tuần nháp.
+- Bản phát hành có `visibleWeekId` được hiển thị cho đến khi Giáo vụ phát hành bản khác. Khi cập nhật từ bản cũ, app đọc snapshot trước đây theo tuần hiện tại cho đến khi nhận tệp mới. Thao tác ghi GitHub vẫn do Giáo vụ thực hiện.
+- `student-sync.js` tự nhận snapshot qua mạng, lưu ngoại tuyến riêng theo đường dẫn repo và tách khỏi dữ liệu lập lịch. Học viên không lấy tuần nháp từ bộ nhớ Giáo vụ.
+- `student-ui.js` hỗ trợ kết quả theo tuần đã phát hành, nhiều lựa chọn, tìm chuyên đề theo từng từ, điều kiện Và/Hoặc và nhóm lịch. Mỗi phiên và khi chuyển tab mở dạng danh sách.
+- `student-core.js` tính dự kiến 1–4 tuần theo tiến độ đã xếp và các khung tiết có bài được gán trong tuần phát hành. Gợi ý học bù bỏ các chuyên đề lớp đã bắt đầu. Timeline lấy các buổi còn lại trong tuần trước khi nối dự kiến. Nếu thiếu dữ liệu chương trình/khung tiết tương ứng, có thể hiện ít hơn hai buổi hoặc không có dự kiến.
+- `schedule-navigation.js` dùng lịch sử trình duyệt cho Back và hỗ trợ kéo tay nắm popup; `schedule.css` tắt kéo làm mới và cập nhật giao diện. Tệp .ics dùng giờ Việt Nam và nội dung buổi đã chọn.
