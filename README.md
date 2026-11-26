@@ -1,12 +1,18 @@
 # Proskills · Lịch học trong tuần
 
-Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.1 · 26/11/2026**.
+Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.2 · 26/11/2026**.
 
 **Đọc trước:** [Đưa lên GitHub Pages](docs/GITHUB-PAGES.md) · [Hướng dẫn Giáo vụ và sao lưu](docs/HUONG-DAN-GIAO-VU.md) · [Bàn giao cho AI tiếp tục phát triển](AI_HANDOFF.md).
 
+## Điện thoại, cài app và phát hành lịch
+
+Xem [hướng dẫn PWA và cập nhật lịch học viên](docs/DIEN-THOAI-PWA.md). Bản này có điều hướng điện thoại 44px, lịch chào thu gọn, icon nền tối, xem ngoại tuyến và thông báo cập nhật trong app. Vào **? → Cài app** để cài lên điện thoại.
+
+Giáo vụ xuất **published-schedule.json** tại **Xuất & sao lưu → Tải lịch học viên để phát hành**, rồi đưa file đó lên gốc repo. Package kèm lịch mẫu; thay file này bằng lịch đã duyệt trước khi gửi học viên. App không tự upload lịch từ máy Giáo vụ và không có thông báo đẩy khi app đóng.
+
 ## Đưa lên repo riêng
 
-1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.1`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
+1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.2`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
 2. Vào **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
 3. Mở **Visit site** ở phần Pages. Gửi **đường dẫn website** cho Giáo vụ; không gửi đường dẫn xem mã nguồn HTML trên GitHub.
 

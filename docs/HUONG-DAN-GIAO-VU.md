@@ -107,3 +107,8 @@ CSV công suất cũng chỉ là bảng thống kê, không phải bản sao lư
 ## F. Khi gửi phản hồi dùng thử
 
 Ghi lại: đang dùng link nào, tuần nào, lớp/giáo viên nào, thao tác vừa làm, kết quả mong muốn và kết quả thực tế. Có thể gửi ảnh màn hình đã kiểm tra nội dung phù hợp. Gửi file sao lưu qua kênh nội bộ được phép nếu cần tái hiện lỗi; không đưa file dữ liệu thật vào issue/repo công khai.
+
+
+## Phát hành lịch học viên từ V1.1.2
+
+Sau khi lập và rà soát lịch, vào **Xuất & sao lưu → Tải lịch học viên để phát hành**. Đưa file **published-schedule.json** vừa tải lên **cùng cấp index.html** trong repo GitHub. Khi GitHub Pages cập nhật, học viên được mời cập nhật khi mở/đang dùng app. Việc bấm Lưu buổi học chỉ lưu tại máy Giáo vụ, chưa phát hành. Lịch mẫu kèm package cần được thay bằng lịch đã duyệt. Giữ tải backup toàn bộ riêng để bảo vệ dữ liệu lập lịch; file phát hành không phải backup. Xem [hướng dẫn điện thoại và PWA](DIEN-THOAI-PWA.md).

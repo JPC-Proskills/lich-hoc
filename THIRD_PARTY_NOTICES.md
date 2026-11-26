@@ -23,3 +23,5 @@ Dữ liệu lịch và chương trình mẫu có nguồn từ các file do ngư�
 ## Logo Proskills
 
 Logo/icon trong `assets/` do chủ dự án cung cấp cho bản cập nhật này.
+
+Các launcher icon `app-dark-*`, `maskable-dark-512.png` và `apple-touch-dark.png` giữ nguyên logo gốc được cung cấp, đặt trên nền tối bằng bố cục SVG tại `assets/launcher-dark.svg`; không vẽ lại hoặc thay hình logo.

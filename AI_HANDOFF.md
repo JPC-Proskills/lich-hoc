@@ -6,7 +6,7 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
-**Phiên bản hiện tại: PS-LICHDAY-V1.1.1 (26/11/2026).**
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.2 (26/11/2026).**
 
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
@@ -164,3 +164,13 @@ Người dùng sẽ dùng thử trước và quay lại chỉnh tiếp. Các đi
 ## Cập nhật thiết kế V1.1.1
 
 Yêu cầu mới nhất: học viên dùng nền trắng/xám trung tính, điểm nhấn xanh #2E6596; trục lịch xanh #244F75 và chữ #E8F3FF (kể cả ngày hôm nay, giờ ca). Darkmode dùng xám đen #18191B và panel #242629. Các nút học viên phải theo màu xanh, không kế thừa cam đất Giáo vụ. Logo từ thư mục Logo Proskills được đóng gói ở assets/. Các tiêu đề dùng Nunito, nội dung giữ Be Vietnam Pro. Bỏ breadcrumb “Đào tạo / …” và cập nhật JS không còn truy cập phần tử này. Khoảng cách dòng/đoạn gọn hơn, giữ vùng bấm và cỡ chữ tuần đã chốt. release.css nạp cuối và ghi đè các quy tắc thiết kế cũ khi có khác biệt. Nguồn chính của phiên bản mới là thư mục PS-LICHDAY-V1.1.1; bản v0.1.0 giữ làm lịch sử.
+
+## Cập nhật V1.1.2 — điện thoại và PWA
+
+Nguồn chính hiện tại là thư mục PS-LICHDAY-V1.1.2. Yêu cầu mới nhất ghi đè thiết kế điện thoại cũ: học viên không có sidebar/toggle; giữ nav dưới đúng 2 nút cao 44px + safe area; bỏ week-tabs trên điện thoại; header logo + Giáo viên không icon khóa + theme + help cùng hàng. Lịch chào học viên ở cuối lịch và trong details mặc định đóng. Tiêu đề ngày danh sách xanh đậm/chữ sáng. mobile.css nạp cuối. Không cho chọn chữ giao diện, trừ ô nhập/textarea; giữ phóng to hệ thống.
+
+Manifest standalone, icon Proskills gốc được giữ nguyên trên nền tối trong assets/launcher-dark.svg và các PNG tương ứng. sw.js giữ shell offline theo phiên bản; tăng VERSION khi thay file app, cập nhật ASSETS khi thêm/bớt tài nguyên. Không tự skipWaiting khi có app mới: yêu cầu bấm Cập nhật app, rồi mới reload. Không cache published-schedule.json trong shell.
+
+feed-core.js xuất/kiểm tra snapshot học viên từ lịch tuần này và tuần sau; student-sync.js kiểm tra mạng, hiện thông báo và áp dụng khi bấm Cập nhật lịch. pwa.js kiểm tra khi mở/quay lại trang/online và mỗi 60s khi visible. Hỗ trợ cả cập nhật tuần rỗng (hủy toàn bộ buổi), không chỉ lịch có entries. Snapshot đã nhận lưu riêng theo đường dẫn repo; không ghi đè proskills-planner-v1. syncScheduleRole() đưa db về bản lập lịch riêng khi vào Giáo vụ và chọn lại bản public khi trở về học viên. Không để các ensure/migration làm biến đổi đối tượng feed gốc dùng so sánh revision.
+
+Phát hành: Giáo vụ tải published-schedule.json rồi tự đưa lên repo cùng index.html. File đi kèm là lịch mẫu. Đây là phát hành một chiều, chưa phải đồng bộ realtime hay lưu lên GitHub tự động. Không có Web Push/thông báo hệ thống khi đóng app. Chi tiết cài đặt, giới hạn status bar iOS và quy trình phát hành: docs/DIEN-THOAI-PWA.md. Các mô tả cũ trong tài liệu về việc chưa có dữ liệu dùng chung được hiểu là chưa có backend; snapshot public mới đã cho phép chia sẻ lịch qua file phát hành.

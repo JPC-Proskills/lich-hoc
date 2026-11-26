@@ -1,3 +1,14 @@
+# PS-LICHDAY-V1.1.2 · 26/11/2026
+
+- Điện thoại học viên: header một hàng logo/Giáo viên/theme/help; bỏ sidebar và nút toggle; nav dưới chỉ Lịch học/Học bù cao 44px cộng safe area; bỏ tab tuần dưới cùng.
+- Lịch chào xuống cuối, mặc định thu gọn; ngày danh sách nền xanh đậm/chữ sáng; rút gọn nhãn tuần trên điện thoại.
+- PWA standalone, launcher icon Proskills nền tối, meta màu theme và safe area, shell ngoại tuyến có phiên bản.
+- Thông báo cập nhật app có nút xác nhận; không tự tải lại khi đang thao tác.
+- Xuất published-schedule.json cho học viên, kiểm tra khi mở/quay lại app/mỗi 60s khi đang xem; thông báo tuần mới và chỉ áp dụng khi bấm cập nhật. Snapshot tách biệt dữ liệu Giáo vụ và hỗ trợ tuần rỗng sau khi hủy buổi.
+- Ghi nhớ bộ lọc/kiểu xem, thông báo ngoại tuyến, cài app và kiểm tra cập nhật trong Hướng dẫn.
+- Không chọn chữ giao diện; ô nhập và lời nhắn vẫn chọn/sửa/sao chép được. Giữ cỡ chữ hệ thống và khả năng zoom.
+- Giữ nguyên schema, khóa lưu, mật khẩu thật và chức năng sao lưu/khôi phục. Không có push khi đóng app hoặc tự upload GitHub.
+
 # PS-LICHDAY-V1.1.1 · 26/11/2026
 
 - Nền học viên và thanh bên chuyển sang xám trung tính, giảm độ phủ xanh trên thẻ lịch.
