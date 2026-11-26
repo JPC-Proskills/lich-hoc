@@ -1,0 +1,34 @@
+/* PS-LICHDAY-V1.1.1: neutral surfaces, role-specific controls, compact rhythm. */
+@font-face{font-family:Nunito;src:url('nunito-variable.ttf') format('truetype');font-weight:200 1000;font-style:normal;font-display:swap}
+h1,h2,h3,.dialog-head h2,.section-heading h2,.program-header h3,.student-detail h3,.week-title b{font-family:Nunito,'Be Vietnam Pro',sans-serif;font-weight:700;letter-spacing:0;line-height:1.3}
+.brand-logo{width:46px;height:46px;object-fit:contain;flex-shrink:0}
+:root[data-role=student]{--clay:#2E6596;--book:#25557F;--crail:#2E6596;--kraft:#6385A3;--primary:#2E6596;--primary-container:#E5ECF2;--on-primary-container:#244F75;--bg:#F3F4F5;--rail:#E9EBED;--surface:#FFFFFF;--surface-low:#F4F5F6;--surface-high:#E9EBED;--line:#DADDE1;--text:#22262B;--muted:#535C65;--secondary:#606973;--input:#FFFFFF;--sidebar-color:#E9EBED;--tts-bg:#F0F2F4;--tts-text:#303A44;--nh-bg:#F0F1F4;--nh-text:#384151;--other-bg:#F2F2F3;--other-text:#414850;--info-bg:#EAEDF0;--info-text:#354E64;--axis:#244F75;--axis-text:#E8F3FF;--action-bg:#2E6596;--action-hover:#25557F;--action-soft:#E5ECF2;--action-pressed:#1D466A}
+:root[data-role=student][data-theme=dark]{--bg:#18191B;--rail:#202225;--surface:#242629;--surface-low:#202225;--surface-high:#303338;--line:#41454B;--text:#F0F1F3;--muted:#C2C6CC;--secondary:#B3BAC3;--input:#1B1D20;--sidebar-color:#202225;--primary:#A8CDEF;--primary-container:#303A44;--on-primary-container:#DCEBFA;--tts-bg:#2B2E32;--tts-text:#E2E5EA;--nh-bg:#2D2F34;--nh-text:#E3E5EC;--other-bg:#2D2F31;--other-text:#E5E7EA;--info-bg:#2C3137;--info-text:#D4DDE7;--axis:#244F75;--axis-text:#E8F3FF;--action-bg:#2E6596;--action-hover:#3976AB;--action-soft:#303A44;--action-pressed:#25557F;--warning-bg:#37332C;--warning-text:#E7D2A6}
+:root[data-role=student] .button:active{background:var(--action-pressed);color:#FFF}
+:root[data-role=student] .icon-button,:root[data-role=student] #theme-toggle{background:var(--action-bg);color:#F1F7FF}
+:root[data-role=student] .icon-button:hover,:root[data-role=student] #theme-toggle:hover{background:var(--action-hover)}
+:root[data-role=student] .segmented button.active,:root[data-role=student] .segmented button.active:hover{background:var(--action-bg);color:#F1F7FF}
+:root[data-role=student] .cell-add{background:var(--action-soft);color:var(--primary)}
+:root[data-role=student] .cell-add:hover{background:var(--action-bg);color:#FFF}
+:root[data-role=student] .cal-header.today{background:var(--axis);color:var(--axis-text);box-shadow:inset 0 -3px #A8CDEF}
+:root[data-role=student] .cal-header.today b,:root[data-role=student] .cal-time small{color:var(--axis-text)}
+:root[data-role=student] nav button{color:var(--muted)}
+:root[data-role=student] nav button.active{background:var(--action-bg);color:#FFF}
+:root[data-role=student] .session.has-program-color{background:color-mix(in srgb,var(--program-color) 6%,var(--surface-low))}
+:root[data-role=student][data-theme=dark] .session.has-program-color{background:color-mix(in srgb,var(--program-color) 7%,var(--surface-low))}
+:root[data-role=student] #toast .button{color:#D8ECFF;background:transparent}
+body{line-height:1.5}.topbar{height:58px}.page-heading{margin-bottom:16px;gap:16px}.eyebrow{margin-bottom:4px}h1{font-size:32px}.page-heading p:last-child{margin-top:5px;line-height:1.5}
+:root[data-role=student] .heading-actions{display:none}
+.weekbar{padding:14px 18px;margin-bottom:14px}.week-title{gap:12px}.calendar-symbol{width:44px;height:44px;border-radius:14px}.schedule-updated{margin:0 0 12px;line-height:1.5}
+.notice{padding:10px 14px;margin-bottom:14px;line-height:1.55}.stats{gap:12px;margin-bottom:16px}.stat{padding:14px;min-height:86px;gap:12px}.stat small{margin-top:4px;line-height:1.45}
+.toolbar{padding:14px 16px;gap:10px}.subbar{padding:10px 16px;gap:10px}.cal-header{padding:11px 7px}.cal-time{padding:16px 6px}.cal-time small{line-height:1.5;margin-top:4px}.calendar .cal-cell{min-height:132px;gap:6px;padding:6px}.calendar .session{padding:8px 10px}.session{line-height:1.45}.session:before{margin-bottom:6px}.session b{line-height:1.45}.session .topic,.calendar .session .topic{line-height:1.5;margin:5px 0}.session .location{margin-top:6px;padding-top:5px}.teacher-chip{padding:2px 6px;line-height:1.4}.tag{margin-top:5px;padding:2px 6px}
+.list-day{padding:10px 18px}.list-row{padding:12px 18px;gap:18px}.list-time{line-height:1.5}.list-row .session{padding:12px 14px}.list-row .session .topic{margin:5px 0 7px;line-height:1.5}
+.section-heading{padding:16px 20px;gap:12px}.section-heading p{margin-top:4px;line-height:1.5}.greetings-panel{margin-bottom:14px}.greetings-panel .section-heading{padding-bottom:10px}.greeting-cards{padding:0 20px 16px;gap:10px}.greeting-card{padding:11px 14px;gap:4px}.side-note{padding-top:20px;margin-bottom:18px}.side-note p{line-height:1.5}.detail-topic{line-height:1.55}.student-detail dl{margin:14px 0}.student-detail dl>div{padding:8px 0}.student-detail textarea[readonly]{line-height:1.5}.form-note,.help-text,.hint,.export-item p{line-height:1.55}.help-text p{margin-bottom:12px}.form-actions{padding-top:16px;margin-top:16px}.bottom-note{line-height:1.5;margin-top:14px}
+@media(max-width:760px){
+ .sidebar{padding:12px 16px 8px}.brand-logo{width:40px;height:40px}.topbar{min-height:48px;padding:0 16px}.topbar .icon-button{width:40px;height:40px}main{padding-top:10px}.page-heading{margin-top:0;margin-bottom:14px}h1{font-size:28px}.page-heading p:last-child{line-height:1.5}.heading-actions{margin-top:12px}
+ .weekbar{padding:12px 14px;margin-bottom:12px}.week-select{margin-top:10px;padding-top:10px}.schedule-updated{margin:0 0 10px;font-size:12px}.stats{gap:8px;margin-bottom:12px}.stat{padding:12px;min-height:88px;gap:8px}.stat small{line-height:1.4}.notice{padding:10px 12px;margin-bottom:12px;line-height:1.55}
+ .toolbar{padding:12px;gap:10px}.filters{gap:8px}.segmented button{min-height:44px}.subbar{padding:10px 12px;gap:10px}.list-day{padding:9px 12px}.list-row{padding:11px 12px}.list-time{margin-bottom:6px;line-height:1.45}.list-row .session{padding:12px}.list-row .session .topic{line-height:1.5}.list-row .session .location{gap:8px}
+ .section-heading{padding:14px 16px}.section-heading p{line-height:1.5}.greetings-panel .section-heading{padding:14px 16px 10px}.greeting-cards{padding:0 16px 14px;gap:8px}.greeting-card{padding:11px 13px}.makeup-form{padding:0 16px 14px}.form-grid{gap:12px}.student-detail dl>div{gap:8px}.detail-topic{line-height:1.55}.bottom-note{font-size:12px;line-height:1.5;margin-top:12px}
+ :root[data-role=student] nav button.active{background:transparent;color:var(--text)}:root[data-role=student] nav button.active>span:first-child{background:var(--action-bg)}
+}
+@media print{.brand-logo{display:none}}

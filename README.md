@@ -1,12 +1,12 @@
 # Proskills · Lịch học trong tuần
 
-Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Gói GitHub đầu tiên: **v0.1.0 · 26/11/2026**.
+Bản dùng thử độc lập cho học viên, giáo viên xem lịch và Giáo vụ Hành chính lập lịch. Phiên bản **PS-LICHDAY-V1.1.1 · 26/11/2026**.
 
 **Đọc trước:** [Đưa lên GitHub Pages](docs/GITHUB-PAGES.md) · [Hướng dẫn Giáo vụ và sao lưu](docs/HUONG-DAN-GIAO-VU.md) · [Bàn giao cho AI tiếp tục phát triển](AI_HANDOFF.md).
 
 ## Đưa lên repo riêng
 
-1. Giải nén package. Đưa **nội dung bên trong thư mục `proskills-lich-hoc`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
+1. Giải nén package. Đưa **nội dung bên trong thư mục `PS-LICHDAY-V1.1.1`** lên thư mục gốc của repo. `index.html` phải nằm ngay ở gốc, không nằm trong một thư mục con.
 2. Vào **Settings → Pages → Deploy from a branch → main → /(root) → Save**.
 3. Mở **Visit site** ở phần Pages. Gửi **đường dẫn website** cho Giáo vụ; không gửi đường dẫn xem mã nguồn HTML trên GitHub.
 
@@ -14,13 +14,13 @@ Không cần cài thư viện, build hay cấu hình tên repo trong mã. Mọi 
 
 ## Chức năng hiện có
 
-- Mặc định chế độ học viên màu xanh, chỉ xem tuần hiện tại và tuần sau nếu đã có lịch; lọc/sắp xếp giáo viên, lớp và tìm buổi học bù.
+- Mặc định chế độ học viên nền xám trung tính, điểm nhấn xanh đậm, chỉ xem tuần hiện tại và tuần sau nếu đã có lịch; lọc/sắp xếp giáo viên, lớp và tìm buổi học bù.
 - Chế độ có mật khẩu dành cho Giáo vụ Hành chính: thêm/sửa lịch, tạo tuần mới từ tuần cũ, gợi ý bài kế tiếp và quản lý danh mục.
 - Chương trình TTS `2025_JPC`: 25 bài/50 tiết; NH `NH4`: 18 bài/36 tiết. Có thể thêm chương trình và chọn 1 trong 10 màu.
 - Phòng học theo AB1, AB2, Âu Cơ; giáo viên; lớp học; lớp hoàn thành được ẩn khi thêm lịch mới.
 - Công suất: Giáo viên → Tổng tiết → Tiết ngày 1–8 → Tiết tối 9–12 → Chi tiết từng ngày.
 - Lịch chào thứ 6: 7:30–7:45 và 12:45–13:00; có danh sách luân phiên, không tính vào số tiết dạy.
-- Giao diện Material 3, Be Vietnam Pro, sáng/tối, nút cam đất, thẻ màu giáo viên, ẩn thanh bên.
+- Giao diện Material 3, tiêu đề Nunito và nội dung Be Vietnam Pro; logo Proskills mới; chế độ học viên nền xám, nút xanh đậm, darkmode xám đen; chế độ Giáo vụ giữ nút cam đất; khoảng cách gọn hơn trên điện thoại.
 - Xuất CSV, JSON một tuần, sao lưu và khôi phục toàn bộ app. Soạn lời nhắn xin học bù, sao chép và mở MS Teams để tự gửi.
 
 ## Dữ liệu và giới hạn cần biết khi thử

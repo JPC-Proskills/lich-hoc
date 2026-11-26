@@ -15,3 +15,11 @@ Nguồn dự án được ghi trong giấy phép: [BeVietnamPro](https://github.
 Chủ dự án chưa chọn giấy phép công khai cho mã ứng dụng. Package dùng `private: true` và `UNLICENSED` để tránh hiểu là đã cấp một giấy phép mã nguồn mở. Những trường này không thay thế giấy phép riêng của font/icon.
 
 Dữ liệu lịch và chương trình mẫu có nguồn từ các file do người dùng cung cấp. Không suy diễn có quyền tái phân phối các tài liệu gốc hoặc dữ liệu nội bộ khác chỉ từ việc package này tồn tại.
+
+## Nunito
+
+`nunito-variable.ttf` từ kho Google Fonts chính thức: https://github.com/google/fonts/tree/main/ofl/nunito. Giấy phép SIL Open Font License 1.1 tại `NUNITO-LICENSE.txt`. Dùng cho các tiêu đề, được đóng gói cùng app.
+
+## Logo Proskills
+
+Logo/icon trong `assets/` do chủ dự án cung cấp cho bản cập nhật này.

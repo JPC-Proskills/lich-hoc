@@ -6,6 +6,8 @@
 
 Chủ dự án muốn app lập lịch đào tạo hằng tuần thay cho Excel: mỗi tuần như một sheet, sao chép khung tuần cũ, gợi ý bài kế tiếp, quản lý lớp/giáo viên/phòng/chương trình, thống kê tiết và giúp học viên tìm lịch học bù trên điện thoại.
 
+**Phiên bản hiện tại: PS-LICHDAY-V1.1.1 (26/11/2026).**
+
 **Hiện tại:** thử nghiệm trong một repo GitHub riêng và phát qua GitHub Pages để Giáo vụ Hành chính dùng thử. Package này trở thành **nguồn mã chính để tiếp tục chỉnh sửa**. Không quay lại sửa nguồn bản Sites cũ rồi chép đè vào repo đang làm việc.
 
 **Về sau:** kết nối thẻ “Lịch học” trong Proskills Hub. Khi học viên đã nhập tên/lớp, Hub tự lấy lịch phù hợp của tuần. Hiện app mới có xuất dữ liệu, chưa tích hợp hoặc đồng bộ với Hub.
@@ -28,7 +30,9 @@ ui.js                     Icon và lựa chọn sáng/tối
 seed.js                   Dữ liệu mẫu window.SEED
 fonts.css                 Font Be Vietnam Pro đóng gói tại máy
 m3.css                    Giao diện Material 3 nền tảng
-modes.css                 Vai trò, chữ nhỏ, nút cam đất, thẻ màu, lịch chào
+modes.css                 Vai trò, thẻ màu, lịch chào
+release.css               Giao diện V1.1.1: Nunito, nền trung tính, nút theo vai trò, khoảng cách gọn
+assets/                   Logo và icon Proskills do người dùng cung cấp
 *.woff2                   Font chữ/icon, không tải từ CDN lúc mở app
 tests/check.cjs           Kiểm tra hồi quy lập lịch và phòng
 tests/check-modes.cjs     Tuần học viên, học bù, lịch chào, roster, màu
@@ -41,7 +45,7 @@ Chạy `npm start`; kiểm tra `npm test`. Không cần `npm install`. Có thể
 
 **Thứ tự script quan trọng:** `ui.js` trong head; cuối body là `seed.js`, `core.js`, `config.js`, `modes.js`, `greetings.js`, `colors.js`, `app.js`. App dùng các binding toàn cục theo thứ tự này. `app.js` gọi `init()` ở cuối; không làm các file kia chạy logic truy cập `db` trước khi app khởi tạo.
 
-`m3.css` được nạp trước `modes.css`; một số quy tắc sau cố ý ghi đè giao diện cũ. Trước khi sửa CSS cần xem độ ưu tiên và cả chế độ sáng/tối/học viên.
+`m3.css` được nạp trước `modes.css`, sau cùng là `release.css`; một số quy tắc sau cố ý ghi đè giao diện cũ. Trước khi sửa CSS cần xem độ ưu tiên và cả chế độ sáng/tối/học viên.
 
 ## 3. Vai trò đã thống nhất
 
@@ -156,3 +160,7 @@ Hướng mong muốn: Giáo vụ làm lịch → cập nhật dữ liệu vào r
 - Kết nối thẻ lịch của Proskills Hub.
 
 Người dùng sẽ dùng thử trước và quay lại chỉnh tiếp. Các điểm trên là hướng phát triển, không phải lý do tự mở rộng phạm vi của yêu cầu hiện tại.
+
+## Cập nhật thiết kế V1.1.1
+
+Yêu cầu mới nhất: học viên dùng nền trắng/xám trung tính, điểm nhấn xanh #2E6596; trục lịch xanh #244F75 và chữ #E8F3FF (kể cả ngày hôm nay, giờ ca). Darkmode dùng xám đen #18191B và panel #242629. Các nút học viên phải theo màu xanh, không kế thừa cam đất Giáo vụ. Logo từ thư mục Logo Proskills được đóng gói ở assets/. Các tiêu đề dùng Nunito, nội dung giữ Be Vietnam Pro. Bỏ breadcrumb “Đào tạo / …” và cập nhật JS không còn truy cập phần tử này. Khoảng cách dòng/đoạn gọn hơn, giữ vùng bấm và cỡ chữ tuần đã chốt. release.css nạp cuối và ghi đè các quy tắc thiết kế cũ khi có khác biệt. Nguồn chính của phiên bản mới là thư mục PS-LICHDAY-V1.1.1; bản v0.1.0 giữ làm lịch sử.

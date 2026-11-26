@@ -1,3 +1,13 @@
+# PS-LICHDAY-V1.1.1 · 26/11/2026
+
+- Nền học viên và thanh bên chuyển sang xám trung tính, giảm độ phủ xanh trên thẻ lịch.
+- Trục thứ/ngày và ca/tiết dùng xanh đậm #244F75, chữ xanh rất nhạt #E8F3FF.
+- Đồng bộ nút học viên sang xanh #2E6596: tuần/danh sách, thanh bên, sáng/tối, hướng dẫn, đóng và các nút trong hộp thoại.
+- Darkmode học viên chuyển nền xám đen #18191B, panel xám #242629.
+- Thay logo và icon bằng bộ Logo Proskills được cung cấp; tiêu đề dùng Nunito đóng gói tại máy.
+- Bỏ đường dẫn “Đào tạo / …”; thu gọn khoảng cách dòng, đoạn và thẻ lịch, giữ cỡ chữ lịch tuần theo thiết kế đã chốt.
+- Giữ logic lịch, dữ liệu, khóa localStorage và khả năng khôi phục bản sao lưu.
+
 # Nhật ký thay đổi
 
 ## 0.1.0 — 26/11/2026

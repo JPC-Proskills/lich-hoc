@@ -4,7 +4,7 @@ const isTeacher=()=>role==='teacher';
 function todayVN(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),get=t=>parts.find(p=>p.type===t).value;return `${get('year')}-${get('month')}-${get('day')}`}
 function accessibleWeeks(){return isTeacher()?[...db.weeks].sort((a,b)=>a.start.localeCompare(b.start)):C.studentWeeks(db,todayVN())}
 function requireTeacher(){if(isTeacher())return true;toast('Chế độ học viên chỉ xem lịch. Hãy đăng nhập chế độ giáo viên để điều chỉnh.');return false}
-function updateAppearanceMeta(){document.querySelector('meta[name="theme-color"]').content=document.documentElement.dataset.theme==='dark'?(isTeacher()?'#262624':'#142536'):(isTeacher()?'#FAF9F5':'#F5F9FD')}
+function updateAppearanceMeta(){document.querySelector('meta[name="theme-color"]').content=document.documentElement.dataset.theme==='dark'?(isTeacher()?'#262624':'#18191B'):(isTeacher()?'#FAF9F5':'#F3F4F5')}
 function updatedText(){const stamp=week()?.updatedAt||db.updatedAt;if(!stamp||!Number.isFinite(Date.parse(stamp)))return 'Lịch tuần mới: chưa có ngày cập nhật được ghi nhận.';return 'Lịch tuần mới được cập nhật vào ngày '+new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(stamp))+' lúc '+new Intl.DateTimeFormat('vi-VN',{timeZone:'Asia/Ho_Chi_Minh',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(stamp))+'.'}
 function applyModeUI(){
  C.ensureGreetings(db,SEED);C.ensureRoster(db);C.ensureTeacherColors(db);
